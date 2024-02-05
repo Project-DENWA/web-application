@@ -8,8 +8,11 @@ type IAnimatedText = {
 export default function AnimatedText() {
 
   const textVariants: IAnimatedText[] = useMemo(() => [
-    { text: 'стартапов' },
-    { text: 'дизайнеров' },
+    { text: 'шлюх' },
+    { text: 'наркоманов' },
+    { text: 'педофилов'},
+    { text: 'пидорасов'},
+    { text: 'зеков'}
   ], []); 
 
   const [displayedText, setDisplayedText] = useState('');
