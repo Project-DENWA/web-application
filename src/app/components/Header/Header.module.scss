@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  .headlineBanner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 0px 8px 0px;
+    width: 100vw;
+    gap: 8px;
+    background: linear-gradient(
+      90deg,
+      rgb(49, 116, 244) -0.313%,
+      rgb(153, 211, 255) 99.965%
+    );
+  }
+}
