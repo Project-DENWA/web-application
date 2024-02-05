@@ -1,0 +1,43 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 112px 0;
+
+    .mainTitleContainer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        h1 {
+            font-size: 95px;
+            font-weight: 700;
+            line-height: 64px;
+        }
+        span {
+            font-size: 166px;
+            font-weight: 700;
+            line-height: 201px;
+            background: linear-gradient(90.00deg, rgb(49, 116, 244), rgb(16, 98, 255), rgb(43, 163, 255));
+            -webkit-background-clip: text; 
+            background-clip: text;
+            color: transparent; 
+            text-align: center;
+        }
+    }
+    .descriptionContainer {
+        p {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 32px;
+
+            max-width: 690px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+ 
+}
