@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-neutral-900 text-neutral-50 hover:bg-neutral-900/90 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-50/90",
+        default: "bg-light-main-colored-100 text-light-text-primary hover:bg-[linear-gradient(90.00deg, rgb(49, 116, 244) -0.313%,rgb(153, 211, 255) 99.965%)] dark:bg-dark-main-colored-100 dark:text-light-text-primary dark:hover:bg-[linear-gradient(90.00deg, rgb(49, 116, 244) -0.313%,rgb(153, 211, 255) 99.965%)]",
         destructive:
           "bg-red-500 text-neutral-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-neutral-50 dark:hover:bg-red-900/90",
         outline:
@@ -20,7 +20,7 @@ const buttonVariants = cva(
         link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
       },
       size: {
-        default: "h-10 px-4 py-2",
+        default: "py-3 px-6 text-[16px] font-bold",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",

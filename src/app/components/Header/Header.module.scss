@@ -19,4 +19,34 @@
       rgb(153, 211, 255) 99.965%
     );
   }
+  .mainHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    padding: 14px 0px 14px 0px;
+    .logotype {
+      width: 300px;
+    }
+    nav {
+      gap: 28px;
+      display: flex;
+      font-weight: 600;
+      font-size: 16;
+      line-height: 24px;
+    }
+    .rightItems {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 30px;
+      div {
+        display: flex;
+        gap: 10px;
+      }
+      width: 300px;
+    }
+  }
 }

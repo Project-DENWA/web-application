@@ -18,12 +18,49 @@ const config = {
       },
     },
     colors: {
-      dark: {
+      light: {
         text: {
           colored: "#3174f4",
           main: { 100: "#0b090a", 50: "#a0a0a0" },
           primary: "#ffffff"
         },
+        main: {
+          colored: {
+            100: "#3174f4",
+            20: "rgba(49,116,244, 0.2)"
+          },
+          dark: '#0B090A',
+          full: {
+            black: "#00000",
+            white: "#FFFFFF",
+          },
+          bg: {
+            main: "#FFFFFF",
+            primary: "#E6EEF5"
+          }
+        }
+      },
+      dark: {
+        text: {
+          colored: "#3174f4",
+          main: { 100: "#FFFFFF", 50: "#a0a0a0" },
+          primary: "#ffffff"
+        },
+        main: {
+          colored: {
+            100: "#3174f4",
+            20: "rgba(49,116,244, 0.2)"
+          },
+          dark: '#FFFFFF',
+          full: {
+            black: "#FFFFFF",
+            white: "#000000",
+          },
+          bg: {
+            main: "#232328",
+            primary: "#2D2D32"
+          }
+        }
       },
     },
     extend: {
