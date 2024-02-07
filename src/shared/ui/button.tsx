@@ -10,8 +10,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-light-main-colored-100 text-light-text-primary hover:bg-[linear-gradient(90.00deg, rgb(49, 116, 244) -0.313%,rgb(153, 211, 255) 99.965%)] dark:bg-dark-main-colored-100 dark:text-light-text-primary dark:hover:bg-[linear-gradient(90.00deg, rgb(49, 116, 244) -0.313%,rgb(153, 211, 255) 99.965%)]",
-        destructive:
-          "bg-red-500 text-neutral-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-neutral-50 dark:hover:bg-red-900/90",
+        dark:
+          "bg-light-main-dark text-light-text-primary hover:bg-[#0e0c0c] dark:bg-dark-main-full-white dark:hover:bg-dark-main-bg-main  dark:text-dark-text-primar py-3 px-6 text-[16px] font-bold",
         outline:
           "border border-neutral-200 bg-white hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
         secondary:

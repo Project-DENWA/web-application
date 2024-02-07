@@ -8,11 +8,19 @@ type IAnimatedText = {
 export default function AnimatedText() {
 
   const textVariants: IAnimatedText[] = useMemo(() => [
-    { text: 'шлюх' },
-    { text: 'наркоманов' },
-    { text: 'педофилов'},
-    { text: 'пидорасов'},
-    { text: 'зеков'}
+    { text: 'русских' },
+    { text: 'каждого' },
+    { text: 'программистов' },
+    { text: 'дизайнеров' },
+    { text: 'тестировщиков' },
+    { text: 'маркетологов' },
+    { text: 'писателей'},
+    { text: 'архитекторов'},
+    { text: 'копирайтеров'},
+    { text: 'фотографов'},
+    { text: 'видеографов'},
+    { text: 'переводчиков'},
+    { text: 'модельеров'},
   ], []); 
 
   const [displayedText, setDisplayedText] = useState('');
@@ -24,28 +32,28 @@ export default function AnimatedText() {
     const animateText = async () => {
       const currentWord = textVariants[currentWordIndex].text;
 
-      // Набор текста
+      // Text typesetting
       for (let i = 0; i <= currentWord.length; i++) {
         if (!isMounted) return;
 
         setDisplayedText(currentWord.substring(0, i));
 
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 100));
       }
 
-      // Задержка перед стиранием
+      // Delay before erasing
       await new Promise((resolve) => setTimeout(resolve, 3000));
 
-      // Стирание текста
+      // Text erasure
       for (let i = currentWord.length; i >= 0; i--) {
         if (!isMounted) return;
 
         setDisplayedText(currentWord.substring(0, i));
 
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 100));
       }
 
-      // Переход к следующему слову с задержкой
+      // Going to the next word with a delay
       await new Promise((resolve) => setTimeout(resolve, 700));
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % textVariants.length);
     };
