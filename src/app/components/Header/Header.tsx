@@ -23,10 +23,10 @@ export default function Header() {
             height={28}
           />
         </div>
-        <h1 className="text-dark-text-primary">
+        <p className="text-dark-text-primary">
           <u>DenwaHub 2024.</u>{" "}
           <span>Программируй деньги с ведущими специалистами.</span>
-        </h1>
+        </p>
         <div>
           <Image
             src={arrowRight}
