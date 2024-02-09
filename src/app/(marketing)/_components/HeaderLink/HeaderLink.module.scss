@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  width: 100%;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    img {
+      transition: all 0.1s ease-in-out;
+    }
+  }
+  a:hover {
+    img {
+      transform: translateX(3px);
+    }
+  }
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+  }
+}

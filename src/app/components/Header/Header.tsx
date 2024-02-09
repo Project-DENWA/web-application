@@ -11,7 +11,10 @@ import ThemeSwitcher from "@/shared/ui/ThemeSwitcher";
 export default function Header() {
   return (
     <header className={css.header}>
-      <Link className={css.headlineBanner+" hover:opacity-90 transition-opacity"} href={"/"}>
+      <Link
+        className={css.headlineBanner + " hover:opacity-90 transition-opacity"}
+        href={"/"}
+      >
         <div>
           <Image
             alt="headline icon smile"
@@ -21,10 +24,17 @@ export default function Header() {
           />
         </div>
         <h1 className="text-dark-text-primary">
-          <u>DenwaHub 2024.</u> Программируй деньги с ведущими специалистами.
+          <u>DenwaHub 2024.</u>{" "}
+          <span>Программируй деньги с ведущими специалистами.</span>
         </h1>
         <div>
-          <Image src={arrowRight} alt="right arrow" width={24} height={24} />
+          <Image
+            src={arrowRight}
+            alt="right arrow"
+            width={24}
+            height={24}
+            id={css.arrow}
+          />
         </div>
       </Link>
       <div className={css.mainHeader}>
@@ -34,10 +44,10 @@ export default function Header() {
             alt="denwa logotype"
             width={62}
             height={38}
-            className="dark:invert hover:scale-105 transition-transform"
+            className="dark:invert hover:scale-105 transition-transform duration-75"
           />
         </Link>
-        <nav className="">
+        <nav>
           <Link
             href={"./#"}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
@@ -65,14 +75,16 @@ export default function Header() {
         </nav>
         <div className={css.rightItems}>
           <Button>Войти</Button>
-          <div role="button">
-            <Image
-              alt="change language icon"
-              src={globe}
-              width={24}
-              height={24}
-              className="dark:invert"
-            />
+          <div>
+            <Button size="icon" variant="ghost">
+              <Image
+                alt="change language icon"
+                src={globe}
+                width={24}
+                height={24}
+                className="dark:invert hover:opacity-85 transition-opacity"
+              />
+            </Button>
             <ThemeSwitcher />
           </div>
         </div>

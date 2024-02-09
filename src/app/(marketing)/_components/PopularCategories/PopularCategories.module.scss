@@ -1,50 +1,35 @@
 .wrapper {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
-   gap: 32px;
-   margin-top: 140px;
-   .navContainer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1280px;
-      width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 140px;
+  .navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    width: 100%;
+  }
 
-      h2 {
-        font-size: 40px;
-        font-weight: 700;
-        line-height: 48px;
-      }
-   }
+  .itemsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-   .moreCategoryLink {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 24px;
+  .leftItems {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 36px;
+    max-width: 850px;
+  }
 
-   }
-
-   .itemsContainer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-   }
-
-   .leftItems {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 36px;
-      max-width: 850px;
-   }
-
-   .rightItems {
+  .rightItems {
     img {
-        max-height: 330px;
+      max-height: 330px;
     }
-   }
+  }
 }

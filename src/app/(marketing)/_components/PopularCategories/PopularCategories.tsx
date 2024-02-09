@@ -1,10 +1,9 @@
 import PopularCategoryCard from "../PopularCategoryCard/PopularCategoryCard"
 import css from "@/app/(marketing)/_components/PopularCategories/PopularCategories.module.scss"
 import ICategoriesCardProps from "@/app/interfaces/ICategoriesCardProps"
-import arrowRightSmall from "@/../public/arrow-right-small.svg"
 import Illustration from "@/../public/categoryIcons/IllustrationCategories.png"
 import Image from "next/image"
-import Link from "next/link"
+import HeaderLink from "@/app/(marketing)/_components/HeaderLink/HeaderLink"
 
 export default function PopularCategories() {
    /**
@@ -45,11 +44,7 @@ export default function PopularCategories() {
    return (
       <section className={css.wrapper}>
         <div className={css.navContainer}>
-         <h2>Популярные категории</h2>
-         <Link className={css.moreCategoryLink + " text-dark-text-colored"} href={'/categories'}>
-            Больше категорий
-            <Image alt="arrow icon" src={arrowRightSmall} width={24} height={24}/>
-         </Link>
+         <HeaderLink title="Популярные категории" href="/categories" description="Больше категорий"/>
         </div>
          <div className={css.itemsContainer}>
          <div className={css.leftItems}>

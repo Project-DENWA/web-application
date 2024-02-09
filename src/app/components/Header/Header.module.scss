@@ -3,21 +3,33 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 100vw;
+  width: 100%;
   .headlineBanner {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 16px;
     font-weight: 600;
-    padding: 8px 0px 8px 0px;
-    width: 100vw;
+    padding: 8px 16px 8px 16px;
+
+    width: 100%;
     gap: 8px;
     background: linear-gradient(
       90deg,
       rgb(49, 116, 244) -0.313%,
       rgb(153, 211, 255) 99.965%
     );
+    #arrow {
+      transition: all 0.1s ease-in-out;
+    }
+  }
+  .headlineBanner:hover {
+    #arrow {
+      transform: translateX(3px);
+    }
   }
   .mainHeader {
     display: flex;
@@ -26,15 +38,15 @@
     align-items: center;
     width: 100%;
     max-width: 1280px;
-    padding: 14px 0px 14px 0px;
+    padding: 14px 16px 14px 16px;
     .logotype {
-      width: 300px;
+      width: 190px;
     }
     nav {
       gap: 28px;
       display: flex;
       font-weight: 600;
-      font-size: 16;
+      font-size: 16px;
       line-height: 24px;
     }
     .rightItems {
@@ -46,7 +58,33 @@
         display: flex;
         gap: 10px;
       }
-      width: 300px;
+      width: 190px;
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .headlineBanner {
+    h1 {
+      span {
+        display: none;
+      }
+      u {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    .mainHeader {
+      nav {
+        display: none;
+      }
+      .rightItems {
+        display: none;
+      }
     }
   }
 }
