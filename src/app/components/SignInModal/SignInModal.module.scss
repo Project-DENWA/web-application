@@ -1,0 +1,23 @@
+.checkboxContainer {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   div:first-child {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+   }
+}
+
+.socialIcons {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.footer {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
