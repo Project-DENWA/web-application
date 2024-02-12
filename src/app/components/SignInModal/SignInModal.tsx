@@ -13,6 +13,8 @@ import {
 } from "@/shared/ui/dialog"
 import css from "@/app/components/SignInModal/SignInModal.module.scss"
 
+import SignUpModal from "@/app/components/SignUpModal/SignUpModal"
+
 import GoogleIcon from "@/../public/socialcons/GoogleIcon.svg"
 import TwitterIcon from "@/../public/socialcons/TwitterIcon.svg"
 import VkIcon from "@/../public/socialcons/VkIcon.svg"
@@ -26,7 +28,9 @@ export default function SignInModal() {
          </DialogTrigger>
          <DialogContent className='max-w-[425px] bg-light-main-full-white border-none rounded-3xl dark:bg-dark-main-bg-primary'>
             <DialogHeader>
-               <DialogTitle>Войти</DialogTitle>
+               <DialogTitle className='text-xl font-semibold'>
+                  Войти
+               </DialogTitle>
             </DialogHeader>
             <Input placeholder='Логин / Почта' />
             <Input placeholder='Пароль' />
@@ -78,13 +82,15 @@ export default function SignInModal() {
             <DialogFooter>
                <div className={css.footer}>
                   <p>Нет аккаунта?</p>
-                  <Button
-                     size={"default"}
-                     className={"text-light-main-colored-100 font-normal"}
-                     variant={"link"}
-                  >
-                     Зарегистрируйтесь
-                  </Button>
+                  <SignUpModal>
+                     <Button
+                        size={"default"}
+                        className={"text-light-main-colored-100 font-normal"}
+                        variant={"link"}
+                     >
+                        Зарегистрируйтесь
+                     </Button>
+                  </SignUpModal>
                </div>
             </DialogFooter>
          </DialogContent>
