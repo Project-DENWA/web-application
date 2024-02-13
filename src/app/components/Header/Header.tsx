@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import headlineIcon from "@/../public/headlineIcon.svg"
 import arrowRight from "@/../public/arrow-right.svg"
@@ -6,14 +7,33 @@ import globe from "@/../public/globe.svg"
 import css from "@/app/components/Header/Header.module.scss"
 import logotype from "@/../public/logotype.svg"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 import { Button } from "@/shared/ui/button"
 import ThemeSwitcher from "@/shared/ui/ThemeSwitcher"
 
 import SignInModal from "@/app/components/SignInModal/SignInModal"
+import SignUpModal from "../SignUpModal/SignUpModal"
 
 export default function Header() {
+   const handleOpenModal = (modalType: "signUp" | "signIn") => {
+      if (modalType === "signUp") {
+         setIsOpenSignUp(!isOpenSignUp)
+         setIsOpenSignIn(false)
+      } else if (modalType === "signIn") {
+         setIsOpenSignUp(false)
+         setIsOpenSignIn(!isOpenSignIn)
+      }
+   }
+
+   const [isOpenSignUp, setIsOpenSignUp] = useState<boolean>(false)
+   const [isOpenSignIn, setIsOpenSignIn] = useState<boolean>(false)
+
    return (
-      <header className={css.header + " bg-light-main-bg-main dark:bg-dark-main-bg-main"} >
+      <header
+         className={
+            css.header + " bg-light-main-bg-main dark:bg-dark-main-bg-main"
+         }
+      >
          <Link
             className={
                css.headlineBanner + " hover:opacity-90 transition-opacity"
@@ -43,7 +63,7 @@ export default function Header() {
             </div>
          </Link>
          <div className={css.mainHeader}>
-            <Link href={"/"} className={css.logotype} >
+            <Link href={"/"} className={css.logotype}>
                <Image
                   src={logotype}
                   alt='denwa logotype'
@@ -79,7 +99,18 @@ export default function Header() {
                </Link>
             </nav>
             <div className={css.rightItems}>
-               <SignInModal />
+               <SignInModal
+                  open={isOpenSignIn}
+                  setIsOpen={setIsOpenSignIn}
+                  handleOpenModal={() => handleOpenModal("signUp")}
+               >
+                  <Button variant={"default"}>Войти</Button>
+               </SignInModal>
+               <SignUpModal
+                  open={isOpenSignUp}
+                  setIsOpen={setIsOpenSignUp}
+                  handleOpenModal={() => handleOpenModal("signIn")}
+               />
                <div>
                   <Button size='icon' variant='ghost'>
                      <Image

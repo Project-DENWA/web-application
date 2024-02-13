@@ -13,15 +13,19 @@ import {
 } from "@/shared/ui/dialog"
 import css from "@/app/components/SignUpModal/SignUpModal.module.scss"
 import Link from "next/link"
-
 type Props = {
-   children: React.ReactNode
+   handleOpenModal: (modalType: "signIn" | "signUp") => void
+   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+   open: boolean
 }
 
-export default function SignUpModal({ children }: Props) {
+export default function SignUpModal({
+   handleOpenModal,
+   open,
+   setIsOpen,
+}: Props) {
    return (
-      <Dialog modal={true}>
-         <DialogTrigger asChild>{children}</DialogTrigger>
+      <Dialog modal={true} open={open} onOpenChange={setIsOpen}>
          <DialogContent className='max-w-[425px] bg-light-main-full-white border-none rounded-3xl dark:bg-dark-main-bg-primary'>
             <DialogHeader>
                <DialogTitle className='text-xl font-semibold'>
@@ -61,6 +65,7 @@ export default function SignUpModal({ children }: Props) {
                      size={"default"}
                      className={"text-light-main-colored-100 font-normal"}
                      variant={"link"}
+                     onClick={() => handleOpenModal("signIn")}
                   >
                      Войти
                   </Button>
