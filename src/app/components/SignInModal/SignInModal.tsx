@@ -12,7 +12,7 @@ import {
    DialogTrigger,
 } from "@/shared/ui/dialog"
 import googleicon from "@/../public/google icon.svg"
-import css from "@/app/components/SignInModal/SignInModal.module.scss"
+import css from "@/app/components/SignInModal/Modal.module.scss"
 import Link from "next/link"
 import { cn } from "@/shared/lib/utils"
 import { Separator } from "@/shared/ui/separator"

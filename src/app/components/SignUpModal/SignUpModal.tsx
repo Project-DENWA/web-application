@@ -1,18 +1,20 @@
 import Image from "next/image"
+import googleicon from "@/../public/google icon.svg"
 import { Button } from "@/shared/ui/button"
 import { Input } from "@/shared/ui/input"
-import { Checkbox } from "@/shared/ui/checkbox"
+
 import {
    Dialog,
    DialogContent,
-   DialogDescription,
    DialogFooter,
    DialogHeader,
    DialogTitle,
-   DialogTrigger,
+   DialogDescription,
 } from "@/shared/ui/dialog"
-import css from "@/app/components/SignUpModal/SignUpModal.module.scss"
+import css from "@/app/components/SignInModal/Modal.module.scss"
+import { Separator } from "@/shared/ui/separator"
 import Link from "next/link"
+import { cn } from "@/shared/lib/utils"
 type Props = {
    handleOpenModal: (modalType: "signIn" | "signUp") => void
    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
@@ -26,41 +28,61 @@ export default function SignUpModal({
 }: Props) {
    return (
       <Dialog modal={true} open={open} onOpenChange={setIsOpen}>
-         <DialogContent className='max-w-[425px] bg-light-main-full-white border-none rounded-3xl dark:bg-dark-main-bg-primary'>
+         <DialogContent className={css.dialogContent}>
             <DialogHeader>
                <DialogTitle className='text-xl font-semibold'>
                   Регистрация
                </DialogTitle>
             </DialogHeader>
+            <Button variant='outline' size='social'>
+               <Image
+                  src={googleicon}
+                  width={18}
+                  height={18}
+                  alt='google icon'
+                  loading='lazy'
+               />
+               Продолжить с Google
+            </Button>
+            <div className={css.separator}>
+               <Separator orientation='horizontal' decorative />
+               <p className='text-light-text-main-50 dark:text-light-text-main-50'>
+                  или
+               </p>
+               <Separator orientation='horizontal' decorative />
+            </div>
+            <Input placeholder='ФИО' />
             <Input placeholder='Логин' />
-            <Input placeholder='Полное имя' />
             <Input placeholder='Электронная почта' />
             <Input placeholder='Пароль' />
-            <div className={css.checkboxContainer}>
-               <Checkbox />
-               <div className={css.servicePolicyContainer}>
-                  <p>
-                     Я принимаю{" "}
-                     <Link
-                        href={"/agreement"}
-                        className='text-light-text-colored'
-                     >
-                        Пользовательское согласение
-                     </Link>{" "}
-                     и{" "}
-                     <Link
-                        href={"privacypolicy"}
-                        className='text-light-text-colored'
-                     >
-                        Политику конфиндециальности
-                     </Link>
-                  </p>
-               </div>
-            </div>
             <Button variant={"default"}>Продолжить</Button>
+            <DialogDescription>
+               <p
+                  className={cn(
+                     css.privacy,
+                     "text-light-text-main-50 dark:text-light-text-main-50"
+                  )}
+               >
+                  Создавая аккаунт, я принимаю следующие документы:{" "}
+                  <Link
+                     className='dark:text-light-text-colored text-light-text-colored'
+                     href={"#"}
+                  >
+                     Условия обслуживания{" "}
+                  </Link>
+                  и{" "}
+                  <Link
+                     className='dark:text-light-text-colored text-light-text-colored'
+                     href={"#"}
+                  >
+                     Конфиденциальность
+                  </Link>
+                  .
+               </p>
+            </DialogDescription>
             <DialogFooter>
                <div className={css.footer}>
-                  <p>Уже зарегистрированы?</p>
+                  <p>Уже есть аккаунт?</p>
                   <Button
                      size={"default"}
                      className={"text-light-main-colored-100 font-normal"}
