@@ -13,18 +13,20 @@ const buttonVariants = cva(
           "transition-opacity bg-light-main-colored-100 text-light-text-primary hover:opacity-90 dark:bg-dark-main-colored-100 dark:text-light-text-primary",
         dark: "bg-light-main-dark text-light-text-primary hover:bg-opacity-90 dark:hover:bg-opacity-70 dark:bg-dark-main-full-white dark:text-dark-text-primar py-3 px-6 text-[16px] font-bold",
         outline:
-          "border border-neutral-200 bg-white hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
+          "border border-light-text-main-50 text-light-text-main-50 text-base dark:border-light-text-main-50 bg-light-bg-main-100 hover:opacity-80 transition-opacity  dark:hover:opacity-80",
         secondary:
           "bg-neutral-100 text-neutral-900 hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80",
         ghost:
           "hover:opacity-90 hover:text-neutral-900 dark:hover:opacity-90 dark:hover:text-neutral-50",
-        link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
+        link: "underline-offset-4 hover:underline",
       },
       size: {
         default: "py-2 px-6 text-[16px] font-bold",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        social: "py-2 px-6 font-normal gap-2",
         icon: "h-6 w-6",
+        link: "p-0 text-[16px]",
       },
     },
     defaultVariants: {

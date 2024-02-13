@@ -13,7 +13,7 @@ import SignInModal from "@/app/components/SignInModal/SignInModal"
 
 export default function Header() {
    return (
-      <header className={css.header}>
+      <header className={css.header + " bg-light-main-bg-main dark:bg-dark-main-bg-main"} >
          <Link
             className={
                css.headlineBanner + " hover:opacity-90 transition-opacity"
@@ -43,7 +43,7 @@ export default function Header() {
             </div>
          </Link>
          <div className={css.mainHeader}>
-            <Link href={"/"} className={css.logotype}>
+            <Link href={"/"} className={css.logotype} >
                <Image
                   src={logotype}
                   alt='denwa logotype'

@@ -3,7 +3,7 @@ import PromoSection from "./_components/PromoSection/PromoSection";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-light-main-bg-main dark:bg-dark-main-bg-main">
       <PromoSection/>
       <PopularCategories/>
     </main>

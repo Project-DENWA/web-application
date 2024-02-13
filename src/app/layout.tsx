@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/app/components/Header/Header";
 import Footer from "@/app/components/Footer/Footer";
-import { ThemeProvider } from "@/shared/lib/ThemeProvider";
+import ThemeProvider from "@/shared/lib/Providers";
 import "./globals.css";
+import { Toaster } from "@/shared/ui/sonner";
+import { Provider } from "react-redux";
+import store from "@/shared/redux/store";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
