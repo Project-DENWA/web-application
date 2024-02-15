@@ -17,7 +17,7 @@ interface RefreshResultData {
 }
 const mutex = new Mutex();
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://zftq3td3-5000.euw.devtunnels.ms/",
+  baseUrl: "",
   credentials: "include",
   prepareHeaders: (headers) => {
     const token = getAccessToken();
