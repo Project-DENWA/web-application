@@ -3,6 +3,7 @@
    align-items: center;
    justify-content: center;
    flex-direction: column;
+   flex-wrap: wrap;
    gap: 32px;
    margin-top: 100px;
    .navContainer {
@@ -12,13 +13,12 @@
       max-width: 1280px;
       width: 100%;
    }
-   .cardsContainer {
+   .cardWrapper {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
-      max-width: 1920px;
-      width: 100%;
+      flex-wrap: wrap;
+      gap: 36px;
+      max-width: 1280px;
    }
 }
