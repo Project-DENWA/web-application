@@ -132,7 +132,7 @@ export default function SignUpModal({
                         return (
                            <FormItem>
                               <FormControl>
-                                 <Input placeholder='ФИО' {...field} />
+                                 <Input placeholder='Полное имя' {...field} />
                               </FormControl>
                            </FormItem>
                         )

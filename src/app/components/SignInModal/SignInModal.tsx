@@ -182,7 +182,7 @@ export default function SignInModal({
                                        onCheckedChange={field.onChange}
                                     />
                                     <p className='text-light-text-main-50 dark:text-light-text-main-50'>
-                                       Запомнить меня на 30 дней
+                                       Запомнить меня
                                     </p>
                                  </div>
                               </FormControl>

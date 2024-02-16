@@ -1,0 +1,15 @@
+.wrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 32px;
+   margin-top: 70px;
+   .navContainer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1280px;
+      width: 100%;
+   }
+}
