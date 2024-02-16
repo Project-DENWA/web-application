@@ -1,30 +1,52 @@
 import css from "@/app/(marketing)/_components/LeaderCard/LeaderCard.module.scss"
 import Image from "next/image"
 import Link from "next/link"
-import Perfomer from "@/../public/photosPerfomers/Perfomer1.png"
-type Props = {}
 
-export default function LeaderCard({}: Props) {
+interface LeaderBoardItem {
+   avatar: string
+   fullname: string
+   href: string
+   description: string
+   rate: number
+   category: string[]
+}
+
+export default function LeaderCard({
+   avatar,
+   fullname,
+   description,
+   category,
+   rate,
+   href,
+}: LeaderBoardItem) {
    return (
-      <article className={css.wrapper}>
-        <div className={css.leftItems}>
-            <div>
+      <Link href={href} className={css.wrapper}>
+         <div className={css.leftItems}>
             <Image
-                alt="Photo of the performer"
-                src={Perfomer}
-                width={109}
-                height={109}
+               alt='Photo of the performer'
+               src={"/photosPerfomers/" + avatar}
+               width={109}
+               height={109}
             />
+            <div className={css.circle + " bg-light-main-bg-main dark:bg-dark-main-bg-main"}>
+               <p className='text-dark-text-colored'>{rate}</p>
             </div>
-        </div>
-        <div className={css.rightItems}>
-            <h3 className='text-light-main-dark dark:text-dark-text-primary'>Николаенко Веня</h3>
-            <h4 className='text-light-main-dark dark:text-dark-text-primary'>С уникальным видением, дизайнер заслужил первое место в конкурсе месяца.</h4>
+         </div>
+         <div className={css.rightItems}>
+            <h3 className='text-light-main-dark dark:text-dark-text-primary'>
+               {fullname}
+            </h3>
+            <h4 className='text-light-main-dark dark:text-dark-text-primary'>
+               {description}
+            </h4>
             <div className={css.categoryes}>
-                <Link href={"/"} className=" text-dark-text-colored">Веб-дизайн</Link>
-                <Link href={"/"} className=" text-dark-text-colored">Иллюстрации</Link>
+               {category.map((item, index: number) => (
+                  <Link href={href} key={index}>
+                     <p className='text-dark-text-colored'>{item}</p>
+                  </Link>
+               ))}
             </div>
-        </div>
-      </article>
+         </div>
+      </Link>
    )
 }
