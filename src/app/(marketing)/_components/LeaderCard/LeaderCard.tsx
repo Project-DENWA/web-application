@@ -20,7 +20,7 @@ export default function LeaderCard({
    href,
 }: LeaderBoardItem) {
    return (
-      <Link href={href} className={css.wrapper}>
+      <section className={css.wrapper}>
          <div className={css.leftItems}>
             <Image
                alt='Photo of the performer'
@@ -41,12 +41,12 @@ export default function LeaderCard({
             </h4>
             <div className={css.categoryes}>
                {category.map((item, index: number) => (
-                  <Link href={href} key={index}>
-                     <p className='text-dark-text-colored'>{item}</p>
+                  <Link className='text-dark-text-colored' href={href} key={index}>
+                     {item}   
                   </Link>
                ))}
             </div>
          </div>
-      </Link>
+      </section>
    )
 }

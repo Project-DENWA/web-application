@@ -1,6 +1,6 @@
 import HeaderLink from "@/app/(marketing)/_components/HeaderLink/HeaderLink"
 import css from "@/app/(marketing)/_components/LeaderBoard/LeaderBoard.module.scss"
-import LeaderCard from "../LeaderCard/LeaderCard"
+import LeaderCard from "@/app/(marketing)/_components/LeaderCard/LeaderCard"
 
 interface LeaderBoardItem {
    avatar: string
