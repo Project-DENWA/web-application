@@ -1,0 +1,23 @@
+.wrapper {
+   display: flex;
+   align-items: center;
+}
+.caret {
+   display: flex;
+   align-items: center;
+   margin-left: 5px;
+   margin-top: 35px;
+   font-size: 90px;
+   max-width: 15px;
+   animation: flicker 1s infinite;
+}
+
+@keyframes flicker {
+   0%,
+   100% {
+      opacity: 1;
+   }
+   50% {
+      opacity: 0;
+   }
+}
