@@ -15,10 +15,6 @@
    .cardsContainer {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      max-width: 1920px;
-      width: 100%;
+      cursor: grabbing;
    }
 }
