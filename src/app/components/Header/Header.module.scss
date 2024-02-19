@@ -17,11 +17,7 @@
 
     width: 100%;
     gap: 8px;
-    background: linear-gradient(
-      90deg,
-      rgb(49, 116, 244) -0.313%,
-      rgb(153, 211, 255) 99.965%
-    );
+    background: linear-gradient(90deg, rgb(49, 116, 244) -0.313%, rgb(153, 211, 255) 99.965%);
     #arrow {
       transition: all 0.1s ease-in-out;
     }
@@ -38,8 +34,8 @@
     align-items: center;
     width: 100%;
     max-width: 1280px;
-    padding: 14px 16px 14px 16px;
- 
+    padding: 14px 0px;
+
     .logotype {
       width: 190px;
     }
@@ -85,6 +81,21 @@
       }
       .rightItems {
         display: none;
+      }
+    }
+  }
+}
+
+.AuthorizedUserWrapper {
+  a {
+    position: relative;
+    svg {
+      z-index: 1;
+      position: absolute;
+      top: -3px;
+      right: 6px;
+      circle {
+        scale: 0.5;
       }
     }
   }

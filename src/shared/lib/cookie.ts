@@ -1,21 +1,17 @@
 import Cookies from "universal-cookie";
-export interface UserData {
-  id: number;
-  fio: string;
+export type UserData = {
+  avatarUrl: null | string;
+  bio: null | string;
+  coverImageUrl: null | string;
+  createdAt: string;
   email: string;
+  fullname: string;
+  id: string;
+  messages: boolean;
+  news: boolean;
   username: string;
-  isEmailVerified: boolean;
-  bio: string | null;
-  avatarUrl: string | null;
-  coverImageUrl: string | null;
-  websiteURL: string | null;
-  twitter: string | null;
-  reddit: string | null;
-  notifyGifts: boolean;
-  notifySales: boolean;
-  notifyExpiredListingsOffers: boolean;
-  notifyRecommendations: boolean;
-  notifyNews: boolean;
+  verified: boolean;
+  verifiedEmail: boolean;
 }
 
 const cookies = new Cookies();
@@ -41,7 +37,7 @@ export const setToken = (accessToken: string, refreshToken: string) => {
   }
 };
 
-export const setUserData = (UserData: any) => {
+export const setUserData = (UserData: UserData) => {
   cookies.set("UserData", UserData, {
     path: "/",
     secure: true,
