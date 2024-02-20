@@ -1,16 +1,16 @@
 import Image from "next/image";
 import headlineIcon from "@/../public/headlineIcon.svg";
 import arrowRight from "@/../public/arrow-right.svg";
-import globe from "@/../public/globe.svg";
 import css from "@/app/components/Header/Header.module.scss";
 import logotype from "@/../public/logotype.svg";
 import Link from "next/link";
-import { Button } from "@/shared/ui/button";
+import LocaleSwitcher from "@/shared/ui/LocaleSwitcher";
 import ThemeSwitcher from "@/shared/ui/ThemeSwitcher";
 import UnauthorizedUser from "./UnauthorizedUser";
 import UserLayout from "./UserLayout";
-
+import { useTranslations } from "next-intl";
 export default function Header() {
+  const t = useTranslations("header")
   return (
     <header
       className={
@@ -31,7 +31,7 @@ export default function Header() {
         </div>
         <p className="text-dark-text-primary">
           <u>DenwaHub 2024.</u>{" "}
-          <span>Программируй деньги с ведущими специалистами.</span>
+          <span>{t("description")}</span>
         </p>
         <div>
           <Image
@@ -58,39 +58,31 @@ export default function Header() {
             href={"./#"}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
-            Заказы
+            {t("orders")}
           </Link>
           <Link
             href={"./#"}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
-            Специалисты
+            {t("specialists")}
           </Link>
           <Link
             href={"./#"}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
-            Новости
+            {t("news")}
           </Link>
           <Link
             href={"./#"}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
-            Ещё...
+            {t("more")}
           </Link>
         </nav>
         <div className={css.rightItems}>
           <UserLayout />
           <div>
-            <Button size="icon" variant="ghost">
-              <Image
-                alt="change language icon"
-                src={globe}
-                width={24}
-                height={24}
-                className="dark:invert hover:opacity-85 transition-opacity"
-              />
-            </Button>
+            <LocaleSwitcher/>
             <ThemeSwitcher />
           </div>
         </div>

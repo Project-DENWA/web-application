@@ -1,0 +1,102 @@
+{
+   "header": {
+      "description": "Program your money with leading experts.",
+      "orders": "Orders",
+      "specialists": "Specialists",
+      "news": "News",
+      "more": "More...",
+      "signIn": "Sign In"
+   },
+
+   "promoSection": {
+      "title": "Freelance exchange",
+      "startWord": "for",
+      "description": "Optimize your work with Denwa find projects, control workload, increase earnings",
+      "textBtnMain": "Working together with Denwa",
+      "textBtnOrder": "Make an order",
+
+      "textVariants": [
+         { "text": "russians" },
+         { "text": "everyone" },
+         { "text": "programmers" },
+         { "text": "designers" },
+         { "text": "testers" },
+         { "text": "marketers" },
+         { "text": "writers" },
+         { "text": "architects" },
+         { "text": "copywriters" },
+         { "text": "photographers" },
+         { "text": "videographers" },
+         { "text": "translators" },
+         { "text": "designers" }
+      ]
+   },
+   "categories": {
+      "title": "Popular categories",
+      "textLink": "More categories",
+      "graphDesign": {
+         "icon": "webPage.svg",
+         "name": "Graphic Design",
+         "description": "Creative and unique graphic design.",
+         "textLink": "Choose a designer",
+         "link": "/orders"
+      },
+      "videoProduction": {
+         "icon": "videoIcon.svg",
+         "name": "Video Production",
+         "description": "Creating and editing video content for various purposes.",
+         "textLink": "View orders",
+         "link": "/orders"
+      },
+      "writtenWorks": {
+         "icon": "penIcon.svg",
+         "name": "Written Works",
+         "description": "Writing, editing texts, articles.",
+         "textLink": "Edit text",
+         "link": "/orders"
+      },
+      "webDev": {
+         "icon": "desktopIcon.svg",
+         "name": "Web Development",
+         "description": "Projects for creating and developing websites and applications.",
+         "textLink": "View orders",
+         "link": "/orders"
+      }
+   },
+   "leaderBoard": {
+      "title": "Leaders in their category",
+      "textLink": "Do you want to be here?"
+   },
+   "whyUs": {
+      "title": "Why Choose Us?",
+      "textLink": "Learn all the benefits",
+      "freeAndEasy": {
+         "icon": "Smile.svg",
+         "name": "Free and Easy",
+         "description": "Free and easy to use without hidden fees and commissions.",
+         "textLink": "Quick Start",
+         "link": "/"
+      },
+      "dataProtection": {
+         "icon": "Shield.svg",
+         "name": "Data Protection",
+         "description": "Guarantee of security and confidentiality of your data.",
+         "textLink": "Learn about protection",
+         "link": "/"
+      },
+      "resumeBuilder": {
+         "icon": "Puzzle.svg",
+         "name": "Resume Builder",
+         "description": "Easy creation of professional resumes for all users.",
+         "textLink": "Create a resume",
+         "link": "/"
+      },
+      "bestCustomerSupport": {
+         "icon": "Comet.svg",
+         "name": "Best Customer Support",
+         "description": "A team of experts always ready to provide prompt assistance.",
+         "textLink": "Contact support",
+         "link": "/"
+      }
+   }
+}
