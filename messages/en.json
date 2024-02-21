@@ -98,5 +98,41 @@
          "textLink": "Contact support",
          "link": "/"
       }
-   }
+   },
+   "signInModal": {
+      "title": "Sign In",
+      "continueWithGoogle": "Continue with Google",
+      "or": "or",
+      "loginPlaceholder": "Username / Email",
+      "passwordPlaceholder": "Password",
+      "btnForm": "Continue",
+      "remindMe": "Remember Me",
+      "creatingAccountText": "By creating an account, I accept the following documents:",
+      "termsOfService": "Terms of Service",
+      "and": "and",
+      "confidentiality": "Privacy Policy",
+      "question": "Don't have an account yet?",
+      "btnCreate": "Create Account"
+   },
+   "signUpModal": {
+      "title": "Sign Up",
+      "continueWithGoogle": "Continue with Google",
+      "or": "or",
+      "fullNamePlaceholder": "Full Name",
+      "loginPlaceholder": "Username",
+      "emailPlaceholder": "Email",
+      "passwordPlaceholder": "Password",
+      "btnForm": "Continue",
+      "creatingAccountText": "By creating an account, I accept the following documents:",
+      "termsOfService": "Terms of Service",
+      "and": "and",
+      "confidentiality": "Privacy Policy",
+      "question": "Already have an account?",
+      "btnCreate": "Sign In"
+   },
+   "signInModalErrors": {
+      "emailorusername": "Email or username must be filled in",
+      "password": "Password field must be filled in"
+    }
+
 }

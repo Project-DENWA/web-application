@@ -15,7 +15,7 @@ import { formSchema } from "@/app/components/SignUpModal/schema";
 import { z } from "zod";
 import { useRegistrationMutation } from "@/shared/redux/features/authApi";
 import { Form, FormControl, FormField, FormItem } from "@/shared/ui/form";
-
+import { useTranslations } from "next-intl";
 import {
   Dialog,
   DialogContent,
@@ -49,7 +49,7 @@ export default function SignUpModal({
   type FieldErrors = {
     [key: string]: any | undefined;
   };
-
+  const t = useTranslations("signUpModal");
   const errors: FieldErrors = form.formState.errors;
   const router = useRouter();
   const [register, { isLoading }] = useRegistrationMutation();
@@ -93,7 +93,7 @@ export default function SignUpModal({
       <DialogContent className={css.dialogContent}>
         <DialogHeader>
           <DialogTitle className="text-xl font-semibold">
-            Регистрация
+            {t("title")}
           </DialogTitle>
         </DialogHeader>
         <Button variant="outline" size="social">
@@ -104,12 +104,12 @@ export default function SignUpModal({
             alt="google icon"
             loading="lazy"
           />
-          Продолжить с Google
+          {t("continueWithGoogle")}
         </Button>
         <div className={css.separator}>
           <Separator orientation="horizontal" decorative />
           <p className="text-light-text-main-50 dark:text-light-text-main-50">
-            или
+            {t("or")}
           </p>
           <Separator orientation="horizontal" decorative />
         </div>
@@ -122,7 +122,7 @@ export default function SignUpModal({
                 return (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Полное имя" {...field} />
+                      <Input placeholder={t("fullNamePlaceholder")} {...field} />
                     </FormControl>
                   </FormItem>
                 );
@@ -135,7 +135,7 @@ export default function SignUpModal({
                 return (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Логин" {...field} />
+                      <Input placeholder={t("loginPlaceholder")} {...field} />
                     </FormControl>
                   </FormItem>
                 );
@@ -148,7 +148,7 @@ export default function SignUpModal({
                 return (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Электронная почта" {...field} />
+                      <Input placeholder={t("emailPlaceholder")} {...field} />
                     </FormControl>
                   </FormItem>
                 );
@@ -161,14 +161,14 @@ export default function SignUpModal({
                 return (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Пароль" {...field} />
+                      <Input placeholder={t("passwordPlaceholder")} {...field} />
                     </FormControl>
                   </FormItem>
                 );
               }}
             />
             <Button onClick={() => setIsErrorsShown(true)} variant={"default"}>
-              Продолжить
+              {t("btnForm")}
             </Button>
           </form>
         </Form>
@@ -178,31 +178,31 @@ export default function SignUpModal({
             "text-light-text-main-50 dark:text-light-text-main-50"
           )}
         >
-          Создавая аккаунт, я принимаю следующие документы:{" "}
+          {t("creatingAccountText")}{" "}
           <Link
             className="dark:text-light-text-colored text-light-text-colored"
             href={"#"}
           >
-            Условия обслуживания{" "}
+            {t("termsOfService")}{" "}
           </Link>
-          и{" "}
+          {t("and")}{" "}
           <Link
             className="dark:text-light-text-colored text-light-text-colored"
             href={"#"}
           >
-            Конфиденциальность
+            {t("confidentiality")}
           </Link>
           .
         </p>
         <DialogFooter>
-          <p>Уже есть аккаунт?</p>
+          <p>{t("question")}</p>
           <Button
             size={"link"}
             className={"text-light-main-colored-100 font-normal"}
             variant={"link"}
             onClick={() => handleOpenModal("signIn")}
           >
-            Войти
+            {t("btnCreate")}
           </Button>
         </DialogFooter>
       </DialogContent>

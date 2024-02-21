@@ -98,5 +98,40 @@
          "textLink": "Связаться с поддержкой",
          "link": "/"
       }
+   },
+   "signInModal": {
+      "title": "Войти",
+      "continueWithGoogle": "Продолжить с Google",
+      "or": "или",
+      "loginPlaceholder": "Логин / Почта",
+      "passwordPlaceholder": "Пароль",
+      "btnForm": "Продолжить",
+      "remindMe": "Запомнить меня",
+      "creatingAccountText": "Создавая аккаунт, я принимаю следующие документы:",
+      "termsOfService": "Условия обслуживания",
+      "and": "и",
+      "confidentiality": "конфиденциальность",
+      "question": "Еще нет аккаунта?",
+      "btnCreate": "Создать аккаунт"
+   },
+   "signUpModal": {
+      "title": "Регистрация",
+      "continueWithGoogle": "Продолжить с Google",
+      "or": "или",
+      "fullNamePlaceholder": "Полное имя",
+      "loginPlaceholder": "Логин",
+      "emailPlaceholder": "Электронная почта",
+      "passwordPlaceholder": "Пароль",
+      "btnForm": "Продолжить",
+      "creatingAccountText": "Создавая аккаунт, я принимаю следующие документы:",
+      "termsOfService": "Условия обслуживания",
+      "and": "и",
+      "confidentiality": "конфиденциальность",
+      "question": "Уже есть аккаунт?",
+      "btnCreate": "Войти"
+   },
+   "signInModalErrors": {
+      "emailorusername": "Электронная почта или логин должны быть заполнены",
+      "password": "Поле пароля должно быть заполнено"
    }
 }

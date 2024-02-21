@@ -26,6 +26,7 @@ import { toast } from "sonner";
 import { useLoginMutation } from "@/shared/redux/features/authApi";
 import { useRouter } from "next/navigation";
 import { getUserData, setToken, setUserData } from "@/shared/lib/cookie";
+import { useTranslations } from "next-intl";
 type Props = {
   children: React.ReactNode;
   handleOpenModal: (modalType: "signIn" | "signUp") => void;
@@ -55,7 +56,7 @@ export default function SignInModal({
   const errors: FieldErrors = form.formState.errors;
   const router = useRouter();
   const [login, { isLoading }] = useLoginMutation();
-
+  const t = useTranslations("signInModal");
   type Response = {
     status: number;
     data: {
@@ -112,7 +113,7 @@ export default function SignInModal({
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className={cn(css.dialogContent)}>
         <DialogHeader>
-          <DialogTitle>Войти</DialogTitle>
+          <DialogTitle>{t("title")}</DialogTitle>
         </DialogHeader>
         <Button variant="outline" size="social">
           <Image
@@ -122,12 +123,12 @@ export default function SignInModal({
             alt="google icon"
             loading="lazy"
           />
-          Продолжить с Google
+          {t("continueWithGoogle")}
         </Button>
         <div className={css.separator}>
           <Separator orientation="horizontal" decorative />
           <p className="text-light-text-main-50 dark:text-light-text-main-50">
-            или
+            {t("or")}
           </p>
           <Separator orientation="horizontal" decorative />
         </div>
@@ -140,7 +141,7 @@ export default function SignInModal({
                 return (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Логин / Почта" {...field} />
+                      <Input placeholder={t("loginPlaceholder")} {...field} />
                     </FormControl>
                   </FormItem>
                 );
@@ -153,13 +154,13 @@ export default function SignInModal({
                 return (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Пароль" {...field} />
+                      <Input placeholder={t("passwordPlaceholder")} {...field} />
                     </FormControl>
                   </FormItem>
                 );
               }}
             />
-            <Button onClick={() => setIsErrorsShown(true)}>Продолжить</Button>
+            <Button onClick={() => setIsErrorsShown(true)}>{t("btnForm")}</Button>
             <FormField
               control={form.control}
               name="remember"
@@ -173,7 +174,7 @@ export default function SignInModal({
                           onCheckedChange={field.onChange}
                         />
                         <p className="text-light-text-main-50 dark:text-light-text-main-50">
-                          Запомнить меня
+                          {t("remindMe")}
                         </p>
                       </div>
                     </FormControl>
@@ -189,32 +190,32 @@ export default function SignInModal({
             "text-light-text-main-50 dark:text-light-text-main-50"
           )}
         >
-          Создавая аккаунт, я принимаю следующие документы:{" "}
+          {t("creatingAccountText")}{" "}
           <Link
             className="dark:text-light-text-colored text-light-text-colored"
             href={"#"}
           >
-            Условия обслуживания{" "}
+            {t("termsOfService")}{" "}
           </Link>
-          и{" "}
+          {t("and")}{" "}
           <Link
             className="dark:text-light-text-colored text-light-text-colored"
             href={"#"}
           >
-            Конфиденциальность
+            {t("confidentiality")}
           </Link>
           .
         </p>
 
         <DialogFooter>
-          <p>Еще нет аккаунта?</p>
+          <p>{t("question")}</p>
           <Button
             size={"link"}
             className={"text-light-main-colored-100 font-normal"}
             variant={"link"}
             onClick={() => handleOpenModal("signUp")}
           >
-            Создать аккаунт
+            {t("btnCreate")}
           </Button>
         </DialogFooter>
       </DialogContent>
