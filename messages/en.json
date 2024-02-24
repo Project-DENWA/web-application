@@ -99,6 +99,58 @@
          "link": "/"
       }
    },
+   "whatWeOffer": {
+      "title": "What We Offer",
+      "textLink": "More Offers",
+      "tabsList": {
+         "constructor": {
+            "title": "Constructor",
+            "value": "сonstructor"
+         },
+         "matchingOrders": {
+            "title": "Matching Orders",
+            "value": "matchingOrders"
+         },
+         "paymentMethods": {
+            "title": "Payment Methods",
+            "value": "paymentMethods"
+         },
+         "technicalSupport": {
+            "title": "Technical Support",
+            "value": "technicalSupport"
+         }
+      },
+      "tabsContent": {
+         "constructor": {
+            "title": "Innovative Resume Builder",
+            "description": "With the help of advanced algorithms, we've simplified the resume writing process. Now you can create professionally crafted resumes.",
+            "span": "@denwa",
+            "link": "/",
+            "textBtn": "Try It Out"
+         },
+         "matchingOrders": {
+            "title": "Unique Order Matching System",
+            "description": "Our matching algorithm connects you with the most suitable projects based on your experience and skills. Find orders that match your professional expectations.",
+            "span": "@denwa",
+            "link": "/",
+            "textBtn": "Find an Order"
+         },
+         "paymentMethods": {
+            "title": "Convenient Payment Options",
+            "description": "We provide diverse payment options for completed orders to suit your preferences. Secure and fast transactions for your comfort.",
+            "span": "@denwa",
+            "link": "/",
+            "textBtn": "Choose a Payment Method"
+         },
+         "technicalSupport": {
+            "title": "Professional 24/7 Support",
+            "description": "Our qualified specialists are ready to assist you at any time. We value your experience with Denwa and strive to provide an unprecedented level of support.",
+            "span": "@denwa",
+            "link": "/",
+            "textBtn": "Contact Technical Support"
+         }
+      }
+   },
    "signInModal": {
       "title": "Sign In",
       "continueWithGoogle": "Continue with Google",
@@ -133,6 +185,5 @@
    "signInModalErrors": {
       "emailorusername": "Email or username must be filled in",
       "password": "Password field must be filled in"
-    }
-
+   }
 }

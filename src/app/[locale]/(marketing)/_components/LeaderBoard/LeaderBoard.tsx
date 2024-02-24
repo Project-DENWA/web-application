@@ -137,8 +137,8 @@ export default function LeaderBoard() {
                   </CarouselItem>
                ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            {/* <CarouselPrevious />
+            <CarouselNext /> */}
          </Carousel>
       </section>
    )
