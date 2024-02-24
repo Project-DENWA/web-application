@@ -1,17 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Denwa | web-application
+
+Denwa Freelance Platform is a cutting-edge web application designed to revolutionize the freelance marketplace in Russia. With a focus on user-friendly design and a commitment to offering free services, Denwa aims to connect skilled freelancers with employers seeking top-notch professionals. The platform stands out in the market due to its modern technology stack, including React, NextJS, TypeScript, RTK-Query, ReduxToolKit, and more.
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Project-DENWA/web-application.git
+```
+Open the application in your development environment
+
+Install dependencies:
+```bash
+pnpm install
+```
+Run the development server:
+
+```bash
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -20,14 +27,13 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+This project is licensed under the MIT License - see the LICENSE.md file for details.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Acknowledgments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+We express our gratitude to the open-source community and contributors who have made this project possible. For any inquiries, please contact us at projectdenwa@mail.com
 
 ## Deploy on Vercel
 
