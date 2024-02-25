@@ -151,6 +151,80 @@
          }
       }
    },
+   "collaborationBanners": {
+      "header": {
+         "title": "Окунитесь в наш мир с головой",
+         "textLink": "Смотри глубже"
+      },
+      "firstCard": {
+         "title": "Сотрудничество с нами",
+         "description": "Предлагайте идеи, задавайте интересующие вас вопросы и еще бла-бла-бла-бла.",
+         "textBtn": "Подробнее"
+      },
+      "secondCard": {
+         "title": "Хотите попасть в наш коллектив?",
+         "description": "Оставьте свое резюме в нашем телеграмм канале",
+         "textBtn": "Подробнее"
+      }
+   },
+
+   "footer": {
+      "orders": {
+         "title": "Заказы",
+         "links": {
+            "link1": { "text": "Link1", "url": "/" },
+            "link2": { "text": "Link2", "url": "/" },
+            "link3": { "text": "Link3", "url": "/" },
+            "link4": { "text": "Link4", "url": "/" },
+            "link5": { "text": "Link5", "url": "/" },
+            "link6": { "text": "Link6", "url": "/" }
+         }
+      },
+      "experts": {
+         "title": "Специалисты",
+         "links": {
+            "link1": { "text": "Link1", "url": "/" },
+            "link2": { "text": "Link2", "url": "/" },
+            "link3": { "text": "Link3", "url": "/" },
+            "link4": { "text": "Link4", "url": "/" },
+            "link5": { "text": "Link5", "url": "/" },
+            "link6": { "text": "Link6", "url": "/" }
+         }
+      },
+      "news": {
+         "title": "Новости",
+         "links": {
+            "link1": { "text": "Link1", "url": "/" },
+            "link2": { "text": "Link2", "url": "/" },
+            "link3": { "text": "Link3", "url": "/" },
+            "link4": { "text": "Link4", "url": "/" },
+            "link5": { "text": "Link5", "url": "/" },
+            "link6": { "text": "Link6", "url": "/" }
+         }
+      },
+      "more": {
+         "title": "Ещё",
+         "links": {
+            "link1": { "text": "Link1", "url": "/" },
+            "link2": { "text": "Link2", "url": "/" },
+            "link3": { "text": "Link3", "url": "/" },
+            "link4": { "text": "Link4", "url": "/" },
+            "link5": { "text": "Link5", "url": "/" },
+            "link6": { "text": "Link6", "url": "/" }
+         }
+      },
+      "inProgress": {
+         "title": "In Progress",
+         "links": {
+            "link1": { "text": "Link1", "url": "/" },
+            "link2": { "text": "Link2", "url": "/" },
+            "link3": { "text": "Link3", "url": "/" },
+            "link4": { "text": "Link4", "url": "/" },
+            "link5": { "text": "Link5", "url": "/" },
+            "link6": { "text": "Link6", "url": "/" }
+         }
+      }
+   },
 
    "signInModal": {
       "title": "Войти",

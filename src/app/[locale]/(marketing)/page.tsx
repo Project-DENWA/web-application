@@ -3,7 +3,7 @@ import PromoSection from "@/app/[locale]/(marketing)/_components/PromoSection/Pr
 import LeaderBoard from "@/app/[locale]/(marketing)/_components/LeaderBoard/LeaderBoard";
 import WhyUs from "@/app/[locale]/(marketing)/_components/WhyUs/WhyUs";
 import WhatWeOffer from "@/app/[locale]/(marketing)/_components/WhatWeOffer/WhatWeOffer";
-
+import CollaborationBanner from "@/app/[locale]/(marketing)/_components/CollaborationBanner/CollaborationBanner";
 export default function Home() {
   return (
     <main className="bg-light-main-bg-main dark:bg-dark-main-bg-main">
@@ -12,6 +12,7 @@ export default function Home() {
       <LeaderBoard/>
       <WhyUs/>
       <WhatWeOffer/>
+      <CollaborationBanner/>
     </main>
   );
 }

@@ -52,6 +52,7 @@ export default function RootLayout({
                >
                   <Header />
                   {children}
+                  <Footer />
                </ThemeProvider>
             </NextIntlClientProvider>
          </body>

@@ -151,6 +151,79 @@
          }
       }
    },
+   "collaborationBanners": {
+      "header": {
+         "title": "Immerse Yourself in Our World",
+         "textLink": "Explore Further"
+      },
+      "firstCard": {
+         "title": "Collaborate with Us",
+         "description": "Submit ideas, ask questions that interest you, and more blah-blah-blah.",
+         "textBtn": "Learn More"
+      },
+      "secondCard": {
+         "title": "Want to Join Our Team?",
+         "description": "Submit your resume in our Telegram channel.",
+         "textBtn": "Learn More"
+      }
+   },
+   "footer": {
+      "orders": {
+         "title": "Orders",
+         "links": {
+            "link1": { "text": "Link1", "url": "/" },
+            "link2": { "text": "Link2", "url": "/" },
+            "link3": { "text": "Link3", "url": "/" },
+            "link4": { "text": "Link4", "url": "/" },
+            "link5": { "text": "Link5", "url": "/" },
+            "link6": { "text": "Link6", "url": "/" }
+         }
+      },
+      "experts": {
+         "title": "Experts",
+         "links": {
+            "link1": { "text": "Link1", "url": "/" },
+            "link2": { "text": "Link2", "url": "/" },
+            "link3": { "text": "Link3", "url": "/" },
+            "link4": { "text": "Link4", "url": "/" },
+            "link5": { "text": "Link5", "url": "/" },
+            "link6": { "text": "Link6", "url": "/" }
+         }
+      },
+      "news": {
+         "title": "News",
+         "links": {
+            "link1": { "text": "Link1", "url": "/" },
+            "link2": { "text": "Link2", "url": "/" },
+            "link3": { "text": "Link3", "url": "/" },
+            "link4": { "text": "Link4", "url": "/" },
+            "link5": { "text": "Link5", "url": "/" },
+            "link6": { "text": "Link6", "url": "/" }
+         }
+      },
+      "more": {
+         "title": "More",
+         "links": {
+            "link1": { "text": "Link1", "url": "/" },
+            "link2": { "text": "Link2", "url": "/" },
+            "link3": { "text": "Link3", "url": "/" },
+            "link4": { "text": "Link4", "url": "/" },
+            "link5": { "text": "Link5", "url": "/" },
+            "link6": { "text": "Link6", "url": "/" }
+         }
+      },
+      "inProgress": {
+         "title": "In Progress",
+         "links": {
+            "link1": { "text": "Link1", "url": "/" },
+            "link2": { "text": "Link2", "url": "/" },
+            "link3": { "text": "Link3", "url": "/" },
+            "link4": { "text": "Link4", "url": "/" },
+            "link5": { "text": "Link5", "url": "/" },
+            "link6": { "text": "Link6", "url": "/" }
+         }
+      }
+   },
    "signInModal": {
       "title": "Sign In",
       "continueWithGoogle": "Continue with Google",
