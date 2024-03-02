@@ -7,6 +7,7 @@ import "./globals.css"
 import { Toaster } from "@/shared/ui/sonner"
 import { Provider } from "react-redux"
 import store from "@/shared/redux/store"
+import CookieModal from "@/app/components/CookieModal/CookieModal"
 import { NextIntlClientProvider, useMessages } from "next-intl"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -51,6 +52,7 @@ export default function RootLayout({
                   disableTransitionOnChange
                >
                   <Header />
+                  <CookieModal/>
                   {children}
                   <Footer />
                </ThemeProvider>

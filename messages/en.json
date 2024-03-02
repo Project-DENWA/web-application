@@ -224,6 +224,13 @@
          }
       }
    },
+   
+   "cookieModal": {
+      "title": "Baking cookies?",
+      "description": "By using our site, you consent to the use of cookies to enhance your user experience. You can disable cookies in your browser settings.",
+      "textBtn": "All right!"
+   },
+
    "signInModal": {
       "title": "Sign In",
       "continueWithGoogle": "Continue with Google",
