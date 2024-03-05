@@ -19,7 +19,7 @@ export default function CollaborationBanner() {
             />
          </div>
          <div className={css.content}>
-            <div className={css.bannerFirst}>
+            <div className={cn(css.bannerFirst, "hover:opacity-90")}>
                <div className={css.leftItems}>
                   <h3>{t("firstCard.title")}</h3>
                   <p>{t("firstCard.description")}</p>
@@ -38,7 +38,7 @@ export default function CollaborationBanner() {
             <div
                className={cn(
                   css.bannerSecond,
-                  "bg-light-main-dark dark:bg-dark-main-dark"
+                  "bg-light-main-dark dark:bg-dark-main-dark hover:opacity-90"
                )}
             >
                <div className={css.leftItems}>
