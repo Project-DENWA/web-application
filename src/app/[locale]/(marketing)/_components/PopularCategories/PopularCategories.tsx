@@ -1,4 +1,4 @@
-import PopularCategoryCard from "../PopularCategoryCard/PopularCategoryCard"
+import PopularCategoryCard from "./PopularCategoryCard/PopularCategoryCard"
 import css from "@/app/[locale]/(marketing)/_components/PopularCategories/PopularCategories.module.scss"
 import ICategoriesCardProps from "@/app/interfaces/ICategoriesCardProps"
 import Illustration from "@/../public/categoryIcons/IllustrationCategories.png"
@@ -24,6 +24,7 @@ export default function PopularCategories() {
                title={t("title")}
                href='/categories'
                description={t("textLink")}
+               abbreviatedDescription={t("abbreviatedDescription")}
             />
          </div>
          <div className={css.itemsContainer}>

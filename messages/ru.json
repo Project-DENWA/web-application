@@ -36,6 +36,7 @@
       "title": "Популярные категории",
       "textLink": "Больше категорий",
       "textLinkReduced": "Больше",
+      "abbreviatedDescription": "Больше",
       "graphDesign": {
          "icon": "webPage.svg",
          "name": "Графический дизайн",

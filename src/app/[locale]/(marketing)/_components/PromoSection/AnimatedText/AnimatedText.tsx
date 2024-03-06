@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect, useMemo } from "react"
 import { useTranslations } from "next-intl"
-import css from "@/app/[locale]/(marketing)/_components/AnimatedText/AnimatedText.module.scss"
+import css from "@/app/[locale]/(marketing)/_components/PromoSection/AnimatedText/AnimatedText.module.scss"
 
 type IAnimatedText = {
    text: string

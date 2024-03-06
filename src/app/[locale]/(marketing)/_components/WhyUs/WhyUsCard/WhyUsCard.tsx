@@ -1,4 +1,4 @@
-import css from "@/app/[locale]/(marketing)/_components/WhyUsCard/WhyUsCard.module.scss"
+import css from "@/app/[locale]/(marketing)/_components/WhyUs/WhyUsCard/WhyUsCard.module.scss"
 import Image from "next/image"
 import ICategoriesCardProps from "@/app/interfaces/ICategoriesCardProps"
 import Link from "next/link"

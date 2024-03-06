@@ -1,4 +1,4 @@
-import css from "@/app/[locale]/(marketing)/_components/PopularCategoryCard/PopularCategoryCard.module.scss";
+import css from "@/app/[locale]/(marketing)/_components/PopularCategories/PopularCategoryCard/PopularCategoryCard.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import arrowRightSmall from "@/../public/arrow-right-small.svg";

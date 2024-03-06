@@ -1,7 +1,7 @@
 "use client"
 import HeaderLink from "@/app/[locale]/(marketing)/_components/HeaderLink/HeaderLink"
 import css from "@/app/[locale]/(marketing)/_components/LeaderBoard/LeaderBoard.module.scss"
-import LeaderCard from "@/app/[locale]/(marketing)/_components/LeaderCard/LeaderCard"
+import LeaderCard from "@/app/[locale]/(marketing)/_components/LeaderBoard/LeaderCard/LeaderCard"
 import Autoplay from "embla-carousel-autoplay"
 import { useTranslations } from "next-intl"
 import {

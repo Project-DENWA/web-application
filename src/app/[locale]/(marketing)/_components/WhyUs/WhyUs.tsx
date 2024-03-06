@@ -1,5 +1,5 @@
 import HeaderLink from "@/app/[locale]/(marketing)/_components/HeaderLink/HeaderLink"
-import WhyUsCard from "@/app/[locale]/(marketing)/_components/WhyUsCard/WhyUsCard"
+import WhyUsCard from "@/app/[locale]/(marketing)/_components/WhyUs/WhyUsCard/WhyUsCard"
 import css from "@/app/[locale]/(marketing)/_components/WhyUs/WhyUs.module.scss"
 import ICategoriesCardProps from "@/app/interfaces/ICategoriesCardProps"
 import { useTranslations } from "next-intl"

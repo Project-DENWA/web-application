@@ -1,4 +1,4 @@
-import css from "@/app/[locale]/(marketing)/_components/LeaderCard/LeaderCard.module.scss"
+import css from "@/app/[locale]/(marketing)/_components/LeaderBoard/LeaderCard/LeaderCard.module.scss"
 import Image from "next/image"
 import Link from "next/link"
 

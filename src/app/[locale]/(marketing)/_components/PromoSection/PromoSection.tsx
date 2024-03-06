@@ -1,6 +1,6 @@
 import css from "@/app/[locale]/(marketing)/_components/PromoSection/PromoSection.module.scss"
 import { Button } from "@/shared/ui/button"
-import AnimatedText from "../AnimatedText/AnimatedText"
+import AnimatedText from "./AnimatedText/AnimatedText"
 import Link from "next/link"
 import {useTranslations} from 'next-intl'
 export default function PromoSection() {
