@@ -13,6 +13,7 @@
       "startWord": "для",
       "description": "Оптимизируйте работу с Denwa находите проекты, контролируйте нагрузку, увеличивайте заработок",
       "textBtnMain": "Работать вместе с Denwa",
+      "textBtnMainReduced": "Работать с Denwa",
       "textBtnOrder": "Сделать заказ",
 
       "textVariants": [
@@ -34,6 +35,7 @@
    "categories": {
       "title": "Популярные категории",
       "textLink": "Больше категорий",
+      "textLinkReduced": "Больше",
       "graphDesign": {
          "icon": "webPage.svg",
          "name": "Графический дизайн",

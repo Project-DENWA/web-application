@@ -32,3 +32,28 @@
     }
   }
 }
+
+@media screen and (max-width: 1440px) {
+  .navContainer {
+    padding: 0 30px;
+    width: 90%;
+  }
+  .itemsContainer {
+    .leftItems {
+      max-width: 800px;
+    }
+
+    .rightItems {
+      img {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .leftItems {
+    justify-content: center;
+    gap: 15px !important;
+  }
+}

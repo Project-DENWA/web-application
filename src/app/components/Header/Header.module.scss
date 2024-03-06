@@ -60,6 +60,14 @@
   }
 }
 
+@media screen and (max-width: 1360px) {
+  .header {
+    .mainHeader {
+        padding: 14px 30px;
+    }
+  }
+}
+
 @media screen and (max-width: 660px) {
   .headlineBanner {
     p {

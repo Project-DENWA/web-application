@@ -18,7 +18,8 @@ export default function PromoSection() {
             </p>
          </div>
           <Link href={"/signin"}>
-            <Button variant='default'>{t("textBtnMain")}</Button>
+            <Button className={css.mainBtn} variant='default'>{t("textBtnMain")}</Button>
+            <Button className={css.hiddenBtn} variant='default'>{t("textBtnMainReduced")}</Button>
             <Button variant='dark'>{t("textBtnOrder")}</Button>
           </Link>
         </div>

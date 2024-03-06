@@ -1,7 +1,8 @@
 .wrapper {
   display: flex;
   align-items: flex-start;
-  max-width: max-content;
+  max-width: 379px;
+  width: 100%;
   gap: 20px;
   padding: 15px;
   border-radius: 14px;
@@ -40,5 +41,20 @@
 .wrapper:hover {
   #arrow {
     transform: translateX(3px);
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .wrapper {
+    max-width: 90%;
+  }
+  .descriptionContainer {
+    div {
+      div {
+        p {
+          max-width: max-content !important;
+        }
+      }
+    }
   }
 }
