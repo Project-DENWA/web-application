@@ -5,6 +5,7 @@
   justify-content: center;
   max-width: 100vw;
   width: 100%;
+
   .headlineBanner {
     display: flex;
     flex-direction: row;
@@ -106,5 +107,9 @@
         scale: 0.5;
       }
     }
+  }
+
+  img {
+    cursor: pointer;
   }
 }

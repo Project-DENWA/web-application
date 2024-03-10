@@ -5,7 +5,26 @@
       "specialists": "Specialists",
       "news": "News",
       "more": "More...",
-      "signIn": "Sign In"
+      "signIn": "Sign In",
+
+      "profileDropdownItems": {
+        "myAccount": {
+          "title": "My Account", 
+          "href": "/profile"
+        },
+        "profile": {
+          "title": "Profile", 
+          "href": "/settings"
+        },
+        "createResume": {
+          "title": "Create Resume", 
+          "href": "/resumebuilder"
+        },
+        "logout": {
+          "title": "Logout", 
+          "href": "/logout"
+        }
+      }
    },
 
    "promoSection": {
@@ -35,6 +54,7 @@
    "categories": {
       "title": "Popular categories",
       "textLink": "More categories",
+      "abbreviatedDescription": "More",
       "graphDesign": {
          "icon": "webPage.svg",
          "name": "Graphic Design",

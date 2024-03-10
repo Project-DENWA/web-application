@@ -5,7 +5,26 @@
       "specialists": "Специалисты",
       "news": "Новости",
       "more": "Ещё...",
-      "signIn": "Войти"
+      "signIn": "Войти",
+
+      "profileDropdownItems": {
+         "myAccount": {
+           "title": "Мой аккаунт", 
+           "href": "/profile"
+         },
+         "profile": {
+           "title": "Профиль", 
+           "href": "/settings"
+         },
+         "createResume": {
+           "title": "Создать резюме", 
+           "href": "/resumebuilder"
+         },
+         "logout": {
+           "title": "Выход", 
+           "href": "/logout"
+         }
+       }
    },
 
    "promoSection": {

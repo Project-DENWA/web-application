@@ -1,22 +1,28 @@
-import Link from "next/link";
-import css from "./Header.module.scss";
-import { UserData } from "@/shared/lib/cookie";
-import Image from "next/image";
-import user from "@/../public/user.svg";
-import notifications from "@/../public/notifications.svg";
-import chat from "@/../public/chat.svg";
-import { useLocale } from "next-intl";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/shared/ui/dropdown-menu"
+import Link from 'next/link';
+import Image from 'next/image';
+
+import user from '@/../public/user.svg';
+import notifications from '@/../public/notifications.svg';
+import chat from '@/../public/chat.svg';
+
+import css from './Header.module.scss';
+
+import { useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
+import { UserData } from '@/shared/lib/cookie';
+
+import Dropdown from '@/shared/ui/dropdown/Dropdown';
 
 export default function AuthorizedUser({ data }: { data: UserData }) {
   const locale = useLocale();
+  const t = useTranslations('header.profileDropdownItems');
+  const keys = ['myAccount', 'profile', 'createResume', 'logout'];
+
+  const profileDropdownItems = keys.map((key) => ({
+    title: t(`${key}.title`),
+    href: `${locale}${t(`${key}.href`)}`,
+  }));
+
   return (
     <div className={css.AuthorizedUserWrapper}>
       <Link href="/chat">
@@ -37,26 +43,15 @@ export default function AuthorizedUser({ data }: { data: UserData }) {
           className="dark:invert hover:opacity-85 transition-opacity"
         />
       </Link>
-    <DropdownMenu>
-      <DropdownMenuTrigger>
-        <Link href="/settings">
-          <Image
-            src={user}
-            height={24}
-            width={24}
-            alt="user icon"
-            className="dark:invert hover:opacity-85 transition-opacity"
-          />
-        </Link>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuItem><Link href={`${locale}` + '/settings'}>Мой аккаунт </Link></DropdownMenuItem>
-        <DropdownMenuItem><Link href={'/profile'}>Профиль </Link></DropdownMenuItem>
-        <DropdownMenuItem><Link href={'/resumebuilder'}>Создать резюме </Link></DropdownMenuItem>
-        <DropdownMenuItem><Link href={'/logout'}>Выйти </Link></DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-   
+      <Dropdown dropdownItems={profileDropdownItems}>
+        <Image
+          src={user}
+          height={24}
+          width={24}
+          alt="user icon"
+          className="dark:invert hover:opacity-85 transition-opacity"
+        />
+      </Dropdown>
     </div>
   );
 }

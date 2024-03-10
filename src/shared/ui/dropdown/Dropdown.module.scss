@@ -1,0 +1,22 @@
+.dropdown {
+  position: relative;
+  .dropdowncontent {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 2;
+    gap: 10px;
+    padding: 10px;
+    transform: translateX(-50%);
+    width: max-content;
+    border-radius: 8px;
+    margin-top: 10px;
+    a {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+  }
+}
