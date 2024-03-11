@@ -1,0 +1,29 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+
+    .change {
+        transition: all ease-in-out 0.2s;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .avatar {
+        width: 104px;
+        height: 104px;
+        max-height: 100%;
+        max-width: 100%; 
+        border-radius: 100%;
+    }
+
+    &:hover .change {
+        opacity: 1;
+        visibility: visible;
+    }
+}

@@ -1,0 +1,23 @@
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 104px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    cursor: pointer;
+    .change {
+        transition: all ease-in-out 0.2s;
+        visibility: hidden;
+        opacity: 0;
+
+    }
+}
+
+.banner:hover .change {
+    opacity: 1;
+    visibility: visible;
+}

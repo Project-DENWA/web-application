@@ -11,7 +11,7 @@ import { useLocale } from 'next-intl';
 import { useTranslations } from 'next-intl';
 import { UserData } from '@/shared/lib/cookie';
 
-import Dropdown from '@/shared/ui/dropdown/Dropdown';
+import Dropdown from '@/shared/ui/dropdown';
 
 export default function AuthorizedUser({ data }: { data: UserData }) {
   const locale = useLocale();
