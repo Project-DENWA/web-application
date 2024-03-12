@@ -13,28 +13,27 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/shared/ui/tooltip';
-
+import { useTranslations } from 'next-intl';
 export const Profile: React.FC = () => {
+  const t = useTranslations('settings');
   return (
     <TabsContent value="profile" className={css.tabContent}>
       <form action="">
         <div>
-          <h3>Профиль</h3>
-          <p className="text-light-text-main-50">
-            Настройте внешний вид своего профиля
-          </p>
+          <h3>{t('profile.title')}</h3>
+          <p className="text-light-text-main-50">{t('profile.description')}</p>
         </div>
         <div className={css.profileContainer}>
           <Avatar />
           <Banner />
         </div>
         <div className={css.editName}>
-          <h4>Полное имя</h4>
-          <Input placeholder="Веня Жикторов" />
+          <h4> {t('profile.fullName')}</h4>
+          <Input placeholder={t('profile.fullNamePlaceholder')} />
         </div>
         <div className={css.editBio}>
           <div>
-            <h4>О себе</h4>
+            <h4> {t('profile.bio')}</h4>
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
@@ -46,15 +45,15 @@ export const Profile: React.FC = () => {
                   />
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Информация будет отображаться в вашем личном кабинете</p>
+                  <p>{t('profile.tooltip')}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
           </div>
-          <Textarea placeholder="🚀 Привет! Я опытный веб-разработчик с фокусом на создании уникальных и эффективных веб-сайтов. Мое портфолио включает в себя разнообразные проекты." />
+          <Textarea placeholder={t('profile.bioPlaceholder')} />
         </div>
         <div>
-          <Button type="submit">Сохранить</Button>
+          <Button type="submit"> {t('profile.textBtn')}</Button>
         </div>
       </form>
     </TabsContent>

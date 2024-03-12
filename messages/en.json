@@ -286,5 +286,31 @@
    "signInModalErrors": {
       "emailorusername": "Email or username must be filled in",
       "password": "Password field must be filled in"
+   },
+   "settings": {
+      "title": "Settings",
+      "description": "Manage your account settings",
+      "profile": {
+         "title": "Profile",
+         "description": "Customize the appearance of your profile",
+         "fullName": "Full name",
+         "fullNamePlaceholder": "John Doe",
+         "bio": "About myself",
+         "bioPlaceholder": "🚀 Hi, I am an experienced web developer with a focus on creating unique and effective websites. My portfolio includes a variety of projects.",
+         "tooltip": "The information will be displayed in your personal account",
+         "textBtn": "Save"
+      },
+      "account": {
+         "title": "Account"
+      },
+      "socialMedia": {
+         "title": "Social media"
+      },
+      "notifications": {
+         "title": "Notifications"
+      },
+      "logout": {
+         "title": "Log out"
+      }
    }
 }
