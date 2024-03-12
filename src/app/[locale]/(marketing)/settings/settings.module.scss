@@ -46,11 +46,13 @@
         }
       }
       .tabContent {
-        display: flex;
-        flex-direction: column;
         width: 100%;
 
-        gap: 18px;
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
 
         h3 {
           font-size: 24px;
@@ -58,9 +60,9 @@
           line-height: 29px;
         }
         h4 {
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 24px;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 24px;
         }
         p {
           font-size: 16px;
@@ -71,23 +73,38 @@
         .profileContainer {
           display: flex;
           align-items: center;
+          justify-content: space-between;
           gap: 40px;
         }
-        
-        .editName, .editBio {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+
+        .editName,
+        .editBio {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
         }
         .editName {
-            max-width: 360px;
+          max-width: 360px;
         }
         .editBio {
-            input {
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 24px;
+          div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            p {
+              font-size: 12px;
             }
+
+            img {
+              cursor: pointer;
+            }
+          }
+          input {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+          }
         }
       }
     }

@@ -4,7 +4,7 @@ import camera from '@/../public/account/Camera.svg';
 
 export default function Banner() {
   const responce_banner: string = '';
-  const default_banner: string = '/account/ForTest.png';
+  const default_banner: string = '/account/bannerForTest.jpg';
   return (
     <div
       className={css.banner}

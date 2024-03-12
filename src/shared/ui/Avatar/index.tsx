@@ -4,7 +4,7 @@ import camera from '@/../public/account/Camera.svg';
 
 export default function Avatar() {
   const responce_avatar: string = '';
-  const default_avatar: string = '/account/ForTest.png';
+  const default_avatar: string = '/account/AvatarForTest.png';
   return (
     <div className={css.wrapper}>
       <Image
