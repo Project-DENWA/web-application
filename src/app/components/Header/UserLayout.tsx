@@ -17,7 +17,7 @@ export default function UserLayout() {
   const user = getUserData();
   return (
     <>
-      {!user?.username ? <AuthorizedUser data={user} /> : <UnauthorizedUser />}
+      {!user?.username ? <UnauthorizedUser /> : <AuthorizedUser data={user} />}
     </>
   );
 }
