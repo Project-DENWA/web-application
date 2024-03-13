@@ -1,7 +1,5 @@
-"use client"
+'use client';
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectAuth, setAuthInfo } from '@/shared/redux/slices/authSlice';
 import AuthorizedUser from './AuthorizedUser';
 import UnauthorizedUser from './UnauthorizedUser';
 import { getUserData } from '@/shared/lib/localstorage';
@@ -15,9 +13,7 @@ const UserLayout = () => {
   }, []);
 
   return (
-    <>
-      {isSignedIn ? <AuthorizedUser data={user} /> : <UnauthorizedUser />}
-    </>
+    <>{isSignedIn ? <AuthorizedUser data={user} /> : <UnauthorizedUser />}</>
   );
 };
 
