@@ -1,32 +1,37 @@
 "use client";
+import { useEffect, useState } from "react";
+
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 import { Button } from "@/shared/ui/button";
 import { Input } from "@/shared/ui/input";
 import { Checkbox } from "@/shared/ui/checkbox";
-import {
-  Dialog,
-  DialogContent,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/shared/ui/dialog";
-import googleicon from "@/../public/google icon.svg";
-import css from "@/app/components/SignInModal/Modal.module.scss";
-import Link from "next/link";
-import { cn } from "@/shared/lib/utils";
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/shared/ui/dialog";
 import { Separator } from "@/shared/ui/separator";
+import { Form, FormControl, FormField, FormItem } from "@/shared/ui/form";
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+
 import { z } from "zod";
 import { formSchema } from "@/app/components/SignInModal/schema";
-import { Form, FormControl, FormField, FormItem } from "@/shared/ui/form";
-import { useEffect, useState } from "react";
+
 import { toast } from "sonner";
+
+import { useAuth } from "@/shared/lib/hooks/useAuth";
 import { useLoginMutation } from "@/shared/redux/features/authApi";
-import { useRouter } from "next/navigation";
-import { getUserData, setToken, setUserData } from "@/shared/lib/cookie";
+import { setToken } from "@/shared/lib/cookie";
+import { setUserData } from "@/shared/lib/localstorage";
+
 import { useTranslations } from "next-intl";
+
+import { cn } from "@/shared/lib/utils";
+
+import css from "@/app/components/SignInModal/Modal.module.scss";
+import googleicon from "@/../public/google icon.svg";
+
 type Props = {
   children: React.ReactNode;
   handleOpenModal: (modalType: "signIn" | "signUp") => void;
@@ -52,6 +57,7 @@ export default function SignInModal({
   type FieldErrors = {
     [key: string]: any | undefined;
   };
+  const { updateAuthInfo } = useAuth();
 
   const errors: FieldErrors = form.formState.errors;
   const router = useRouter();
@@ -94,6 +100,7 @@ export default function SignInModal({
         response.result.tokens.accessToken,
         response.result.tokens.refreshToken
       );
+      updateAuthInfo(response.result.userModel, true);
       console.log(response);
       setUserData(response.result.userModel);
       toast.success("Login succesfull");

@@ -9,11 +9,11 @@ import css from './Header.module.scss';
 
 import { useLocale } from 'next-intl';
 import { useTranslations } from 'next-intl';
-import { UserData } from '@/shared/lib/cookie';
+import { UserData } from '@/shared/lib/localstorage';
 
 import Dropdown from '@/shared/ui/dropdown';
 
-export default function AuthorizedUser({ data }: { data: UserData }) {
+export default function AuthorizedUser({ data }: { data: UserData | null}) {
   const locale = useLocale();
   const t = useTranslations('header.profileDropdownItems');
   const keys = ['myAccount', 'profile', 'createResume', 'logout'];

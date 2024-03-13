@@ -5,10 +5,7 @@ import Image from "next/image"
 import { cn } from "@/shared/lib/utils"
 import { Button } from "@/shared/ui/button"
 import CookieIcon from "@/../public/smileCookie.svg"
-import Cookies from "universal-cookie"
 import css from "@/app/components/CookieModal/CookitModal.module.scss"
-
-const cookies = new Cookies()
 
 export default function CookieModal() {
    const [isOpen, setIsOpen] = useState<boolean>(true)
@@ -23,13 +20,13 @@ export default function CookieModal() {
 
    const handleClose = () => {
       setIsOpen(false)
-      cookies.set("cookieModalShown", true, { path: "/" })
+      localStorage.setItem("cookieModalShown", "true")
    }
 
    useEffect(() => {
-      const cookieValue = cookies.get("cookieModalShown")
+      const localStorageValue = localStorage.getItem("cookieModalShown");
 
-      if (cookieValue) {
+      if (localStorageValue) {
          setIsOpen(false)
       }
    }, [])

@@ -1,23 +1,24 @@
-'use client';
-
+"use client"
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectAuth, setAuthInfo } from '@/shared/redux/slices/authSlice';
 import AuthorizedUser from './AuthorizedUser';
 import UnauthorizedUser from './UnauthorizedUser';
-import { getUserData } from '@/shared/lib/cookie';
-import { useEffect, useState } from 'react';
-export default function UserLayout() {
-  const [mounted, setMounted] = useState<boolean>(false);
+import { getUserData } from '@/shared/lib/localstorage';
+import { useAuth } from '@/shared/lib/hooks/useAuth';
+const UserLayout = () => {
+  const { isSignedIn, user, updateAuthInfo } = useAuth();
 
   useEffect(() => {
-    setMounted(true);
+    const userData = getUserData();
+    updateAuthInfo(userData, !!userData?.username);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
-  const user = getUserData();
   return (
     <>
-      {!user?.username ? <UnauthorizedUser /> : <AuthorizedUser data={user} />}
+      {isSignedIn ? <AuthorizedUser data={user} /> : <UnauthorizedUser />}
     </>
   );
-}
+};
+
+export default UserLayout;

@@ -1,10 +1,10 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { apiSlice } from './api/apiSlice';
-// import userReducer from '@/utils/redux/slices/userSlice';
+import authSlice from './slices/authSlice';
 
 const rootReducer = combineReducers({
   [apiSlice.reducerPath]: apiSlice.reducer,
-//   user: userReducer,
+  auth: authSlice,
 });
 
 export const store = configureStore({
@@ -12,6 +12,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),
 });
+
 export default store;
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppStore = typeof store;
