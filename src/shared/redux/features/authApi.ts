@@ -15,6 +15,7 @@ export const authApi = apiSlice.injectEndpoints({
         method: 'DELETE',
       }),
     }),
+
     registration: builder.mutation({
       query: (data) => ({
         url: `auth/registration`,
@@ -22,8 +23,16 @@ export const authApi = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+
+    updateAvatar: builder.mutation({
+      query: (avatarData) => ({
+        url: `users/avatar`,
+        method: 'PATCH',
+        body: avatarData,
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation, useLogoutMutation, useRegistrationMutation } =
+export const { useLoginMutation, useLogoutMutation, useRegistrationMutation, useUpdateAvatarMutation } =
   authApi;

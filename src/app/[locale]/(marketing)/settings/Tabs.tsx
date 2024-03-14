@@ -1,19 +1,16 @@
 import css from './settings.module.scss';
 import Image from 'next/image';
 import questionMark from '@/../public/questionMark.svg';
-import Avatar from '@/shared/ui/Avatar';
 import Banner from '@/shared/ui/Banner';
 import { Input } from '@/shared/ui/input';
 import { Textarea } from '@/shared/ui/textarea';
 import { Button } from '@/shared/ui/button';
 import { TabsContent } from '@/shared/ui/tabs';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/shared/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/shared/ui/tooltip';
 import { useTranslations } from 'next-intl';
+import dynamic from 'next/dynamic';
+const Avatar = dynamic(() => import('@/shared/ui/Avatar'), { ssr: false });
+
 export const Profile: React.FC = () => {
   const t = useTranslations('settings');
   return (
