@@ -9,19 +9,18 @@ import { TabsContent } from '@/shared/ui/tabs';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/shared/ui/tooltip';
 import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
-const Avatar = dynamic(() => import('@/shared/ui/Avatar'), { ssr: false });
-
+import FormAvatar from './forms/Avatar';
 export const Profile: React.FC = () => {
   const t = useTranslations('settings');
   return (
     <TabsContent value="profile" className={css.tabContent}>
-      <form action="">
+      <div className={css.form}>
         <div>
           <h3>{t('profile.title')}</h3>
           <p className="text-light-text-main-50">{t('profile.description')}</p>
         </div>
         <div className={css.profileContainer}>
-          <Avatar />
+          <FormAvatar />
           <Banner />
         </div>
         <div className={css.editName}>
@@ -52,7 +51,7 @@ export const Profile: React.FC = () => {
         <div>
           <Button type="submit"> {t('profile.textBtn')}</Button>
         </div>
-      </form>
+      </div>
     </TabsContent>
   );
 };

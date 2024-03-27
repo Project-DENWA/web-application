@@ -17,7 +17,7 @@ interface RefreshResultData {
 }
 const mutex = new Mutex();
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://lr4wkl74-5001.euw.devtunnels.ms/",
+  baseUrl: "https://lr4wkl74-5000.euw.devtunnels.ms/",
   credentials: "include",
   prepareHeaders: (headers) => {
     const token = getAccessToken();

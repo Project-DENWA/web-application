@@ -25,10 +25,10 @@ export const authApi = apiSlice.injectEndpoints({
     }),
 
     updateAvatar: builder.mutation({
-      query: (avatarData) => ({
+      query: (data) => ({
         url: `users/avatar`,
         method: 'PATCH',
-        body: avatarData,
+        body: data.newAvatar,
       }),
     }),
   }),

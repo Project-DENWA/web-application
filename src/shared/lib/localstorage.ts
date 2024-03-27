@@ -1,17 +1,27 @@
-export type UserData = {
-  avatarUrl: null | string;
+export interface UserData  {
+  avatarUrl: string;
   bio: null | string;
   coverImageUrl: null | string;
   createdAt: string;
   email: string;
-  fullname: string;
-  id: string;
+  meta: Meta;
   messages: boolean;
   news: boolean;
   username: string;
   verified: boolean;
   verifiedEmail: boolean;
 };
+
+// export interface Avatar {
+//   id: string;
+//   icon: string;
+//   cover: string;
+// }
+
+export interface Meta {
+  id: string;
+  description: string | null;
+}
 
 export const setUserData = (userData: UserData) => {
   localStorage.setItem('userData', JSON.stringify(userData));
