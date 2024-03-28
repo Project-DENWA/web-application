@@ -31,8 +31,16 @@ export const authApi = apiSlice.injectEndpoints({
         body: data.newAvatar,
       }),
     }),
+    updateBanner: builder.mutation({
+      query: (data) => ({
+        url: `users/cover`,
+        method: 'PATCH',
+        body: data.newCover,
+      }),
+    }),
+    
   }),
 });
 
-export const { useLoginMutation, useLogoutMutation, useRegistrationMutation, useUpdateAvatarMutation } =
+export const { useLoginMutation, useLogoutMutation, useRegistrationMutation, useUpdateAvatarMutation, useUpdateBannerMutation } =
   authApi;

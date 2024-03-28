@@ -1,13 +1,18 @@
 'use client';
-import Avatar from '@/shared/ui/Avatar';
+
 import css from '../settings.module.scss';
+
 import React, { useEffect, useState } from 'react';
+
 import { useAuth } from '@/shared/lib/hooks/useAuth';
 import { getUserData, setUserData } from '@/shared/lib/localstorage';
-import { toast } from 'sonner';
 import { UserData } from '@/shared/lib/localstorage';
-import { Input } from '@/shared/ui/input';
 import { useUpdateAvatarMutation } from '@/shared/redux/features/authApi';
+
+import Avatar from '@/shared/ui/Avatar';
+import { Input } from '@/shared/ui/input';
+import { toast } from 'sonner';
+
 import camera from '@/../public/account/Camera.svg';
 import Image from 'next/image';
 
@@ -75,8 +80,8 @@ export default function FormAvatar() {
     });
   };
   return (
-    <div className={css.avatarWrapper}>
-      <form className={css.avatar} role="button">
+    <div className={css.hiddenWrapper}>
+      <form className={css.hidden} role="button">
         {!userLoading || !isLoading ? (
           <Image className={css.imagePlus} alt="Camera" src={camera} />
         ) : (

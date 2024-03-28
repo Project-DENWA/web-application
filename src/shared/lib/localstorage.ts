@@ -1,7 +1,7 @@
 export interface UserData  {
-  avatarUrl: string;
+  avatarUrl: string | undefined;
+  coverImageUrl: string | undefined;
   bio: null | string;
-  coverImageUrl: null | string;
   createdAt: string;
   email: string;
   meta: Meta;
@@ -12,11 +12,6 @@ export interface UserData  {
   verifiedEmail: boolean;
 };
 
-// export interface Avatar {
-//   id: string;
-//   icon: string;
-//   cover: string;
-// }
 
 export interface Meta {
   id: string;

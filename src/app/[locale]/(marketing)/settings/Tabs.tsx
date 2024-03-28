@@ -1,15 +1,10 @@
 import css from './settings.module.scss';
-import Image from 'next/image';
-import questionMark from '@/../public/questionMark.svg';
-import Banner from '@/shared/ui/Banner';
-import { Input } from '@/shared/ui/input';
-import { Textarea } from '@/shared/ui/textarea';
-import { Button } from '@/shared/ui/button';
+import FormBanner from './forms/Banner';
 import { TabsContent } from '@/shared/ui/tabs';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/shared/ui/tooltip';
 import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
 import FormAvatar from './forms/Avatar';
+import ProfileData from './forms/ProfileData';
 export const Profile: React.FC = () => {
   const t = useTranslations('settings');
   return (
@@ -21,36 +16,9 @@ export const Profile: React.FC = () => {
         </div>
         <div className={css.profileContainer}>
           <FormAvatar />
-          <Banner />
+          <FormBanner />
         </div>
-        <div className={css.editName}>
-          <h4> {t('profile.fullName')}</h4>
-          <Input placeholder={t('profile.fullNamePlaceholder')} />
-        </div>
-        <div className={css.editBio}>
-          <div>
-            <h4> {t('profile.bio')}</h4>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Image
-                    src={questionMark}
-                    alt="Question mark"
-                    width={16}
-                    height={16}
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{t('profile.tooltip')}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-          <Textarea placeholder={t('profile.bioPlaceholder')} />
-        </div>
-        <div>
-          <Button type="submit"> {t('profile.textBtn')}</Button>
-        </div>
+        <ProfileData />
       </div>
     </TabsContent>
   );
