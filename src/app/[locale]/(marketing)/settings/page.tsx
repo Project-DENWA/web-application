@@ -1,9 +1,9 @@
 import css from './settings.module.scss'
 import { cn } from '@/shared/lib/utils';
 import { Tabs, TabsList, TabsTrigger } from "@/shared/ui/tabs"
-import { Profile } from './Tabs';
+import { Profile, Account } from './Tabs';
 import { useTranslations } from 'next-intl';
-export default function Settings() {
+export default function Settings(): JSX.Element {
   const t = useTranslations("settings");
   return (
     <main className={cn(css.wrapper,"bg-light-main-bg-main dark:bg-dark-main-bg-main")}>
@@ -16,12 +16,13 @@ export default function Settings() {
         <Tabs defaultValue='profile' className={css.tabsContainer}>
             <TabsList className={css.tabsList}>
               <TabsTrigger value='profile'>{t("profile.title")}</TabsTrigger>
-              <TabsTrigger value='Account'>{t("account.title")}</TabsTrigger>
-              <TabsTrigger value='Social'>{t("socialMedia.title")}</TabsTrigger>
-              <TabsTrigger value='Notifications'>{t("notifications.title")}</TabsTrigger>
-              <TabsTrigger value='Logout'>{t("logout.title")}</TabsTrigger>
+              <TabsTrigger value='account'>{t("account.title")}</TabsTrigger>
+              <TabsTrigger value='social'>{t("socialMedia.title")}</TabsTrigger>
+              <TabsTrigger value='notifications'>{t("notifications.title")}</TabsTrigger>
+              <TabsTrigger value='logout'>{t("logout.title")}</TabsTrigger>
             </TabsList>         
             <Profile/>
+            <Account/>
          </Tabs>
 
       </div>

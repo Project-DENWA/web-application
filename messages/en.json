@@ -1,316 +1,339 @@
 {
-   "header": {
-      "description": "Program your money with leading experts.",
-      "orders": "Orders",
-      "specialists": "Specialists",
-      "news": "News",
-      "more": "More...",
-      "signIn": "Sign In",
+  "header": {
+    "description": "Program your money with leading experts.",
+    "orders": "Orders",
+    "specialists": "Specialists",
+    "news": "News",
+    "more": "More...",
+    "signIn": "Sign In",
 
-      "profileDropdownItems": {
-        "myAccount": {
-          "title": "My Account", 
-          "href": "/profile"
-        },
-        "profile": {
-          "title": "Profile", 
-          "href": "/settings"
-        },
-        "createResume": {
-          "title": "Create Resume", 
-          "href": "/resumebuilder"
-        },
-        "logout": {
-          "title": "Logout", 
-          "href": "/logout"
-        }
-      }
-   },
-
-   "promoSection": {
-      "title": "Freelance exchange",
-      "startWord": "for",
-      "description": "Optimize your work with Denwa find projects, control workload, increase earnings",
-      "textBtnMain": "Working together with Denwa",
-      "textBtnMainReduced": "Working with Denwa",
-      "textBtnOrder": "Make an order",
-
-      "textVariants": [
-         { "text": "russians" },
-         { "text": "everyone" },
-         { "text": "programmers" },
-         { "text": "designers" },
-         { "text": "testers" },
-         { "text": "marketers" },
-         { "text": "writers" },
-         { "text": "architects" },
-         { "text": "copywriters" },
-         { "text": "photographers" },
-         { "text": "videographers" },
-         { "text": "translators" },
-         { "text": "designers" }
-      ]
-   },
-   "categories": {
-      "title": "Popular categories",
-      "textLink": "More categories",
-      "abbreviatedDescription": "More",
-      "graphDesign": {
-         "icon": "webPage.svg",
-         "name": "Graphic Design",
-         "description": "Creative and unique graphic design.",
-         "textLink": "Choose a designer",
-         "link": "/orders"
+    "profileDropdownItems": {
+      "myAccount": {
+        "title": "My Account",
+        "href": "/profile"
       },
-      "videoProduction": {
-         "icon": "videoIcon.svg",
-         "name": "Video Production",
-         "description": "Creating and editing video content for various purposes.",
-         "textLink": "View orders",
-         "link": "/orders"
-      },
-      "writtenWorks": {
-         "icon": "penIcon.svg",
-         "name": "Written Works",
-         "description": "Writing, editing texts, articles.",
-         "textLink": "Edit text",
-         "link": "/orders"
-      },
-      "webDev": {
-         "icon": "desktopIcon.svg",
-         "name": "Web Development",
-         "description": "Projects for creating and developing websites and applications.",
-         "textLink": "View orders",
-         "link": "/orders"
-      }
-   },
-   "leaderBoard": {
-      "title": "Leaders in their category",
-      "textLink": "Do you want to be here?"
-   },
-   "whyUs": {
-      "title": "Why Choose Us?",
-      "textLink": "Learn all the benefits",
-      "freeAndEasy": {
-         "icon": "Smile.svg",
-         "name": "Free and Easy",
-         "description": "Free and easy to use without hidden fees and commissions.",
-         "textLink": "Quick Start",
-         "link": "/"
-      },
-      "dataProtection": {
-         "icon": "Shield.svg",
-         "name": "Data Protection",
-         "description": "Guarantee of security and confidentiality of your data.",
-         "textLink": "Learn about protection",
-         "link": "/"
-      },
-      "resumeBuilder": {
-         "icon": "Puzzle.svg",
-         "name": "Resume Builder",
-         "description": "Easy creation of professional resumes for all users.",
-         "textLink": "Create a resume",
-         "link": "/"
-      },
-      "bestCustomerSupport": {
-         "icon": "Comet.svg",
-         "name": "Best Customer Support",
-         "description": "A team of experts always ready to provide prompt assistance.",
-         "textLink": "Contact support",
-         "link": "/"
-      }
-   },
-   "whatWeOffer": {
-      "title": "What We Offer",
-      "textLink": "More Offers",
-      "tabsList": {
-         "constructor": {
-            "title": "Constructor",
-            "value": "сonstructor"
-         },
-         "matchingOrders": {
-            "title": "Matching Orders",
-            "value": "matchingOrders"
-         },
-         "paymentMethods": {
-            "title": "Payment Methods",
-            "value": "paymentMethods"
-         },
-         "technicalSupport": {
-            "title": "Technical Support",
-            "value": "technicalSupport"
-         }
-      },
-      "tabsContent": {
-         "constructor": {
-            "title": "Innovative Resume Builder",
-            "description": "With the help of advanced algorithms, we've simplified the resume writing process. Now you can create professionally crafted resumes.",
-            "span": "@denwa",
-            "link": "/",
-            "textBtn": "Try It Out"
-         },
-         "matchingOrders": {
-            "title": "Unique Order Matching System",
-            "description": "Our matching algorithm connects you with the most suitable projects based on your experience and skills. Find orders that match your professional expectations.",
-            "span": "@denwa",
-            "link": "/",
-            "textBtn": "Find an Order"
-         },
-         "paymentMethods": {
-            "title": "Convenient Payment Options",
-            "description": "We provide diverse payment options for completed orders to suit your preferences. Secure and fast transactions for your comfort.",
-            "span": "@denwa",
-            "link": "/",
-            "textBtn": "Choose a Payment Method"
-         },
-         "technicalSupport": {
-            "title": "Professional 24/7 Support",
-            "description": "Our qualified specialists are ready to assist you at any time. We value your experience with Denwa and strive to provide an unprecedented level of support.",
-            "span": "@denwa",
-            "link": "/",
-            "textBtn": "Contact Technical Support"
-         }
-      }
-   },
-   "collaborationBanners": {
-      "header": {
-         "title": "Immerse Yourself in Our World",
-         "textLink": "Explore Further"
-      },
-      "firstCard": {
-         "title": "Collaborate with Us",
-         "description": "Submit ideas, ask questions that interest you, and more blah-blah-blah.",
-         "textBtn": "Learn More"
-      },
-      "secondCard": {
-         "title": "Want to Join Our Team?",
-         "description": "Submit your resume in our Telegram channel.",
-         "textBtn": "Learn More"
-      }
-   },
-   "footer": {
-      "orders": {
-         "title": "Orders",
-         "links": {
-            "link1": { "text": "Link1", "url": "/" },
-            "link2": { "text": "Link2", "url": "/" },
-            "link3": { "text": "Link3", "url": "/" },
-            "link4": { "text": "Link4", "url": "/" },
-            "link5": { "text": "Link5", "url": "/" },
-            "link6": { "text": "Link6", "url": "/" }
-         }
-      },
-      "experts": {
-         "title": "Experts",
-         "links": {
-            "link1": { "text": "Link1", "url": "/" },
-            "link2": { "text": "Link2", "url": "/" },
-            "link3": { "text": "Link3", "url": "/" },
-            "link4": { "text": "Link4", "url": "/" },
-            "link5": { "text": "Link5", "url": "/" },
-            "link6": { "text": "Link6", "url": "/" }
-         }
-      },
-      "news": {
-         "title": "News",
-         "links": {
-            "link1": { "text": "Link1", "url": "/" },
-            "link2": { "text": "Link2", "url": "/" },
-            "link3": { "text": "Link3", "url": "/" },
-            "link4": { "text": "Link4", "url": "/" },
-            "link5": { "text": "Link5", "url": "/" },
-            "link6": { "text": "Link6", "url": "/" }
-         }
-      },
-      "more": {
-         "title": "More",
-         "links": {
-            "link1": { "text": "Link1", "url": "/" },
-            "link2": { "text": "Link2", "url": "/" },
-            "link3": { "text": "Link3", "url": "/" },
-            "link4": { "text": "Link4", "url": "/" },
-            "link5": { "text": "Link5", "url": "/" },
-            "link6": { "text": "Link6", "url": "/" }
-         }
-      },
-      "inProgress": {
-         "title": "In Progress",
-         "links": {
-            "link1": { "text": "Link1", "url": "/" },
-            "link2": { "text": "Link2", "url": "/" },
-            "link3": { "text": "Link3", "url": "/" },
-            "link4": { "text": "Link4", "url": "/" },
-            "link5": { "text": "Link5", "url": "/" },
-            "link6": { "text": "Link6", "url": "/" }
-         }
-      }
-   },
-   
-   "cookieModal": {
-      "title": "Baking cookies?",
-      "description": "By using our site, you consent to the use of cookies to enhance your user experience. You can disable cookies in your browser settings.",
-      "textBtn": "All right!"
-   },
-
-   "signInModal": {
-      "title": "Sign In",
-      "continueWithGoogle": "Continue with Google",
-      "or": "or",
-      "loginPlaceholder": "Username / Email",
-      "passwordPlaceholder": "Password",
-      "btnForm": "Continue",
-      "remindMe": "Remember Me",
-      "creatingAccountText": "By creating an account, I accept the following documents:",
-      "termsOfService": "Terms of Service",
-      "and": "and",
-      "confidentiality": "Privacy Policy",
-      "question": "Don't have an account yet?",
-      "btnCreate": "Create Account"
-   },
-   "signUpModal": {
-      "title": "Sign Up",
-      "continueWithGoogle": "Continue with Google",
-      "or": "or",
-      "fullNamePlaceholder": "Full Name",
-      "loginPlaceholder": "Username",
-      "emailPlaceholder": "Email",
-      "passwordPlaceholder": "Password",
-      "btnForm": "Continue",
-      "creatingAccountText": "By creating an account, I accept the following documents:",
-      "termsOfService": "Terms of Service",
-      "and": "and",
-      "confidentiality": "Privacy Policy",
-      "question": "Already have an account?",
-      "btnCreate": "Sign In"
-   },
-   "signInModalErrors": {
-      "emailorusername": "Email or username must be filled in",
-      "password": "Password field must be filled in"
-   },
-   "settings": {
-      "title": "Settings",
-      "description": "Manage your account settings",
       "profile": {
-         "title": "Profile",
-         "description": "Customize the appearance of your profile",
-         "fullName": "Full name",
-         "fullNamePlaceholder": "John Doe",
-         "bio": "About myself",
-         "bioPlaceholder": "🚀 Hi, I am an experienced web developer with a focus on creating unique and effective websites. My portfolio includes a variety of projects.",
-         "tooltip": "The information will be displayed in your personal account",
-         "textBtn": "Save"
+        "title": "Profile",
+        "href": "/settings"
       },
-      "account": {
-         "title": "Account"
-      },
-      "socialMedia": {
-         "title": "Social media"
-      },
-      "notifications": {
-         "title": "Notifications"
+      "createResume": {
+        "title": "Create Resume",
+        "href": "/resumebuilder"
       },
       "logout": {
-         "title": "Log out"
+        "title": "Logout",
+        "href": "/logout"
       }
-   }
+    }
+  },
+
+  "promoSection": {
+    "title": "Freelance exchange",
+    "startWord": "for",
+    "description": "Optimize your work with Denwa find projects, control workload, increase earnings",
+    "textBtnMain": "Working together with Denwa",
+    "textBtnMainReduced": "Working with Denwa",
+    "textBtnOrder": "Make an order",
+
+    "textVariants": [
+      { "text": "russians" },
+      { "text": "everyone" },
+      { "text": "programmers" },
+      { "text": "designers" },
+      { "text": "testers" },
+      { "text": "marketers" },
+      { "text": "writers" },
+      { "text": "architects" },
+      { "text": "copywriters" },
+      { "text": "photographers" },
+      { "text": "videographers" },
+      { "text": "translators" },
+      { "text": "designers" }
+    ]
+  },
+  "categories": {
+    "title": "Popular categories",
+    "textLink": "More categories",
+    "abbreviatedDescription": "More",
+    "graphDesign": {
+      "icon": "webPage.svg",
+      "name": "Graphic Design",
+      "description": "Creative and unique graphic design.",
+      "textLink": "Choose a designer",
+      "link": "/orders"
+    },
+    "videoProduction": {
+      "icon": "videoIcon.svg",
+      "name": "Video Production",
+      "description": "Creating and editing video content for various purposes.",
+      "textLink": "View orders",
+      "link": "/orders"
+    },
+    "writtenWorks": {
+      "icon": "penIcon.svg",
+      "name": "Written Works",
+      "description": "Writing, editing texts, articles.",
+      "textLink": "Edit text",
+      "link": "/orders"
+    },
+    "webDev": {
+      "icon": "desktopIcon.svg",
+      "name": "Web Development",
+      "description": "Projects for creating and developing websites and applications.",
+      "textLink": "View orders",
+      "link": "/orders"
+    }
+  },
+  "leaderBoard": {
+    "title": "Leaders in their category",
+    "textLink": "Do you want to be here?"
+  },
+  "whyUs": {
+    "title": "Why Choose Us?",
+    "textLink": "Learn all the benefits",
+    "freeAndEasy": {
+      "icon": "Smile.svg",
+      "name": "Free and Easy",
+      "description": "Free and easy to use without hidden fees and commissions.",
+      "textLink": "Quick Start",
+      "link": "/"
+    },
+    "dataProtection": {
+      "icon": "Shield.svg",
+      "name": "Data Protection",
+      "description": "Guarantee of security and confidentiality of your data.",
+      "textLink": "Learn about protection",
+      "link": "/"
+    },
+    "resumeBuilder": {
+      "icon": "Puzzle.svg",
+      "name": "Resume Builder",
+      "description": "Easy creation of professional resumes for all users.",
+      "textLink": "Create a resume",
+      "link": "/"
+    },
+    "bestCustomerSupport": {
+      "icon": "Comet.svg",
+      "name": "Best Customer Support",
+      "description": "A team of experts always ready to provide prompt assistance.",
+      "textLink": "Contact support",
+      "link": "/"
+    }
+  },
+  "whatWeOffer": {
+    "title": "What We Offer",
+    "textLink": "More Offers",
+    "tabsList": {
+      "constructor": {
+        "title": "Constructor",
+        "value": "сonstructor"
+      },
+      "matchingOrders": {
+        "title": "Matching Orders",
+        "value": "matchingOrders"
+      },
+      "paymentMethods": {
+        "title": "Payment Methods",
+        "value": "paymentMethods"
+      },
+      "technicalSupport": {
+        "title": "Technical Support",
+        "value": "technicalSupport"
+      }
+    },
+    "tabsContent": {
+      "constructor": {
+        "title": "Innovative Resume Builder",
+        "description": "With the help of advanced algorithms, we've simplified the resume writing process. Now you can create professionally crafted resumes.",
+        "span": "@denwa",
+        "link": "/",
+        "textBtn": "Try It Out"
+      },
+      "matchingOrders": {
+        "title": "Unique Order Matching System",
+        "description": "Our matching algorithm connects you with the most suitable projects based on your experience and skills. Find orders that match your professional expectations.",
+        "span": "@denwa",
+        "link": "/",
+        "textBtn": "Find an Order"
+      },
+      "paymentMethods": {
+        "title": "Convenient Payment Options",
+        "description": "We provide diverse payment options for completed orders to suit your preferences. Secure and fast transactions for your comfort.",
+        "span": "@denwa",
+        "link": "/",
+        "textBtn": "Choose a Payment Method"
+      },
+      "technicalSupport": {
+        "title": "Professional 24/7 Support",
+        "description": "Our qualified specialists are ready to assist you at any time. We value your experience with Denwa and strive to provide an unprecedented level of support.",
+        "span": "@denwa",
+        "link": "/",
+        "textBtn": "Contact Technical Support"
+      }
+    }
+  },
+  "collaborationBanners": {
+    "header": {
+      "title": "Immerse Yourself in Our World",
+      "textLink": "Explore Further"
+    },
+    "firstCard": {
+      "title": "Collaborate with Us",
+      "description": "Submit ideas, ask questions that interest you, and more blah-blah-blah.",
+      "textBtn": "Learn More"
+    },
+    "secondCard": {
+      "title": "Want to Join Our Team?",
+      "description": "Submit your resume in our Telegram channel.",
+      "textBtn": "Learn More"
+    }
+  },
+  "footer": {
+    "orders": {
+      "title": "Orders",
+      "links": {
+        "link1": { "text": "Link1", "url": "/" },
+        "link2": { "text": "Link2", "url": "/" },
+        "link3": { "text": "Link3", "url": "/" },
+        "link4": { "text": "Link4", "url": "/" },
+        "link5": { "text": "Link5", "url": "/" },
+        "link6": { "text": "Link6", "url": "/" }
+      }
+    },
+    "experts": {
+      "title": "Experts",
+      "links": {
+        "link1": { "text": "Link1", "url": "/" },
+        "link2": { "text": "Link2", "url": "/" },
+        "link3": { "text": "Link3", "url": "/" },
+        "link4": { "text": "Link4", "url": "/" },
+        "link5": { "text": "Link5", "url": "/" },
+        "link6": { "text": "Link6", "url": "/" }
+      }
+    },
+    "news": {
+      "title": "News",
+      "links": {
+        "link1": { "text": "Link1", "url": "/" },
+        "link2": { "text": "Link2", "url": "/" },
+        "link3": { "text": "Link3", "url": "/" },
+        "link4": { "text": "Link4", "url": "/" },
+        "link5": { "text": "Link5", "url": "/" },
+        "link6": { "text": "Link6", "url": "/" }
+      }
+    },
+    "more": {
+      "title": "More",
+      "links": {
+        "link1": { "text": "Link1", "url": "/" },
+        "link2": { "text": "Link2", "url": "/" },
+        "link3": { "text": "Link3", "url": "/" },
+        "link4": { "text": "Link4", "url": "/" },
+        "link5": { "text": "Link5", "url": "/" },
+        "link6": { "text": "Link6", "url": "/" }
+      }
+    },
+    "inProgress": {
+      "title": "In Progress",
+      "links": {
+        "link1": { "text": "Link1", "url": "/" },
+        "link2": { "text": "Link2", "url": "/" },
+        "link3": { "text": "Link3", "url": "/" },
+        "link4": { "text": "Link4", "url": "/" },
+        "link5": { "text": "Link5", "url": "/" },
+        "link6": { "text": "Link6", "url": "/" }
+      }
+    }
+  },
+
+  "cookieModal": {
+    "title": "Baking cookies?",
+    "description": "By using our site, you consent to the use of cookies to enhance your user experience. You can disable cookies in your browser settings.",
+    "textBtn": "All right!"
+  },
+
+  "signInModal": {
+    "title": "Sign In",
+    "continueWithGoogle": "Continue with Google",
+    "or": "or",
+    "loginPlaceholder": "Username / Email",
+    "passwordPlaceholder": "Password",
+    "btnForm": "Continue",
+    "remindMe": "Remember Me",
+    "creatingAccountText": "By creating an account, I accept the following documents:",
+    "termsOfService": "Terms of Service",
+    "and": "and",
+    "confidentiality": "Privacy Policy",
+    "question": "Don't have an account yet?",
+    "btnCreate": "Create Account"
+  },
+  "signUpModal": {
+    "title": "Sign Up",
+    "continueWithGoogle": "Continue with Google",
+    "or": "or",
+    "fullNamePlaceholder": "Full Name",
+    "loginPlaceholder": "Username",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password",
+    "btnForm": "Continue",
+    "creatingAccountText": "By creating an account, I accept the following documents:",
+    "termsOfService": "Terms of Service",
+    "and": "and",
+    "confidentiality": "Privacy Policy",
+    "question": "Already have an account?",
+    "btnCreate": "Sign In"
+  },
+  "signInModalErrors": {
+    "emailorusername": "Email or username must be filled in",
+    "password": "Password field must be filled in"
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Manage your account settings",
+    "profile": {
+      "title": "Profile",
+      "description": "Customize the appearance of your profile",
+      "fullName": "Full name",
+      "fullNamePlaceholder": "John Doe",
+      "bio": "About myself",
+      "bioPlaceholder": "🚀 Hi, I am an experienced web developer with a focus on creating unique and effective websites. My portfolio includes a variety of projects.",
+      "tooltip": "The information will be displayed in your personal account",
+      "textBtn": "Save"
+    },
+    "account": {
+      "title": "Account",
+      "description": "Customize your account details",
+      "username": "Username",
+      "usernamePlaceholder": "username_",
+      "mail": "Email",
+      "mailPlaceholder": "denwa@mail.ru",
+      "btn": "Save",
+      "pass": {
+        "title": "Change Password",
+        "description": "Set a new password",
+        "old": "Enter old password",
+        "oldPlaceholder": "Old password",
+        "new": "Enter new password",
+        "newPlaceholder": "New password",
+        "confirm": "Confirm new password",
+        "confirmPlaceholder": "New password"
+      },
+      "2fa": {
+        "title": "Two-Factor Authentication",
+        "description": "Connect two-factor authentication",
+        "tooltip": "(2FA) is a security mechanism that uses two forms of verification when logging into an account or system",
+        "btn": "Enable"
+      }
+    },
+
+    "socialMedia": {
+      "title": "Social media"
+    },
+    "notifications": {
+      "title": "Notifications"
+    },
+    "logout": {
+      "title": "Log out"
+    }
+  }
 }
