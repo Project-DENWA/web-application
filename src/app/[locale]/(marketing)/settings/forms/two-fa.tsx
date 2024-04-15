@@ -8,9 +8,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/shared/ui/tooltip';
-import { Button } from '@/shared/ui/button';
+
+import ModalTrigger from '../_components/ModalTrigger';
 export default function TwoFa(): JSX.Element {
   const t = useTranslations('settings.account.2fa');
+
   return (
     <div className={css.twoFaWrapper}>
       <div>
@@ -34,9 +36,7 @@ export default function TwoFa(): JSX.Element {
         </div>
         <p className="text-light-text-main-50">{t('description')}</p>
       </div>
-      <div>
-        <Button>Включить</Button>
-      </div>
+     <ModalTrigger />
     </div>
   );
 }

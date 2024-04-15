@@ -316,13 +316,20 @@
         "new": "Enter new password",
         "newPlaceholder": "New password",
         "confirm": "Confirm new password",
-        "confirmPlaceholder": "New password"
+        "confirmPlaceholder": "New password",
+        "btn": "Change"
       },
       "2fa": {
         "title": "Two-Factor Authentication",
         "description": "Connect two-factor authentication",
         "tooltip": "(2FA) is a security mechanism that uses two forms of verification when logging into an account or system",
-        "btn": "Enable"
+        "btn": "Enable",
+        "modal": {
+          "title": "Scan the QR in the app",
+          "tooltip": "Denwa recommends Google Authenticator!",
+          "or": "or",
+          "btn": "Show key"
+        }
       }
     },
 

@@ -1,0 +1,43 @@
+.dialogContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 425px !important;
+  width: 100%;
+
+  img {
+    animation: appearance 1.5s forwards;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    h1 {
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 600;
+    }
+  }
+  .separator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .footer {
+    width: 100%;
+  }
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -32,7 +32,7 @@ export default function ChangePassword(): JSX.Element {
 
   const onSubmit = (data: ChangePassFormData) => {
     if (data.newPass !== data.confirmPass) {
-      toast.error("Пароли не совпадают");
+      toast.error('Пароли не совпадают');
       return;
     }
     const payload = {
@@ -129,7 +129,7 @@ export default function ChangePassword(): JSX.Element {
                 });
               }}
             >
-              Изменить
+              {t('btn')}
             </Button>
           </div>
         </div>

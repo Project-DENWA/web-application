@@ -307,7 +307,7 @@
       "title": "Аккаунт",
       "description": "Настройте данные своего аккаунта",
       "username": "Имя аккаунта",
-      "usernamePlaceholder": "username",
+      "usernamePlaceholder": "Username",
       "mail": "Почта",
       "mailPlaceholder": "denwa@mail.ru",
       "btn": "Сохранить",
@@ -319,13 +319,20 @@
         "new": "Введите новый пароль",
         "newPlaceholder": "Новый пароль",
         "confirm": "Подтвердите новый пароль",
-        "confirmPlaceholder": "Новый пароль"
+        "confirmPlaceholder": "Новый пароль",
+        "btn": "Изменить"
       },
       "2fa": {
         "title": "Двухфакторная аутентификация",
         "description": "Подключите двух-факторную аутентификацию",
         "tooltip": "(2FA) — это механизм безопасности, использующий две формы проверки при входе в аккаунт или систему",
-        "btn": "Включить"
+        "btn": "Включить",
+        "modal": {
+          "title": "Отсканируйте QR в приложении",
+          "tooltip": "Denwa рекомендует Google Authenticator!",
+          "or": "или",
+          "btn": "Показать ключ"
+        }
       }
     },
     "socialMedia": {
