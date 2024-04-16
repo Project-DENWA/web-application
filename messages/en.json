@@ -354,5 +354,39 @@
     "logout": {
       "title": "Log out"
     }
+  },
+  "createOrder": {
+    "navBar": {
+      "firstTitle": "Brief Description of Task",
+      "secondTitle": "Deadlines and Budget",
+      "exit": "Exit"
+    },
+    "infoBlock": {
+      "title": "First Step - Let's Begin!",
+      "description": "Share an overall picture of the task",
+      "link": "How does it work?"
+    },
+    "form": {
+      "infoSection": {
+        "title": "Are you a performer?",
+        "link": "Find a customer"
+      },
+      "title": {
+        "title": "Write a project title",
+        "description": "Share an overall picture of the task",
+        "placeholder": "Example: Want the best website in the world",
+        "link": "Examples of titles"
+      },
+      "description": {
+        "title": "Enter project description",
+        "description": "This will help convey a comprehensive understanding of the project to the specialist",
+        "placeholder": "I need...",
+        "link": "How to write a proper resume"
+      },
+      "uploadFile": {
+        "title": "Choose a file"
+      },
+      "btn": "Continue"
+    }
   }
 }
