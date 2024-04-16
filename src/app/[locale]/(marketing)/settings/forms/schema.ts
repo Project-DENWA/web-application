@@ -16,6 +16,12 @@ export interface ChangePassFormData {
   confirmPass: string;
 }
 
+export interface NotificationsFormData {
+  push: boolean;
+  sound: boolean;
+  news: boolean;
+}
+
 export const ProfileFormSchema: ZodType<ProfileFormData> = z.object({
   fullname: z.string().min(1, {
     message: 'Поле полного имени обязательно для заполнения!',
@@ -48,7 +54,7 @@ export const AccountFormSchema: ZodType<AccountFormData> = z.object({
 export const ChangePasswordSchema: ZodType<ChangePassFormData> = z.object({
   oldPass: z
     .string()
-    .min(1, { message: "Поле старого пароля обязательно для заполнения!" }),
+    .min(1, { message: 'Поле старого пароля обязательно для заполнения!' }),
   newPass: z
     .string()
     .min(6, { message: 'Пароль должен состоять не менее чем из 6 символов!' })
@@ -56,9 +62,13 @@ export const ChangePasswordSchema: ZodType<ChangePassFormData> = z.object({
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/,
       'Пароль должен содержать как минимум одну заглавную букву, одну строчную букву и одну цифру.',
     ),
-  confirmPass: z
-    .string()
-    .min(1, {
-      message: "Поле подтверждения пароля обязательно для заполнения!",
-    }),
+  confirmPass: z.string().min(1, {
+    message: 'Поле подтверждения пароля обязательно для заполнения!',
+  }),
+});
+
+export const NotificationsFormSchema = z.object({
+  push: z.boolean().default(false).optional(),
+  sound: z.boolean().default(false).optional(),
+  news: z.boolean().default(false).optional(),
 });

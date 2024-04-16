@@ -332,12 +332,24 @@
         }
       }
     },
-
     "socialMedia": {
       "title": "Social media"
     },
     "notifications": {
-      "title": "Notifications"
+      "title": "Notifications",
+      "description": "Notification settings",
+      "chat": {
+        "title": "Chat notifications",
+        "description": "Receive push notifications for new messages"
+      },
+      "sounds": {
+        "title": "Notification sounds",
+        "description": "Audible notification for new messages"
+      },
+      "news": {
+        "title": "News notification",
+        "description": "Receive news notifications about updates and more"
+      }
     },
     "logout": {
       "title": "Log out"

@@ -49,7 +49,8 @@
         width: 100%;
         animation: appearance 1s forwards;
         .form,
-        .accountForm {
+        .accountForm,
+        .notificationsform {
           display: flex;
           flex-direction: column;
           .item {
@@ -63,6 +64,12 @@
         }
         .accountForm {
           gap: 32px;
+        }
+        .notificationsform {
+          gap: 16px;
+          .btn {
+            max-width: max-content;
+          }
         }
 
         h3 {
@@ -159,6 +166,17 @@
                 font-size: 12px;
               }
             }
+          }
+        }
+
+        .notificationsItem {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          div {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
           }
         }
       }

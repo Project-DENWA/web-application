@@ -1,7 +1,7 @@
 import css from './settings.module.scss'
 import { cn } from '@/shared/lib/utils';
 import { Tabs, TabsList, TabsTrigger } from "@/shared/ui/tabs"
-import { Profile, Account } from './Tabs';
+import { Profile, Account, Notifications } from './Tabs';
 import { useTranslations } from 'next-intl';
 export default function Settings(): JSX.Element {
   const t = useTranslations("settings");
@@ -17,12 +17,13 @@ export default function Settings(): JSX.Element {
             <TabsList className={css.tabsList}>
               <TabsTrigger value='profile'>{t("profile.title")}</TabsTrigger>
               <TabsTrigger value='account'>{t("account.title")}</TabsTrigger>
-              <TabsTrigger value='social'>{t("socialMedia.title")}</TabsTrigger>
+              {/* <TabsTrigger value='social'>{t("socialMedia.title")}</TabsTrigger> */}
               <TabsTrigger value='notifications'>{t("notifications.title")}</TabsTrigger>
               <TabsTrigger value='logout'>{t("logout.title")}</TabsTrigger>
             </TabsList>         
             <Profile/>
             <Account/>
+            <Notifications/>
          </Tabs>
 
       </div>

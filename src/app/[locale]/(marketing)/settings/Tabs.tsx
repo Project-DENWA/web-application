@@ -6,6 +6,7 @@ import FormAvatar from './forms/Avatar';
 import ProfileData from './forms/profile-data';
 import AccountData from './forms/account-data';
 import ChangePassword from './forms/change-password';
+import NotificationsForm from './forms/notifications';
 import TwoFa from './forms/two-fa';
 export const Profile: React.FC = () => {
   const t = useTranslations('settings.profile');
@@ -52,6 +53,24 @@ export const Account: React.FC = () => {
         <div className={css.item}>
           <TwoFa />
         </div>
+      </div>
+    </TabsContent>
+  );
+};
+
+export const Notifications: React.FC = () => {
+  const t = useTranslations('settings.notifications');
+
+  return (
+    <TabsContent value="notifications" className={css.tabContent}>
+      <div className={css.form}>
+        <div className={css.item}>
+          <div>
+            <h3>{t('title')}</h3>
+            <p className="text-light-text-main-50">{t('description')}</p>
+          </div>
+        </div>
+        <NotificationsForm />
       </div>
     </TabsContent>
   );
