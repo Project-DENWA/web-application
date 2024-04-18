@@ -36,7 +36,6 @@
     "textBtnOrder": "Make an order",
 
     "textVariants": [
-      { "text": "russians" },
       { "text": "everyone" },
       { "text": "programmers" },
       { "text": "designers" },
@@ -355,7 +354,7 @@
       "title": "Log out"
     }
   },
-  "createOrder": {
+  "createOrderStepOne": {
     "navBar": {
       "firstTitle": "Brief Description of Task",
       "secondTitle": "Deadlines and Budget",
@@ -385,6 +384,33 @@
       },
       "uploadFile": {
         "title": "Choose a file"
+      },
+      "btn": "Continue"
+    }
+  },
+  "createOrderStepTwo": {
+    "infoBlock": {
+      "title": "Set Deadlines and Budget",
+      "description": "Share cost information with the future performer",
+      "link": "How does it work?"
+    },
+    "form": {
+      "price": {
+        "title": "Project Cost",
+        "description": "Please enter the desired project budget below",
+        "placeholder": "Cost...",
+        "checkbox": "Negotiable Price",
+        "link": "How to determine project cost?"
+      },
+      "deadline": {
+        "title": "When should the project be completed?",
+        "description": "If you haven't decided on a completion date, activate the button below",
+        "checkbox": "Undetermined Date",
+        "link": "How to determine project deadlines?"
+      },
+      "category": {
+        "title": "Select a project category",
+        "placeholder": "Choose one category"
       },
       "btn": "Continue"
     }

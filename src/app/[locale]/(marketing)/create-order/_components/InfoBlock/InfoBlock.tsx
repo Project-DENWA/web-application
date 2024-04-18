@@ -3,8 +3,17 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
 import Plug from '@/../public/Plug.png';
-export default function InfoBlock(): JSX.Element {
-  const t = useTranslations('createOrder.infoBlock');
+
+type Props = {
+  active: 'step1' | 'step2';
+};
+
+export default function InfoBlock({ active }: Props): JSX.Element {
+  const t = useTranslations(
+    active === 'step1'
+      ? 'createOrderStepOne.infoBlock'
+      : 'createOrderStepTwo.infoBlock',
+  );
   return (
     <div className={css.wrapper}>
       <h1>{t('title')}</h1>
