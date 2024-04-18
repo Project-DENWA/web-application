@@ -22,7 +22,6 @@ export default function AnimatedText() {
          { text: t("textVariants.9.text") },
          { text: t("textVariants.10.text") },
          { text: t("textVariants.11.text") },
-         { text: t("textVariants.12.text") },
       ],
       [t]
    )

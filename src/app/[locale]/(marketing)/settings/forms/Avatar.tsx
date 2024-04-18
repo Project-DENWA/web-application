@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 
 import { useAuth } from '@/shared/lib/hooks/useAuth';
 import { getUserData, setUserData } from '@/shared/lib/localstorage';
-import { UserData } from '@/shared/lib/localstorage';
+import { UserData, AvatarData } from '@/shared/lib/localstorage';
 import { useUpdateAvatarMutation } from '@/shared/redux/features/authApi';
 
 import Avatar from '@/shared/ui/Avatar';
@@ -47,7 +47,7 @@ export default function FormAvatar() {
 
     formData.append('newAvatar', fileWithLowerCaseName);
     const payload = {
-      username: user?.username,
+      userId: user?.id,
       newAvatar: formData,
     };
     return update(payload).unwrap();
@@ -57,15 +57,23 @@ export default function FormAvatar() {
     toast.promise(uploadFile(data), {
       loading: 'Обновление аватара...',
       success: (response) => {
-        console.log(response);
+        // console.log(response);
         const userData = getUserData();
-        if (userData && userData.avatarUrl) {
+        if (userData && userData.avatar) {
+          const updatedAvatarData: AvatarData = {
+            ...userData.avatar,
+            icon: response.result.url,
+          };
+
           const updatedUserData: UserData = {
             ...userData,
-            avatarUrl: response.result,
+            avatar: updatedAvatarData,
           };
+
           setUserData(updatedUserData);
           updateAuthInfo(updatedUserData, true);
+          // console.log('Updated user data:', updatedUserData);
+          // console.log('url from server', response.result.url);
         }
         return 'Аватар успешно обновлён!';
       },
@@ -88,7 +96,7 @@ export default function FormAvatar() {
           ''
         )}
         <Avatar
-          url={user?.avatarUrl}
+          url={user?.avatar.icon || undefined}
           className={css.image}
           isLoading={userLoading || isLoading ? true : false}
         />
@@ -96,7 +104,7 @@ export default function FormAvatar() {
           className={css.input}
           multiple={false}
           type="file"
-          accept="image/*"
+          accept="image/png, image/jpeg, image/jpg"
           onChange={(e) => handleFileChange(e)}
         />
       </form>

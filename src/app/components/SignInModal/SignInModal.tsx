@@ -1,42 +1,53 @@
-"use client";
-import { useEffect, useState } from "react";
+'use client';
+import { useEffect, useState } from 'react';
 
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
-import { Button } from "@/shared/ui/button";
-import { Input } from "@/shared/ui/input";
-import { Checkbox } from "@/shared/ui/checkbox";
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/shared/ui/dialog";
-import { Separator } from "@/shared/ui/separator";
-import { Form, FormControl, FormField, FormItem } from "@/shared/ui/form";
+import { Button } from '@/shared/ui/button';
+import { Input } from '@/shared/ui/input';
+import { Checkbox } from '@/shared/ui/checkbox';
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/shared/ui/dialog';
+import { Separator } from '@/shared/ui/separator';
+import { Form, FormControl, FormField, FormItem } from '@/shared/ui/form';
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
-import { z } from "zod";
-import { formSchema } from "@/app/components/SignInModal/schema";
+import { z } from 'zod';
+import { formSchema } from '@/app/components/SignInModal/schema';
 
-import { toast } from "sonner";
+import { toast } from 'sonner';
 
-import { useAuth } from "@/shared/lib/hooks/useAuth";
-import { useLoginMutation } from "@/shared/redux/features/authApi";
-import { setToken } from "@/shared/lib/cookie";
-import { setUserData } from "@/shared/lib/localstorage";
+import { useAuth } from '@/shared/lib/hooks/useAuth';
+import { useLoginMutation } from '@/shared/redux/features/authApi';
+import { setToken } from '@/shared/lib/cookie';
+import { setUserData } from '@/shared/lib/localstorage';
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl';
 
-import { cn } from "@/shared/lib/utils";
+import { cn } from '@/shared/lib/utils';
 
-import css from "@/app/components/SignInModal/Modal.module.scss";
-import googleicon from "@/../public/google icon.svg";
+import css from '@/app/components/SignInModal/Modal.module.scss';
+import googleicon from '@/../public/google icon.svg';
 
 type Props = {
   children: React.ReactNode;
-  handleOpenModal: (modalType: "signIn" | "signUp") => void;
+  handleOpenModal: (modalType: 'signIn' | 'signUp') => void;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   open: boolean;
+};
+
+type FieldErrors = {
+  [key: string]: any | undefined;
 };
 
 export default function SignInModal({
@@ -48,21 +59,18 @@ export default function SignInModal({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      emailorusername: "",
-      password: "",
+      account: '',
+      password: '',
       remember: false,
     },
   });
   const [isErrorsShown, setIsErrorsShown] = useState<boolean>(false);
-  type FieldErrors = {
-    [key: string]: any | undefined;
-  };
   const { updateAuthInfo } = useAuth();
 
   const errors: FieldErrors = form.formState.errors;
   const router = useRouter();
   const [login, { isLoading }] = useLoginMutation();
-  const t = useTranslations("signInModal");
+  const t = useTranslations('signInModal');
   type Response = {
     status: number;
     data: {
@@ -75,41 +83,44 @@ export default function SignInModal({
     for (const field in errors) {
       const errorMessage = errors[field]?.message;
       if (errorMessage) {
-        toast(errorMessage, { position: "top-center" });
+        toast(errorMessage, { position: 'top-center' });
       }
     }
     setIsErrorsShown(false);
   }, [isErrorsShown]);
 
   const signIn = async (data: z.infer<typeof formSchema>) => {
-    const emailOrUsername = data.emailorusername;
+    const emailOrUsername = data.account;
     const isEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(emailOrUsername);
-    const username = isEmail ? "" : emailOrUsername;
-    const email = isEmail ? emailOrUsername : "";
+    const username = isEmail ? '' : emailOrUsername;
+    const email = isEmail ? emailOrUsername : '';
     const payload = {
-      username,
-      email,
+      account: username,
+      email: email,
       password: data.password,
       remember: data.remember,
-      tfaCode: "123456",
+      tfaCode: '123456',
     };
-    toast.loading("Logining...");
+    toast.loading('Авторизация..');
     try {
       const response = await login(payload).unwrap();
       setToken(
         response.result.tokens.accessToken,
-        response.result.tokens.refreshToken
+        response.result.tokens.refreshToken,
       );
-      updateAuthInfo(response.result.userModel, true);
+      updateAuthInfo(response.result.user, true);
       console.log(response);
-      setUserData(response.result.userModel);
-      toast.success("Login succesfull");
+      setUserData(response.result.user);
+      toast.success('Вы успешно авторизованы!');
       form.reset();
-      router.push("/");
-    } catch (e) {
-      toast.error("Error");
-      // REMOVE
-      console.log(e);
+      router.push('/');
+    } catch (e: any) {
+      if (e.data && e.data.message) {
+        toast.error(e.data.message);
+      } else {
+        toast.error('Возникла ошибка..');
+      }
+      console.error(e);
     } finally {
       toast.dismiss();
     }
@@ -120,7 +131,7 @@ export default function SignInModal({
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className={cn(css.dialogContent)}>
         <DialogHeader>
-          <DialogTitle>{t("title")}</DialogTitle>
+          <DialogTitle>{t('title')}</DialogTitle>
         </DialogHeader>
         <Button variant="outline" size="social">
           <Image
@@ -130,12 +141,12 @@ export default function SignInModal({
             alt="google icon"
             loading="lazy"
           />
-          {t("continueWithGoogle")}
+          {t('continueWithGoogle')}
         </Button>
         <div className={css.separator}>
           <Separator orientation="horizontal" decorative />
           <p className="text-light-text-main-50 dark:text-light-text-main-50">
-            {t("or")}
+            {t('or')}
           </p>
           <Separator orientation="horizontal" decorative />
         </div>
@@ -143,12 +154,12 @@ export default function SignInModal({
           <form onSubmit={form.handleSubmit(signIn)}>
             <FormField
               control={form.control}
-              name="emailorusername"
+              name="account"
               render={({ field }) => {
                 return (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder={t("loginPlaceholder")} {...field} />
+                      <Input placeholder={t('loginPlaceholder')} {...field} />
                     </FormControl>
                   </FormItem>
                 );
@@ -161,13 +172,18 @@ export default function SignInModal({
                 return (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder={t("passwordPlaceholder")} {...field} />
+                      <Input
+                        placeholder={t('passwordPlaceholder')}
+                        {...field}
+                      />
                     </FormControl>
                   </FormItem>
                 );
               }}
             />
-            <Button onClick={() => setIsErrorsShown(true)}>{t("btnForm")}</Button>
+            <Button onClick={() => setIsErrorsShown(true)}>
+              {t('btnForm')}
+            </Button>
             <FormField
               control={form.control}
               name="remember"
@@ -181,7 +197,7 @@ export default function SignInModal({
                           onCheckedChange={field.onChange}
                         />
                         <p className="text-light-text-main-50 dark:text-light-text-main-50">
-                          {t("remindMe")}
+                          {t('remindMe')}
                         </p>
                       </div>
                     </FormControl>
@@ -194,35 +210,35 @@ export default function SignInModal({
         <p
           className={cn(
             css.privacy,
-            "text-light-text-main-50 dark:text-light-text-main-50"
+            'text-light-text-main-50 dark:text-light-text-main-50',
           )}
         >
-          {t("creatingAccountText")}{" "}
+          {t('creatingAccountText')}{' '}
           <Link
             className="dark:text-light-text-colored text-light-text-colored"
-            href={"#"}
+            href={'#'}
           >
-            {t("termsOfService")}{" "}
+            {t('termsOfService')}{' '}
           </Link>
-          {t("and")}{" "}
+          {t('and')}{' '}
           <Link
             className="dark:text-light-text-colored text-light-text-colored"
-            href={"#"}
+            href={'#'}
           >
-            {t("confidentiality")}
+            {t('confidentiality')}
           </Link>
           .
         </p>
 
         <DialogFooter>
-          <p>{t("question")}</p>
+          <p>{t('question')}</p>
           <Button
-            size={"link"}
-            className={"text-light-main-colored-100 font-normal"}
-            variant={"link"}
-            onClick={() => handleOpenModal("signUp")}
+            size={'link'}
+            className={'text-light-main-colored-100 font-normal'}
+            variant={'link'}
+            onClick={() => handleOpenModal('signUp')}
           >
-            {t("btnCreate")}
+            {t('btnCreate')}
           </Button>
         </DialogFooter>
       </DialogContent>

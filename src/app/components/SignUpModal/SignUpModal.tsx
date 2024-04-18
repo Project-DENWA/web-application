@@ -75,10 +75,10 @@ export default function SignUpModal({
       email,
       password,
     };
-    toast.loading("Creating an account...");
+    toast.loading("Создание аккаунта...");
     try {
       const responce = await register(payload).unwrap();
-      toast.success("Account created successfully");
+      toast.success("Аккаунт успешно создан!");
       form.reset();
       router.push("/");
     } catch (e) {

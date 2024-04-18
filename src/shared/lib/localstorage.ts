@@ -1,21 +1,35 @@
-export interface UserData  {
-  avatarUrl: string | undefined;
-  coverImageUrl: string | undefined;
-  bio: null | string;
-  createdAt: string;
-  email: string;
-  meta: Meta;
-  messages: boolean;
-  news: boolean;
-  username: string;
-  verified: boolean;
-  verifiedEmail: boolean;
-};
-
-
-export interface Meta {
+interface EmailData {
   id: string;
+  email: string;
+  verified: boolean;
+  token: string;
+}
+
+export interface AvatarData {
+  id: string;
+  icon: string | null;
+  cover: string | null; 
+}
+
+interface NotificationData {
+  id: string;
+  news: boolean;
+}
+
+interface MetaData {
+  id: string;
+  name: string;
   description: string | null;
+}
+
+export interface UserData {
+  id: string;
+  fullname: string;
+  createdAt: string;
+  email: EmailData;
+  avatar: AvatarData;
+  meta: MetaData;
+  notification: NotificationData;
 }
 
 export const setUserData = (userData: UserData) => {

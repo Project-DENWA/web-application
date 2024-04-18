@@ -9,7 +9,7 @@ const UserLayout = () => {
 
   useEffect(() => {
     const userData = getUserData();
-    updateAuthInfo(userData, !!userData?.username);
+    updateAuthInfo(userData, !!userData?.fullname);
   }, []);
 
   return (
