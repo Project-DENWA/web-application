@@ -37,9 +37,14 @@ export const setUserData = (userData: UserData) => {
 };
 
 export const getUserData = (): UserData | null => {
-  const userData = localStorage.getItem('userData');
-  return userData ? JSON.parse(userData) : null;
+  if (typeof window !== 'undefined') {
+    const userData = localStorage.getItem('userData');
+    return userData ? JSON.parse(userData) : null;
+  } else {
+    return null;
+  }
 };
+
 
 export const removeUserData = () => {
   localStorage.removeItem('userData');

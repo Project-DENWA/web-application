@@ -1,8 +1,8 @@
 import { ZodType, z } from 'zod';
 
 export interface ProfileFormData {
-  fullname: string;
-  bio: string;
+  name: string;
+  description: string;
 }
 
 export interface AccountFormData {
@@ -23,10 +23,10 @@ export interface NotificationsFormData {
 }
 
 export const ProfileFormSchema: ZodType<ProfileFormData> = z.object({
-  fullname: z.string().min(1, {
+  name: z.string().min(1, {
     message: 'Поле полного имени обязательно для заполнения!',
   }),
-  bio: z.string().min(1, {
+  description: z.string().min(1, {
     message: "Поле 'О себе' обязательно для заполнения",
   }),
 });

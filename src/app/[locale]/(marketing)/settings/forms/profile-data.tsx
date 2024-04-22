@@ -1,15 +1,9 @@
 'use client';
-import Image from 'next/image';
-import questionMark from '@/../public/questionMark.svg';
 import { Input } from '@/shared/ui/input';
 import { Textarea } from '@/shared/ui/textarea';
 import { Button } from '@/shared/ui/button';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/shared/ui/tooltip';
+import MyTooltip from '@/shared/ui/myTooltip';
+
 import css from '../settings.module.scss';
 import { useTranslations } from 'next-intl';
 
@@ -20,25 +14,26 @@ import { useEffect, useState } from 'react';
 import { Form, FormControl, FormField, FormItem } from '@/shared/ui/form';
 import { toast } from 'sonner';
 import { ProfileFormData, ProfileFormSchema } from './schema';
-
+import { UserData, getUserData } from '@/shared/lib/localstorage';
 type FieldErrors = {
   [key: string]: any | undefined;
 };
 
 export default function ProfileData(): JSX.Element {
   const t = useTranslations('settings.profile');
+  const userData: UserData | null = getUserData();
 
   const form = useForm<z.infer<typeof ProfileFormSchema>>({
     resolver: zodResolver(ProfileFormSchema),
     defaultValues: {
-      fullname: '',
-      bio: '',
+      name: userData?.meta.name || '',
+      description: userData?.meta.description || '',
     },
   });
   const onSubmit = (data: ProfileFormData) => {
     const payload = {
-      fullname: data.fullname,
-      bio: data.bio,
+      newUsername: data.name,
+      newDescription: data.description,
     };
     console.log('Payload:', payload);
     toast.success('Данные успешно изменены!');
@@ -65,12 +60,12 @@ export default function ProfileData(): JSX.Element {
           <h4> {t('fullName')}</h4>
           <FormField
             control={form.control}
-            name="fullname"
+            name="name"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
                   <Input
-                    id="fullname"
+                    id="name"
                     type="text"
                     placeholder={t('fullNamePlaceholder')}
                     {...field}
@@ -83,30 +78,18 @@ export default function ProfileData(): JSX.Element {
         <div className={css.editBio}>
           <div>
             <h4> {t('bio')}</h4>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Image
-                    src={questionMark}
-                    alt="Question mark"
-                    width={16}
-                    height={16}
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{t('tooltip')}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+            <MyTooltip>
+              <p>{t('tooltip')}</p>
+            </MyTooltip>
           </div>
           <FormField
             control={form.control}
-            name="bio"
+            name="description"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
                   <Textarea
-                    id="bio"
+                    id="description"
                     placeholder={t('bioPlaceholder')}
                     {...field}
                   />
