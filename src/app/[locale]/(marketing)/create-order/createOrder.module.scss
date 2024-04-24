@@ -1,12 +1,126 @@
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  width: 100%;
+  gap: 40px;
+  main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 640px;
+  width: 100%;
+  gap: 16px;
+  animation: appearance 1s forwards;
+  .checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    button {
+      max-width: none !important;
+    }
+  }
+
+  .selectTrigger {
+    width: 100%;
+    max-width: none !important;
+  }
+
+  .infoBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    width: 100%;
+    border-radius: 10px;
+    a {
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 24px;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .form {
     display: flex;
     flex-direction: column;
-    max-width: 1280px;
     width: 100%;
-    gap: 40px;
-    main {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
+    gap: 10px;
+
+    h3 {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
     }
+    h4 {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 28px;
+    }
+    input {
+      width: 100%;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+    button {
+      max-width: max-content;
+    }
+    a {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+  }
+ 
+}
+.createBtn {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.uploadFile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: max-content;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

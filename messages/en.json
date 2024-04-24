@@ -404,7 +404,7 @@
       },
       "deadline": {
         "title": "When should the project be completed?",
-        "description": "If you haven't decided on a completion date, activate the button below",
+        "description": "Set a deadline for project completion",
         "checkbox": "Undetermined Date",
         "link": "How to determine project deadlines?"
       },

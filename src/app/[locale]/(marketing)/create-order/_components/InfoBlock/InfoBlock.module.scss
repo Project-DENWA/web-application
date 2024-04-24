@@ -4,7 +4,7 @@
   align-items: flex-start;
   max-width: 440px;
   gap: 16px;
-
+  animation: appearance 1s forwards;
 
   h1 {
     background: linear-gradient(90deg, rgb(49, 116, 244), rgb(153, 211, 255));
@@ -12,7 +12,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-    font-size: 56px;
+    font-size: 52px;
     font-weight: 700;
     line-height: 60px;
   }
@@ -26,5 +26,14 @@
     font-weight: 700;
     line-height: 28px;
     text-decoration-line: underline;
+  }
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
