@@ -1,0 +1,58 @@
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 8px;
+  width: 100%;
+  padding: 20px;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .parameters {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+    .data {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+  div {
+    a {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 32px;
+    }
+    h4 {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 32px;
+    }
+    h5 {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+    h6 {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 32px;
+    }
+  }
+}

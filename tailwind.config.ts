@@ -27,7 +27,8 @@ const config = {
         main: {
           colored: {
             100: "#3174f4",
-            20: "rgba(49,116,244, 0.2)"
+            20: "rgba(49,116,244, 0.2)",
+            10: "rgb(238, 246, 254)"
           },
           dark: '#0B090A',
           full: {
@@ -49,7 +50,8 @@ const config = {
         main: {
           colored: {
             100: "#3174f4",
-            20: "rgba(49,116,244, 0.2)"
+            20: "rgba(49,116,244, 0.2)",
+            10: "rgb(45, 45, 50)"
           },
           dark: '#FFFFFF',
           full: {

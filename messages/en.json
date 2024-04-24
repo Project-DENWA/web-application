@@ -414,5 +414,33 @@
       },
       "btn": "Continue"
     }
+  },
+  "tasks": {
+    "sectionHeader": {
+      "title": "Orders",
+      "breadcrumb": {
+        "firstLink": "Home",
+        "secondLink": "Orders"
+      }
+    },
+    "filter": {
+      "title": "Filter",
+      "category": "Categories",
+      "dataSort": {
+        "title": "Publication Date",
+        "subTitle": "Sort by",
+        "24hour": "Last 24 Hours",
+        "3days": "Last 3 Days",
+        "7days": "Last 7 Days",
+        "1months": "Last 1 Month",
+        "3months": "Last 3 Months"
+      }
+    },
+    "card": {
+      "reply": "replies",
+      "views": "views",
+      "per": "per",
+      "day": "day"
+    }
   }
 }

@@ -1,0 +1,11 @@
+.accordionContent {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
