@@ -3,6 +3,7 @@ import css from './TasksCard.module.scss';
 import { cn } from '@/shared/lib/utils';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import useFormatPrice from '@/shared/lib/hooks/useFormatPrice';
 
 interface TaskProps {
   title: string;
@@ -11,8 +12,7 @@ interface TaskProps {
   reply: number;
   views: number;
   deadline: number;
-  data: string;
-  time: string;
+  time: number;
 }
 
 export default function TasksCard({
@@ -22,16 +22,22 @@ export default function TasksCard({
   reply,
   views,
   deadline,
-  data,
   time,
 }: TaskProps): JSX.Element {
-  const wrapperClass = cn(css.wrapper, 'bg-light-main-colored-10 dark:bg-dark-main-colored-10',);
-  const t = useTranslations('tasks.card')
+  const wrapperClass = cn(
+    css.wrapper,
+    'bg-light-main-colored-10 dark:bg-dark-main-colored-10',
+  );
+  const t = useTranslations('tasks.card');
+  const { value: formattedPrice, isNumber } = useFormatPrice(price);
+  
   return (
     <div className={wrapperClass}>
       <div className={css.header}>
         <Link href={'#'}>{title}</Link>
-        <h4>{price}₽</h4>
+        <h4>
+          {formattedPrice} {isNumber && '₽'}
+        </h4>
       </div>
       <div>
         <h5>{description}</h5>
@@ -41,7 +47,8 @@ export default function TasksCard({
           <div>
             <MessageCircleMore size={22} />
             <h6>
-              {reply} <span className="text-light-text-main-50">{t('reply')}</span>
+              {reply}{' '}
+              <span className="text-light-text-main-50">{t('reply')}</span>
             </h6>
           </div>
           <div>
@@ -53,11 +60,13 @@ export default function TasksCard({
           </div>
           <div>
             <Clock size={22} />
-            <span className="text-light-text-main-50">{t('per')} {deadline} {t('day')}</span>
+            <span className="text-light-text-main-50">
+              {t('per')} {deadline}
+            </span>
           </div>
         </div>
         <div className={cn(css.data, 'text-light-text-main-50')}>
-          <h6>{data}</h6>
+          <h6>{deadline}</h6>
           <h1>{time}</h1>
         </div>
       </div>

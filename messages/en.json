@@ -439,8 +439,7 @@
     "card": {
       "reply": "replies",
       "views": "views",
-      "per": "per",
-      "day": "day"
+      "per": "Until the"
     }
   }
 }
