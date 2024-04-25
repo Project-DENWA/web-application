@@ -60,28 +60,28 @@
       "name": "Графический дизайн",
       "description": "Креативный и уникальный графический дизайн.",
       "textLink": "Выбрать дизайнера",
-      "link": "/orders"
+      "link": "/tasks"
     },
     "videoProduction": {
       "icon": "videoIcon.svg",
       "name": "Видео-продакшн",
       "description": "Создание и редактирование видеоконтента для различных целей.",
       "textLink": "Посмотреть заказы",
-      "link": "/orders"
+      "link": "/tasks"
     },
     "writtenWorks": {
       "icon": "penIcon.svg",
       "name": "Письменные работы",
       "description": "Написание, редактирование текстов, статей.",
       "textLink": "Редактировать текст",
-      "link": "/orders"
+      "link": "/tasks"
     },
     "webDev": {
       "icon": "desktopIcon.svg",
       "name": "Веб-разработка",
       "description": "Проекты по созданию и развитию веб-сайтов и приложений.",
       "textLink": "Посмотреть заказы",
-      "link": "/orders"
+      "link": "/tasks"
     }
   },
   "leaderBoard": {
@@ -96,7 +96,7 @@
       "name": "Бесплатно и просто",
       "description": "Бесплатное и простое использование без скрытых платежей и комиссий.",
       "textLink": "Быстрый старт",
-      "link": "/"
+      "link": "/tasks"
     },
     "dataProtection": {
       "icon": "Shield.svg",

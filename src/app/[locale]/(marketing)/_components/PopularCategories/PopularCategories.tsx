@@ -4,9 +4,10 @@ import ICategoriesCardProps from "@/app/interfaces/ICategoriesCardProps"
 import Illustration from "@/../public/categoryIcons/IllustrationCategories.png"
 import Image from "next/image"
 import HeaderLink from "@/app/[locale]/(marketing)/_components/HeaderLink/HeaderLink"
-import { useTranslations } from "next-intl"
+import { useTranslations, useLocale } from "next-intl"
 export default function PopularCategories() {
    const t = useTranslations("categories")
+   const locale = useLocale();
    const keys = ["graphDesign", "videoProduction", "writtenWorks", "webDev"]
 
    const categoryCards = keys.map(key => ({
@@ -22,7 +23,7 @@ export default function PopularCategories() {
          <div className={css.navContainer}>
             <HeaderLink
                title={t("title")}
-               href='/categories'
+               href={`${locale}/tasks`}
                description={t("textLink")}
                abbreviatedDescription={t("abbreviatedDescription")}
             />

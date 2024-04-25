@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import arrowRightSmall from "@/../public/arrow-right-small.svg";
 import ICategoriesCardProps from "@/app/interfaces/ICategoriesCardProps";
-
+import { useLocale } from "next-intl";
 export default function PopularCategoryCard({
   name,
   description,
@@ -11,6 +11,7 @@ export default function PopularCategoryCard({
   link,
   textLink,
 }: ICategoriesCardProps) {
+  const locale = useLocale();
   return (
     <article
       className={
@@ -25,7 +26,7 @@ export default function PopularCategoryCard({
             <p className="dark:text-dark-text-primary">{description}</p>
           </div>
         </div>
-        <Link href={link} className="text-dark-text-colored">
+        <Link href={`${locale}/${link}`} className="text-dark-text-colored">
           {textLink}
           <Image
             alt="arrow icon"

@@ -59,28 +59,28 @@
       "name": "Graphic Design",
       "description": "Creative and unique graphic design.",
       "textLink": "Choose a designer",
-      "link": "/orders"
+      "link": "/tasks"
     },
     "videoProduction": {
       "icon": "videoIcon.svg",
       "name": "Video Production",
       "description": "Creating and editing video content for various purposes.",
       "textLink": "View orders",
-      "link": "/orders"
+      "link": "/tasks"
     },
     "writtenWorks": {
       "icon": "penIcon.svg",
       "name": "Written Works",
       "description": "Writing, editing texts, articles.",
       "textLink": "Edit text",
-      "link": "/orders"
+      "link": "/tasks"
     },
     "webDev": {
       "icon": "desktopIcon.svg",
       "name": "Web Development",
       "description": "Projects for creating and developing websites and applications.",
       "textLink": "View orders",
-      "link": "/orders"
+      "link": "/tasks"
     }
   },
   "leaderBoard": {

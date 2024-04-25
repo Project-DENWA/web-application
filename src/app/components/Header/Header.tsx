@@ -8,9 +8,10 @@ import LocaleSwitcher from "@/shared/ui/LocaleSwitcher";
 import ThemeSwitcher from "@/shared/ui/ThemeSwitcher";
 import UnauthorizedUser from "./UnauthorizedUser";
 import UserLayout from "./UserLayout";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 export default function Header() {
   const t = useTranslations("header")
+  const locale = useLocale()
   return (
     <header
       className={
@@ -55,25 +56,25 @@ export default function Header() {
         </Link>
         <nav>
           <Link
-            href={"./#"}
+            href={`${locale}/create-order`}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
             {t("orders")}
           </Link>
           <Link
-            href={"./#"}
+            href={`${locale}/freelancers`}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
             {t("specialists")}
           </Link>
           <Link
-            href={"./#"}
+            href={`${locale}/news`}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
             {t("news")}
           </Link>
           <Link
-            href={"./#"}
+            href={`${locale}/more`}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
             {t("more")}
