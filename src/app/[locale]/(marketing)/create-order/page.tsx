@@ -15,7 +15,13 @@ import { Input } from '@/shared/ui/input';
 import { Button } from '@/shared/ui/button';
 import { Textarea } from '@/shared/ui/textarea';
 import { Checkbox } from '@/shared/ui/checkbox';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/shared/ui/select';
 import { Form, FormControl, FormField, FormItem } from '@/shared/ui/form';
 
 import Image from 'next/image';
@@ -26,6 +32,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 
+import { useCreateOrderMutation } from '@/shared/redux/features/worksApi';
+
 import paperClip from '@/../public/Paperclip.svg';
 
 type FieldErrors = {
@@ -33,7 +41,7 @@ type FieldErrors = {
 };
 
 const categories = [
-  { value: 'web', label: 'Веб-разработка' },
+  { value: 'Web Development', label: 'Веб-разработка' },
   { value: 'mobile', label: 'Мобильная-разработка' },
   { value: 'gameDev', label: 'Геймдев' },
   { value: 'dataScience', label: 'Наука о данных' },
@@ -42,9 +50,10 @@ const categories = [
 ];
 
 export default function CreateOrderStepOne(): JSX.Element {
+  const [create, { isLoading }] = useCreateOrderMutation();
   const [activeTab, setActiveTab] = useState<'step1' | 'step2'>('step1');
   const [isPriceDisabled, setIsPriceDisabled] = useState<boolean>(false);
-
+  const [buttonDisabled, setButtonDisabled] = useState<boolean>(false);
   const t = useTranslations(
     activeTab === 'step1'
       ? 'createOrderStepOne.form'
@@ -73,25 +82,42 @@ export default function CreateOrderStepOne(): JSX.Element {
       title: '',
       description: '',
       images: [],
-      price: 0,
+      cost: 0,
       deadline: '',
-      category: '',
+      categoryNames: '',
     },
   });
 
-  const onSubmit = (data: any) => {
-    const price = isPriceDisabled ? 0 : data.price;
+  const onSubmit = async (data: z.infer<typeof CreateOrderFormSchema>) => {
+    const price = isPriceDisabled ? 0 : data.cost;
     const payload = {
       title: data.title,
       description: data.description,
       images: data.images,
-      price: price,
+      cost: price,
       deadline: data.deadline,
-      category: data.category,
+      categoryNames: data.categoryNames.split(','),
     };
+    toast.loading('Создание заказа..');
+    setButtonDisabled(true);
     console.log('Payload:', payload);
-    form.reset();
-    toast.success('Заказ успешно создан!');
+    try {
+      //@ts-ignore
+      const response = await create(payload).unwrap();
+      form.reset();
+      toast.success('Заказ успешно создан!');
+      console.log('send payload:', payload);
+      setButtonDisabled(false);
+    } catch (e: any) {
+      if (e.data && e.data.message) {
+        toast.error(e.data.message);
+      } else {
+        toast.error('Упсс, возникла ошибка...');
+      }
+      console.error(e);
+    } finally {
+      toast.dismiss();
+    }
   };
 
   const [isErrorsShown, setIsErrorsShown] = useState<boolean>(false);
@@ -213,7 +239,7 @@ export default function CreateOrderStepOne(): JSX.Element {
                   </h4>
                   <FormField
                     control={form.control}
-                    name="price"
+                    name="cost"
                     render={({ field }) => (
                       <FormItem>
                         <FormControl>
@@ -275,13 +301,10 @@ export default function CreateOrderStepOne(): JSX.Element {
                   <h3>{t('category.title')}</h3>
                   <FormField
                     control={form.control}
-                    name="category"
+                    name="categoryNames"
                     render={({ field }) => (
                       <FormItem>
-                        <Select
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                        >
+                        <Select onValueChange={field.onChange}>
                           <FormControl>
                             <SelectTrigger className={css.selectTrigger}>
                               <SelectValue placeholder={t('category.title')} />
@@ -310,10 +333,13 @@ export default function CreateOrderStepOne(): JSX.Element {
               onClick={() => {
                 setIsErrorsShown(true);
                 form.handleSubmit((data) => {
-                  onSubmit(data);
+                  if (form.formState.isValid) {
+                    onSubmit(data);
+                  }
                 })();
               }}
               type="submit"
+              disabled={buttonDisabled}
             >
               Создать
             </Button>

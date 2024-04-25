@@ -1,12 +1,12 @@
 import { ZodType, z } from 'zod';
 
-interface CreateOrderFormData {
+export interface CreateOrderFormData {
   title: string;
   description: string;
   images: File[] | null;
-  price: number | string;
+  cost: number | string;
   deadline: string;
-  category: string;
+  categoryNames: string;
 }
 
 export const CreateOrderFormSchema: ZodType<CreateOrderFormData> = z.object({
@@ -24,7 +24,7 @@ export const CreateOrderFormSchema: ZodType<CreateOrderFormData> = z.object({
     .max(5, {
       message: 'Можно загружать только до 5 изображений!',
     }),
-  price: z
+    cost: z
     .union([z.number(), z.string()])
     .transform((val) => (typeof val === 'number' ? val.toString() : val))
     .refine((val) => val !== '' && !isNaN(parseFloat(val)), {
@@ -34,7 +34,9 @@ export const CreateOrderFormSchema: ZodType<CreateOrderFormData> = z.object({
   deadline: z.string().min(1, {
     message: 'Поле срока проекта обязательно для заполнения',
   }),
-  category: z.string().min(1, {
-    message: "Поле категории обязательно для заполнения",
- }),
+  categoryNames: z
+    .string()
+    .min(1, {
+      message: "Поле категории обязательно для заполнения",
+    }),
 });

@@ -9,8 +9,7 @@ type Props = {
 export default function Banner({ url, className, isLoading }: Props) {
   const default_banner: string = '/account/bannerForTest.jpg';
   const baseUrl: string =
-    'https://lr4wkl74-5000.euw.devtunnels.ms/users/cover/';
-
+    'https://xm5pqtm1-5000.euw.devtunnels.ms/users/cover/';
   return (
     <div className={`${css.banner} ${className}`}>
       {url ? (
