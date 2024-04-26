@@ -56,7 +56,7 @@ export default function Header() {
         </Link>
         <nav>
           <Link
-            href={`${locale}/create-order`}
+            href={`${locale}/orders`}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
             {t("orders")}

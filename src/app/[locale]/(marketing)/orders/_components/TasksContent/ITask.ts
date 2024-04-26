@@ -1,9 +1,3 @@
-interface MetaData {
-  id: string;
-  name: string;
-  description: string;
-}
-
 interface User {
   id: string;
   fullname: string;
@@ -16,9 +10,12 @@ interface Category {
 
 export interface Task {
   id: string;
+  name: string;
+  description: string;
   cost: number;
   deadline: number;
-  meta: MetaData;
+  views: number;
+  status: string;
   createdAt: string;
   user: User;
   categories: Category[];

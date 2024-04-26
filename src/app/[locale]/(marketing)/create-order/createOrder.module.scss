@@ -14,7 +14,7 @@
 .projectInfo {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
   max-width: 640px;
   width: 100%;
   gap: 16px;
@@ -99,10 +99,17 @@
   }
  
 }
-.createBtn {
+.createBtn, .nextBtn {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+
+}
+.createBtn {
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+  }
 }
 .uploadFile {
   display: flex;

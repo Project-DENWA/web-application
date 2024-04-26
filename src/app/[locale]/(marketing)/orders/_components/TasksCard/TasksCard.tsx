@@ -4,33 +4,34 @@ import { cn } from '@/shared/lib/utils';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import useFormatPrice from '@/shared/lib/hooks/useFormatPrice';
+import useFormatCreatedAt from '@/shared/lib/hooks/useFormatDate';
 
 interface TaskProps {
   title: string;
   description: string;
-  price: number;
+  cost: number;
   reply: number;
   views: number;
   deadline: number;
-  time: number;
+  createdAt: string;
 }
 
 export default function TasksCard({
   title,
   description,
-  price,
+  cost,
   reply,
   views,
   deadline,
-  time,
+  createdAt
 }: TaskProps): JSX.Element {
   const wrapperClass = cn(
     css.wrapper,
     'bg-light-main-colored-10 dark:bg-dark-main-colored-10',
   );
   const t = useTranslations('tasks.card');
-  const { value: formattedPrice, isNumber } = useFormatPrice(price);
-  
+  const { value: formattedPrice, isNumber } = useFormatPrice(cost);
+  const formatCreatedAt = useFormatCreatedAt(createdAt)
   return (
     <div className={wrapperClass}>
       <div className={css.header}>
@@ -66,8 +67,8 @@ export default function TasksCard({
           </div>
         </div>
         <div className={cn(css.data, 'text-light-text-main-50')}>
-          <h6>{deadline}</h6>
-          <h1>{time}</h1>
+          <h6>{formatCreatedAt.date}</h6>
+          <h1>{formatCreatedAt.time}</h1>
         </div>
       </div>
     </div>

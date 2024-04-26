@@ -55,7 +55,7 @@
       }
    }
 
-   a {
+   .links {
       display: flex;
       align-items: center;
       gap: 30px;
@@ -157,7 +157,7 @@
          }
       }
 
-      a {
+      .links {
          gap: 10px;
          button {
             font-size: 12px;
@@ -194,7 +194,7 @@
             line-height: 24px !important;
          }
       }
-      a {
+      .links {
          .mainBtn {
             display: none;
          }

@@ -7,7 +7,7 @@ import { Task } from './ITask';
 
 export default function TasksContent(): JSX.Element {
   const [tasks, setTasks] = useState<Task[]>([]);
-
+  console.log(tasks);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -35,13 +35,14 @@ export default function TasksContent(): JSX.Element {
         {tasks.map((task, index) => (
           <TasksCard
             key={task.id}
-            title={task.meta.name}
-            description={task.meta.description}
-            price={task.cost}
+            title={task.name}
+            description={task.description}
+            cost={task.cost}
             deadline={task.deadline}
             reply={1}
             time={1}
-            views={1}
+            views={task.views}
+            createdAt={task.createdAt}
           />
         ))}
       </div>

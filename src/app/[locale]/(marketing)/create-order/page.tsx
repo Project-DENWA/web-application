@@ -111,8 +111,10 @@ export default function CreateOrderStepOne(): JSX.Element {
     } catch (e: any) {
       if (e.data && e.data.message) {
         toast.error(e.data.message);
+        setButtonDisabled(true);
       } else {
         toast.error('Упсс, возникла ошибка...');
+        setButtonDisabled(true);
       }
       console.error(e);
     } finally {
@@ -228,6 +230,11 @@ export default function CreateOrderStepOne(): JSX.Element {
                     />
                   </label>
                 </div>
+                <div className={css.nextBtn}>
+                  <Button onClick={() => setActiveTab('step2')}>
+                    Продолжить
+                  </Button>
+                </div>
               </div>
             )}
             {activeTab === 'step2' && (
@@ -325,25 +332,25 @@ export default function CreateOrderStepOne(): JSX.Element {
                     )}
                   />
                 </div>
+                <div className={css.createBtn}>
+                  <Button
+                    onClick={() => {
+                      setIsErrorsShown(true);
+                      form.handleSubmit((data) => {
+                        if (form.formState.isValid) {
+                          onSubmit(data);
+                        }
+                      })();
+                    }}
+                    type="submit"
+                    disabled={buttonDisabled}
+                  >
+                    Создать заказ
+                  </Button>
+                </div>
               </div>
             )}
           </main>
-          <div className={css.createBtn}>
-            <Button
-              onClick={() => {
-                setIsErrorsShown(true);
-                form.handleSubmit((data) => {
-                  if (form.formState.isValid) {
-                    onSubmit(data);
-                  }
-                })();
-              }}
-              type="submit"
-              disabled={buttonDisabled}
-            >
-              Создать
-            </Button>
-          </div>
         </form>
       </Form>
     </Page>
