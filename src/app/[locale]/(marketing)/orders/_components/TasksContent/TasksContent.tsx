@@ -1,32 +1,19 @@
 'use client'
-import { useState, useEffect } from 'react';
 import css from './tasksContent.module.scss';
 import TasksFilter from '../TasksFilter/TasksFilter';
 import TasksCard from '../TasksCard/TasksCard';
-import { Task } from './ITask';
-
+import { useGetWorksQuery } from '@/shared/redux/features/worksApi';
 export default function TasksContent(): JSX.Element {
-  const [tasks, setTasks] = useState<Task[]>([]);
-  console.log(tasks);
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch('https://xm5pqtm1-5000.euw.devtunnels.ms/works');
-        if (!res.ok) {
-          throw new Error('Failed to fetch data');
-        }
-        const data = await res.json();
-        if (data.ok) {
-          setTasks(data.result);
-        } else {
-          throw new Error('Response not okay');
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchData();
-  }, []);
+
+  const { data: tasks = [], error, isLoading } = useGetWorksQuery({
+    sort: 'relevant',
+    page: 1,
+    pageSize: 10,
+  });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className={css.wrapper}>

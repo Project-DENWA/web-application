@@ -3,7 +3,10 @@ import { Middleware } from '@reduxjs/toolkit';
 export const localStorageMiddleware: Middleware =
   (store) => (next) => (action) => {
     const result = next(action);
-    localStorage.setItem('authState', JSON.stringify(store.getState().auth));
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('authState', JSON.stringify(store.getState().auth));
+    }
+    
     return result;
   };
 
