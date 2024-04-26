@@ -1,0 +1,79 @@
+.button {
+  background: #00aed480;
+  border: 1px solid #00aed4;
+  border-radius: 10px;
+  width: 100%;
+  height: 40px;
+  max-width: 560px;
+}
+
+.input {
+  background: #003343;
+  border: 1px solid #00aed4;
+  border-radius: 10px;
+  max-width: 560px;
+  width: 100%;
+  height: 40px;
+}
+
+.label {
+  width: 150px;
+  height: 27px;
+  background: #003343;
+  border-radius: 5px;
+}
+
+.div {
+  // background: rgb(45 45 50);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.pulsate {
+  // background: linear-gradient(-45deg, rgb(45 45 50), rgb(35 35 40), rgb(45 45 50), rgb(35 35 40));
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 2.25s ease infinite;
+  -moz-animation: Gradient 2.25s ease infinite;
+  animation: Gradient 2.25s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

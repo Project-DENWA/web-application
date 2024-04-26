@@ -1,19 +1,22 @@
 'use client'
 import css from './tasksContent.module.scss';
 import TasksFilter from '../TasksFilter/TasksFilter';
-import TasksCard from '../TasksCard/TasksCard';
 import { useGetWorksQuery } from '@/shared/redux/features/worksApi';
-export default function TasksContent(): JSX.Element {
+import dynamic from 'next/dynamic';
+import TasksCardSkeleton from '../TasksCard/skeleton';
+const TasksCard = dynamic(() => import('../TasksCard/TasksCard'), {
+  loading: () => <TasksCardSkeleton/>,
+  ssr: false,
+});
 
+export default function TasksContent(): JSX.Element {
   const { data: tasks = [], error, isLoading } = useGetWorksQuery({
     sort: 'relevant',
     page: 1,
     pageSize: 10,
   });
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+
 
   return (
     <div className={css.wrapper}>
