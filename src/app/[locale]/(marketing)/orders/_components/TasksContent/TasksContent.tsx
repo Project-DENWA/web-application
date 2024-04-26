@@ -40,7 +40,6 @@ export default function TasksContent(): JSX.Element {
             cost={task.cost}
             deadline={task.deadline}
             reply={1}
-            time={1}
             views={task.views}
             createdAt={task.createdAt}
           />

@@ -23,7 +23,7 @@ export default function PopularCategories() {
          <div className={css.navContainer}>
             <HeaderLink
                title={t("title")}
-               href={`${locale}/tasks`}
+               href={`${locale}/orders`}
                description={t("textLink")}
                abbreviatedDescription={t("abbreviatedDescription")}
             />

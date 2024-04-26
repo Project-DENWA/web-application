@@ -5,7 +5,7 @@ import TasksContent from './_components/TasksContent/TasksContent';
 import { useTranslations } from 'next-intl';
 
 
-export default function Tasks(): JSX.Element {
+export default function Orders(): JSX.Element {
   const t = useTranslations('tasks.sectionHeader')
 
   const breadcrumb_data = [
