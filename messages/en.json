@@ -18,7 +18,7 @@
       },
       "createResume": {
         "title": "Create Resume",
-        "href": "/resumebuilder"
+        "href": "/create-resume"
       },
       "logout": {
         "title": "Logout",
@@ -441,5 +441,47 @@
       "views": "views",
       "per": "Until the"
     }
+  },
+  "createResume": {
+    "header": {
+      "title": "Resume",
+      "description": "Tell a little about yourself. This information will help employers notice you.",
+      "breadcrumbs": {
+        "main": "Main",
+        "current": "Resume Creation"
+      }
+    },
+    "content": {
+      "fieldName": {
+        "title": "Tagname",
+        "placeholder": "Name",
+        "questionMark": "Unique user tag for easy resume retrieval"
+      },
+      "fieldDescription": {
+        "title": "Description",
+        "placeholder": "🚀 Hello! I'm an experienced web developer focused on creating unique and efficient websites. My portfolio includes a variety of projects."
+      },
+      "fieldLanguage": {
+        "title": "Language",
+        "placeholder": "Language",
+        "selectPlaceholder": "Select language proficiency:"
+      },
+      "fieldSkills": {
+        "title": "Your Skills",
+        "placeholder": "Skill",
+        "expPlaceholder": "Experience",
+        "selectPlaceholder": "Experience"
+      },
+      "fieldSocials": {
+        "title": "Social Networks",
+        "website": "Personal Website",
+        "twitter": "Twitter",
+        "github": "GitHub",
+        "telegram": "Telegram",
+        "discord": "Discord"
+      },
+      "btn": "Create Resume"
+    }
   }
+
 }

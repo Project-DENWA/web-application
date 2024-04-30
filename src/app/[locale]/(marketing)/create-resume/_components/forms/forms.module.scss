@@ -1,0 +1,79 @@
+.wrapper,
+.field,
+.fieldTextArea,
+.languageField,
+.skillsField {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.wrapper {
+  flex-direction: column;
+  gap: 30px;
+  max-width: 910px;
+  width: 100%;
+
+  .field {
+    max-width: 550px;
+    width: 100%;
+    gap: 40px;
+
+    .input {
+      max-width: 340px;
+      width: 100%;
+    }
+  }
+
+  .fieldTextArea {
+    max-width: 910px;
+    width: 100%;
+
+    .textarea {
+      max-width: 700px;
+      min-height: 128px;
+      width: 100%;
+    }
+  }
+  .languageField,
+  .skillsField {
+    width: 100%;
+    svg {
+      cursor: pointer;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  .languageField {
+    .input,
+    .selectTrigger {
+      width: 320px;
+    }
+  }
+
+  .skillsField {
+    .input,
+    .selectTrigger {
+      width: 275px;
+    }
+    .expInput {
+      max-width: 70px;
+      width: 100%;
+    }
+  }
+
+  .accordionContent {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+  }
+  .questionMark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
