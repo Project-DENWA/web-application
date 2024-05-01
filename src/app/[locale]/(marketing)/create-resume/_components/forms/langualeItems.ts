@@ -8,6 +8,6 @@ export const languageItems = [
 ];
 
 export const dateFormat = [
-  { value: 'month', label: 'Месяц' },
-  { value: 'year', label: 'Год' },
+  { value: 'm', label: 'Месяц' },
+  { value: 'y', label: 'Год' },
 ];

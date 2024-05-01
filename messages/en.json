@@ -475,10 +475,10 @@
       "fieldSocials": {
         "title": "Social Networks",
         "website": "Personal Website",
-        "twitter": "Twitter",
-        "github": "GitHub",
-        "telegram": "Telegram",
-        "discord": "Discord"
+        "twitter": "Twitter @username",
+        "github": "GitHub @username",
+        "telegram": "Telegram @username",
+        "discord": "Discord @username"
       },
       "btn": "Create Resume"
     }

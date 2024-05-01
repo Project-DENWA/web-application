@@ -478,10 +478,10 @@
       "fieldSocials": {
         "title": "Социальные сети",
         "website": "Личный веб-сайт",
-        "twitter": "Twitter",
-        "github": "GitHub",
-        "telegram": "Telegram",
-        "discord": "Discord"
+        "twitter": "Twitter @username",
+        "github": "GitHub @username",
+        "telegram": "Telegram @username",
+        "discord": "Discord @username"
       },
       "btn": "Создать резюме"
     }

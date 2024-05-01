@@ -12,7 +12,18 @@
   gap: 30px;
   max-width: 910px;
   width: 100%;
+  .table {
+    display: flex;
+    justify-content: space-between;
+    max-width: 910px;
+    width: 100%;
 
+    div {
+      p {
+        line-height: 26px;
+      }
+    }
+  }
   .field {
     max-width: 550px;
     width: 100%;
