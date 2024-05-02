@@ -517,5 +517,28 @@
       "rating": "Рейтинг",
       "experience": "Опыт"
     }
+  },
+  "orderDetails": {
+    "header": {
+      "title": "Разработка сайта на Tilda",
+      "breadcrumbs": {
+        "main": "Главная",
+        "past": "Заказы",
+        "current": "Подробное описание заказа"
+      }
+    },
+    "userInfo": {
+      "role": "Заказчик",
+      "rating": "Рейтинг",
+      "views": "просмотров",
+      "reply": "откликов",
+      "btn": "Откликнуться"
+    },
+    "requirement": {
+      "title": "Требование"
+    },
+    "relatedOrders": {
+      "title": "Похожие заказы"
+    }
   }
 }

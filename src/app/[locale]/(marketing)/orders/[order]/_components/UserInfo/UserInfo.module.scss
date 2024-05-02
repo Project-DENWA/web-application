@@ -1,0 +1,75 @@
+.userInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .leftItems {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .avatar {
+          max-width: 60px;
+          max-height: 60px;
+          img {
+            border-radius: 100%;
+            cursor: pointer;
+          }
+        }
+        .userName {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          h2 {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 24px;
+          }
+          h5 {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+          }
+        }
+      }
+      .stats {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        div {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+    }
+
+    .rightItems {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      .terms {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        h4 {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 20px;
+        }
+        div {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+    }
+  }

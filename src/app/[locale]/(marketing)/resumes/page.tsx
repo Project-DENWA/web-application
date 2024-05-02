@@ -4,7 +4,7 @@ import SectionHeader from '@/shared/ui/sectionHeader/SectionHeader';
 import ResumesContent from './_components/ResumesContent/page';
 import { useTranslations } from 'next-intl';
 
-export default function Resumes() {
+export default function Resumes(): JSX.Element {
   const t = useTranslations('resumes');
 
   const breadcrumb_data = [

@@ -514,5 +514,28 @@
       "rating": "Rating",
       "experience": "Experience"
     }
+  },
+  "orderDetails": {
+    "header": {
+      "title": "Website Development on Tilda",
+      "breadcrumbs": {
+        "main": "Main",
+        "past": "Orders",
+        "current": "Order Details"
+      }
+    },
+    "userInfo": {
+      "role": "Customer",
+      "rating": "Rating",
+      "views": "views",
+      "reply": "replies",
+      "btn": "Respond"
+    },
+    "requirement": {
+      "title": "Requirement"
+    },
+    "relatedOrders": {
+      "title": "Related Orders"
+    }
   }
 }
