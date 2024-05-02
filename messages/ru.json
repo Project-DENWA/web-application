@@ -485,5 +485,37 @@
       },
       "btn": "Создать резюме"
     }
+  },
+  "resumes": {
+    "header": {
+      "title": "Специалисты",
+      "breadcrumbs": {
+        "main": "Главная",
+        "current": "Специалисты"
+      }
+    },
+    "filter": {
+      "title": "Фильтр",
+      "category": "Категории",
+      "payment": "Оплата",
+      "rating": "Рейтинг",
+      "experience": {
+        "title": "Опыт",
+        "irrelevant": "Не имеет значения",
+        "noExp": "Без опыта",
+        "oneToThree": "1 - 3 года",
+        "overThree": "Более 3 лет"
+      },
+      "verification": {
+        "title": "Верификация",
+        "irrelevant": "Не имеет значения",
+        "have": "Есть",
+        "absent": "Нет"
+      }
+    },
+    "card": {
+      "rating": "Рейтинг",
+      "experience": "Опыт"
+    }
   }
 }

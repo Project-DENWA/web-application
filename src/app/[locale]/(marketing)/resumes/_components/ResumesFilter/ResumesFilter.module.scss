@@ -1,0 +1,19 @@
+.wrapper {
+  max-width: 335px;
+  width: 100%;
+  border-radius: 8px;
+  .element {
+    padding: 18px;
+  }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 29px;
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 29px;
+  }
+}

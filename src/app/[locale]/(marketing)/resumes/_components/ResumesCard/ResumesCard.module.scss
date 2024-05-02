@@ -1,0 +1,66 @@
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border-radius: 8px;
+  max-width: 818px;
+  width: 100%;
+  padding: 20px;
+  .rightItems {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .username {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      img {
+        cursor: pointer;
+      }
+    }
+    .categories {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      flex-wrap: wrap;
+      max-width: 680px;
+      width: 100%;
+    }
+    .stats {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .stars {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+    .description {
+      max-width: 680px;
+      width: 100%;
+    }
+    div {
+      h2 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+      }
+      h4 {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+      }
+      h5 {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22px;
+      }
+    }
+  }
+}

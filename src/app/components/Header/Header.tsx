@@ -62,7 +62,7 @@ export default function Header() {
             {t("orders")}
           </Link>
           <Link
-            href={`/${locale}/freelancers`}
+            href={`/${locale}/resumes`}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
             {t("specialists")}

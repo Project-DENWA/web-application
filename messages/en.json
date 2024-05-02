@@ -482,6 +482,37 @@
       },
       "btn": "Create Resume"
     }
+  },
+  "resumes": {
+    "header": {
+      "title": "Specialists",
+      "breadcrumbs": {
+        "main": "Main",
+        "current": "Specialists"
+      }
+    },
+    "filter": {
+      "title": "Filter",
+      "category": "Categories",
+      "payment": "Payment",
+      "rating": "Rating",
+      "experience": {
+        "title": "Experience",
+        "irrelevant": "Irrelevant",
+        "noExp": "No Experience",
+        "oneToThree": "1 - 3 years",
+        "overThree": "Over 3 years"
+      },
+      "verification": {
+        "title": "Verification",
+        "irrelevant": "Irrelevant",
+        "have": "Have",
+        "absent": "Absent"
+      }
+    },
+    "card": {
+      "rating": "Rating",
+      "experience": "Experience"
+    }
   }
-
 }
