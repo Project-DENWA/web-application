@@ -2,11 +2,12 @@ import { MessageCircleMore, Eye, Clock } from 'lucide-react';
 import css from './TasksCard.module.scss';
 import { cn } from '@/shared/lib/utils';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import useFormatPrice from '@/shared/lib/hooks/useFormatPrice';
 import useFormatCreatedAt from '@/shared/lib/hooks/useFormatDate';
 
 interface TaskProps {
+  id: string;
   title: string;
   description: string;
   cost: number;
@@ -17,25 +18,27 @@ interface TaskProps {
 }
 
 export default function TasksCard({
+  id,
   title,
   description,
   cost,
   reply,
   views,
   deadline,
-  createdAt
+  createdAt,
 }: TaskProps): JSX.Element {
   const wrapperClass = cn(
     css.wrapper,
     'bg-light-main-colored-10 dark:bg-dark-main-colored-10',
   );
+  const locale = useLocale();
   const t = useTranslations('tasks.card');
   const { value: formattedPrice, isNumber } = useFormatPrice(cost);
-  const formatCreatedAt = useFormatCreatedAt(createdAt)
+  const formatCreatedAt = useFormatCreatedAt(createdAt);
   return (
     <div className={wrapperClass}>
       <div className={css.header}>
-        <Link href={'#'}>{title}</Link>
+        <Link href={`/${locale}/orders/${id}`}>{title}</Link>
         <h4>
           {formattedPrice} {isNumber && '₽'}
         </h4>

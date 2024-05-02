@@ -36,6 +36,7 @@ export default function TasksContent(): JSX.Element {
       <div className={css.cards}>
         {tasks.map((task, index) => (
           <TasksCard
+            id={task.id}
             key={task.id}
             title={task.name}
             description={task.description}

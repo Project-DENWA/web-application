@@ -56,25 +56,25 @@ export default function Header() {
         </Link>
         <nav>
           <Link
-            href={`${locale}/orders`}
+            href={`/${locale}/orders`}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
             {t("orders")}
           </Link>
           <Link
-            href={`${locale}/freelancers`}
+            href={`/${locale}/freelancers`}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
             {t("specialists")}
           </Link>
           <Link
-            href={`${locale}/news`}
+            href={`/${locale}/news`}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
             {t("news")}
           </Link>
           <Link
-            href={`${locale}/more`}
+            href={`/${locale}/more`}
             className="hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors"
           >
             {t("more")}
