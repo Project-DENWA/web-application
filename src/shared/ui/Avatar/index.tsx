@@ -9,8 +9,7 @@ type Props = {
 
 export default function Avatar({ url, className, isLoading }: Props) {
   const default_avatar: string = '/account/AvatarForTest.png';
-  const baseUrl: string =
-    'https://xm5pqtm1-5000.euw.devtunnels.ms/users/avatar/';
+  const baseUrl: string = 'http://79.174.80.17:5000/users/avatar/';
 
   return (
     <div className={`${css.wrapper} ${className}`}>

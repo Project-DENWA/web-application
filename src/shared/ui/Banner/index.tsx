@@ -8,8 +8,8 @@ type Props = {
 
 export default function Banner({ url, className, isLoading }: Props) {
   const default_banner: string = '/account/bannerForTest.jpg';
-  const baseUrl: string =
-    'https://xm5pqtm1-5000.euw.devtunnels.ms/users/cover/';
+  const baseUrl: string = 'http://79.174.80.17:5000/users/cover/';
+
   return (
     <div className={`${css.banner} ${className}`}>
       {url ? (
