@@ -9,18 +9,22 @@ interface Category {
   name: string;
 }
 
-export interface Task {
+export interface OrderResult {
   id: string;
   name: string;
   description: string;
   cost: string;
-  deadline: number;
+  deadline: Date;
   views: number;
   status: string;
   createdAt: string;
   user: User;
-  images: string[]; 
-  feedbacksAmount: number;
   categories: Category[];
+  images: string[];
+  feedbacksAmount: number;
 }
 
+export interface Order {
+  ok: boolean;
+  result: OrderResult;
+}

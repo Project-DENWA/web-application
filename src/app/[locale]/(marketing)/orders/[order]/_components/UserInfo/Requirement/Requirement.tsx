@@ -1,32 +1,27 @@
 import css from './Requirement.module.scss';
 import { cn } from '@/shared/lib/utils';
 
-export default function Requirement(): JSX.Element {
+import useFormatCreatedAt from '@/shared/lib/hooks/useFormatDate';
+
+type Props = {
+  description: string;
+  createdAt: string;
+}
+
+export default function Requirement({description, createdAt}: Props): JSX.Element {
+  const dateOfCreate = useFormatCreatedAt(createdAt)
   return (
     <div className={css.wrapper}>
       <div className={css.requirement}>
         <h3>Требование</h3>
         <p>
-          Нужно создать похожий сайт (Сайт скину в переписке). Это сайт с
-          анкетами- Нужен личный кабинет для админа, чтобы можно было добавлять,
-          изменять, удалять анкеты- Как должна будет выглядеть анкета и какие
-          параметры добавлять при ее создании уже покажу на примере- Указывать
-          порядок размещения анкет. Какие-то захотелось повыше поднять ,
-          какие-то пониже. Либо чтобы выводились рандомно. Так же чтобы можно
-          было закреплять анкеты (Указал чтобы анкеты была в топе и она всё
-          время вверху, остальные анкеты уже выводятся рандомно)- Фильтр по
-          критериям (критерии укажу в переписке)- Аккуратная мобильная версия-
-          Удобный и понятный раздел для СЕО продвижения- Разделы на сайте
-          которые так же выводятся как отдельная страница, которую можно
-          продвигать в поиске(Пока что по районам)- Вывод анкет на сайте
-          (Попробуем разные варианты и остановимся на одном)- По дизайну: нужно
-          будет сделать такой же дизайн, который покажу в примере- Лого к сайту
+          {description}
         </p>
       </div>
       <div className={cn(css.date, 'text-light-text-main-50')}>
-        <h4>02.01.2024</h4>
+        <h4>{dateOfCreate.date}</h4>
         <h4>|</h4>
-        <h4>12:32</h4>
+        <h4>{dateOfCreate.time}</h4>
       </div>
     </div>
   );

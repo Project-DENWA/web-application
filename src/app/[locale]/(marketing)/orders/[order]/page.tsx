@@ -1,6 +1,9 @@
+'use client';
 import css from './order.module.scss';
 
-import { Task } from '@/app/[locale]/(marketing)/orders/_components/TasksContent/ITask';
+import { useState } from 'react';
+
+import { Order } from './Iordet';
 import { useLocale } from 'next-intl';
 import { cn } from '@/shared/lib/utils';
 
@@ -10,44 +13,47 @@ import UserInfo from './_components/UserInfo/UserInfo';
 import Requirement from './_components/UserInfo/Requirement/Requirement';
 import RelatedTasks from './_components/RelatedTasks/RelatedTasks';
 
-const getPosts = async (name: string): Promise<Task[]> => {
-  const data = await fetch(`http://79.174.80.17:5000/works/${name}`);
-  const posts = await data.json();
+import { useGetOrderQuery } from '@/shared/redux/features/worksApi';
 
-  return posts;
-};
-
-export default async function OrderItem({
-  params,
-}: {
-  params: { order: string };
-}) {
-  const posts = await getPosts(params.order);
-  console.log(posts);
+export default function OrderItem({ params }: { params: { order: string } }) {
   const locale = useLocale();
+
   const breadcrumb_data = [
     { link: '/', title: 'Главная' },
     { link: `/${locale}/orders`, title: 'Заказы' },
     { link: '', title: 'Подробное описание заказа' },
   ];
 
-  return (
-    <Page>
-      <div className={css.wrapper}>
-        <div className={css.title}>
-          <SectionHeader
-            title="Разработка сайта на Tilda"
-            breadcrumbs={breadcrumb_data}
-          />
+  const { data: order, isSuccess } = useGetOrderQuery({ id: params.order });
+
+  if (isSuccess && order) {
+    return (
+      <Page>
+        <div className={css.wrapper}>
+          <div className={css.title}>
+            <SectionHeader
+              title={order.result.name}
+              breadcrumbs={breadcrumb_data}
+            />
+          </div>
+          <div className={css.main}>
+            <UserInfo
+              user={order.result.user}
+              views={order.result.views}
+              feedbacksAmount={order.result.feedbacksAmount}
+              cost={order.result.cost}
+              deadline={order.result.deadline}
+            />
+            <div className={cn(css.separator, 'bg-light-text-main-50')}></div>
+            <Requirement
+              description={order.result.description}
+              createdAt={order.result.createdAt}
+            />
+            <div className={cn(css.separator, 'bg-light-text-main-50')}></div>
+            <RelatedTasks />
+          </div>
         </div>
-        <div className={css.main}>
-          <UserInfo />
-          <div className={cn(css.separator, 'bg-light-text-main-50')}></div>
-          <Requirement />
-          <div className={cn(css.separator, 'bg-light-text-main-50')}></div>
-          <RelatedTasks />
-        </div>
-      </div>
-    </Page>
-  );
+      </Page>
+    );
+  }
 }

@@ -10,10 +10,10 @@ interface TaskProps {
   id: string;
   title: string;
   description: string;
-  cost: number;
+  cost: string;
   reply: number;
   views: number;
-  deadline: number;
+  deadline: Date;
   createdAt: string;
 }
 
@@ -33,7 +33,7 @@ export default function TasksCard({
   );
   const locale = useLocale();
   const t = useTranslations('tasks.card');
-  const { value: formattedPrice, isNumber } = useFormatPrice(cost);
+  const { value: formattedPrice, isNumber } = useFormatPrice(parseFloat(cost));
   const formatCreatedAt = useFormatCreatedAt(createdAt);
   return (
     <div className={wrapperClass}>
@@ -65,7 +65,7 @@ export default function TasksCard({
           <div>
             <Clock size={22} />
             <span className="text-light-text-main-50">
-              {t('per')} {deadline}
+              {t('per')} {deadline.toLocaleString()}
             </span>
           </div>
         </div>
