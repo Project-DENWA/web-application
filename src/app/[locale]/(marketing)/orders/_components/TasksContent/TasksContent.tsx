@@ -17,17 +17,13 @@ const TasksCard = dynamic(() => import('../TasksCard/TasksCard'), {
 });
 
 export default function TasksContent(): JSX.Element {
-  const {
-    data: response = { result: [] },
-    isLoading,
-  } = useGetWorksQuery({
+  const { data, isLoading } = useGetWorksQuery<{ result: OrderResult[] }>({
     sort: 'relevant',
     page: 1,
     pageSize: 10,
   });
 
-  //@ts-ignore
-  const orders = response.result
+  const orders = data?.result || [];
 
   return (
     <div className={css.wrapper}>
