@@ -13,7 +13,7 @@ interface TaskProps {
   cost: string;
   reply: number;
   views: number;
-  deadline: Date;
+  deadline?: Date;
   createdAt: string;
 }
 
@@ -65,7 +65,7 @@ export default function TasksCard({
           <div>
             <Clock size={22} />
             <span className="text-light-text-main-50">
-              {t('per')} {deadline.toLocaleString()}
+              {t('per')} {deadline?.toLocaleString()}
             </span>
           </div>
         </div>

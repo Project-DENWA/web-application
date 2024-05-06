@@ -13,7 +13,6 @@ export default function RelatedTasks(): JSX.Element {
             key={index}
             title={task.title}
             description={task.description}
-            deadline={task.deadline}
             cost={task.price}
             createdAt={task.data}
             id={'Залупа'}

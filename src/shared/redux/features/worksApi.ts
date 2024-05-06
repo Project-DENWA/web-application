@@ -22,7 +22,14 @@ export const worksApi = apiSlice.injectEndpoints({
         method: 'GET',
       }),
     }),
+    addView: builder.mutation({
+      query: (data) => ({
+        url: "works/add-view/",
+        method: 'POST',
+        body: data
+      }),
+    })
   }),
 });
 
-export const { useCreateOrderMutation, useGetWorksQuery, useGetOrderQuery } = worksApi;
+export const { useCreateOrderMutation, useGetWorksQuery, useGetOrderQuery, useAddViewMutation } = worksApi;

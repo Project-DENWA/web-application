@@ -5,7 +5,7 @@ export const taskItems = [
         price: "2500",
         reply: 8,
         views: 200,
-        deadline: 5,
+        deadline: "10.03.2024",
         data: "01.03.2024",
         time: "14:30"
     },
@@ -15,7 +15,7 @@ export const taskItems = [
         price: "1500",
         reply: 5,
         views: 150,
-        deadline: 2,
+        deadline: "10.03.2024",
         data: "05.03.2024",
         time: "10:00"
     },
@@ -25,7 +25,7 @@ export const taskItems = [
         price: "1000",
         reply: 3,
         views: 100,
-        deadline: 1,
+        deadline: "10.03.2024",
         data: "10.03.2024",
         time: "16:45"
     },
@@ -35,7 +35,7 @@ export const taskItems = [
         price: "2000",
         reply: 6,
         views: 180,
-        deadline: 4,
+        deadline: "10.03.2024",
         data: "15.03.2024",
         time: "09:15"
     },
@@ -45,7 +45,7 @@ export const taskItems = [
         price: "5000",
         reply: 12,
         views: 350,
-        deadline: 7,
+        deadline: "10.03.2024",
         data: "20.03.2024",
         time: "11:00"
     }

@@ -1,7 +1,6 @@
 'use client';
 import css from './order.module.scss';
 
-import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import { cn } from '@/shared/lib/utils';
 
@@ -11,7 +10,8 @@ import UserInfo from './_components/UserInfo/UserInfo';
 import Requirement from './_components/UserInfo/Requirement/Requirement';
 import RelatedTasks from './_components/RelatedTasks/RelatedTasks';
 
-import { useGetOrderQuery } from '@/shared/redux/features/worksApi';
+import { useGetOrderQuery, useAddViewMutation } from '@/shared/redux/features/worksApi';
+import { useEffect } from 'react';
 
 export default function Order({ params }: { params: { order: string } }) {
   const locale = useLocale();
@@ -23,6 +23,19 @@ export default function Order({ params }: { params: { order: string } }) {
   ];
 
   const { data: order, isSuccess } = useGetOrderQuery({ id: params.order });
+  const [addViewMutation, { data: mutationData }] = useAddViewMutation();
+
+  useEffect(() => {
+    if (order?.result.id) {
+      addViewMutation({ workId: order.result.id });
+    }
+  }, [order]);
+
+  useEffect(() => {
+    if (mutationData) {
+      console.log('Response from server:', mutationData);
+    }
+  }, [mutationData]);
 
   if (isSuccess && order) {
     return (
