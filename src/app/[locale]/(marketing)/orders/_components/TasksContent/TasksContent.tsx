@@ -16,15 +16,16 @@ const TasksCard = dynamic(() => import('../TasksCard/TasksCard'), {
   ssr: false,
 });
 
-export default function TasksContent(): JSX.Element {
-  const { data, isLoading } = useGetWorksQuery<{ result: OrderResult[] }>({
+export default function Orders(): JSX.Element {
+  const { data, isLoading } = useGetWorksQuery({
     sort: 'relevant',
     page: 1,
     pageSize: 10,
   });
+  
+  const orders: OrderResult[] = data?.result || [];
 
-  const orders = data?.result || [];
-
+  console.log(orders)
   return (
     <div className={css.wrapper}>
       <TasksFilter />

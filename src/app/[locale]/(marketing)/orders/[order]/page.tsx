@@ -2,8 +2,6 @@
 import css from './order.module.scss';
 
 import { useState } from 'react';
-
-import { Order } from './Iordet';
 import { useLocale } from 'next-intl';
 import { cn } from '@/shared/lib/utils';
 
@@ -15,7 +13,7 @@ import RelatedTasks from './_components/RelatedTasks/RelatedTasks';
 
 import { useGetOrderQuery } from '@/shared/redux/features/worksApi';
 
-export default function OrderItem({ params }: { params: { order: string } }) {
+export default function Order({ params }: { params: { order: string } }) {
   const locale = useLocale();
 
   const breadcrumb_data = [

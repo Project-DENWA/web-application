@@ -1,6 +1,6 @@
 import { apiSlice } from '../api/apiSlice';
 import { CreateOrderFormData } from '@/app/[locale]/(marketing)/create-order/schema';
-import { Order } from '@/app/[locale]/(marketing)/orders/[order]/Iordet';
+import { Order, OrderResult } from '@/app/[locale]/(marketing)/orders/[order]/Iordet';
 export const worksApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     createOrder: builder.mutation<{ data: CreateOrderFormData }, CreateOrderFormData>({
@@ -10,12 +10,12 @@ export const worksApi = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
-    getWorks: builder.query<Order[], { sort: string; page: number; pageSize: number }>({
+    getWorks: builder.query<Order, { sort: string; page: number; pageSize: number }>({
       query: ({ sort, page, pageSize }) => ({
         url: `works/create/feed?sort=${sort}&page=${page}&pageSize=${pageSize}`,
         method: 'GET',
       }),
-    }),
+    }),    
     getOrder: builder.query<Order, { id: string}>({
       query: ({ id }) => ({
         url: `works/${id}`,
