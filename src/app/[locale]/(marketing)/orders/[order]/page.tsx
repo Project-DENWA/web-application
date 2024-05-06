@@ -54,6 +54,7 @@ export default function Order({ params }: { params: { order: string } }) {
               feedbacksAmount={order.result.feedbacksAmount}
               cost={order.result.cost}
               deadline={order.result.deadline}
+              orderId={params.order}
             />
             <div className={cn(css.separator, 'bg-light-text-main-50')}></div>
             <Requirement

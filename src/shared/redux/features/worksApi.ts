@@ -1,6 +1,6 @@
 import { apiSlice } from '../api/apiSlice';
 import { CreateOrderFormData } from '@/app/[locale]/(marketing)/create-order/schema';
-import { Order, OrderResult } from '@/app/[locale]/(marketing)/orders/[order]/Iordet';
+import { Order } from '@/app/[locale]/(marketing)/orders/[order]/Iordet';
 export const worksApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     createOrder: builder.mutation<{ data: CreateOrderFormData }, CreateOrderFormData>({

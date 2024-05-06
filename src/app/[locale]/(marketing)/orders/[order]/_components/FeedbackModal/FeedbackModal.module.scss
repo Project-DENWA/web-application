@@ -1,0 +1,52 @@
+.dialogContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 425px !important;
+  gap: 20px;
+  width: 100%;
+  animation: appearance 1.5s forwards;
+
+  .title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+
+    h1 {
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 600;
+    }
+  }
+  .separator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+  }
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
