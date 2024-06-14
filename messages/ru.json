@@ -415,7 +415,7 @@
         "title": "Выберите категорию проекта",
         "placeholder": "Выберите одну категорию"
       },
-      "btn": "Продолжить"
+      "btn": "Создать заказ"
     }
   },
   "tasks": {
@@ -466,11 +466,13 @@
       },
       "fieldLanguage": {
         "title": "Язык",
+        "added": "Добавленные языки:",
         "placeholder": "Язык",
         "selectPlaceholder": "Выберите уровень языка:"
       },
       "fieldSkills": {
         "title": "Ваши навыки",
+        "added": "Добавленные навыки:",
         "placeholder": "Навык",
         "expPlaceholder": "Опыт",
         "selectPlaceholder": "Опыт"
@@ -483,7 +485,19 @@
         "telegram": "Telegram @username",
         "discord": "Discord @username"
       },
-      "btn": "Создать резюме"
+      "btn": "Создать резюме",
+      "messages": {
+        "loading": "Создание резюме..",
+        "success": "Резюме успешно создано!",
+        "added": "Вы добавили",
+        "language": "язык!",
+        "addedSkill": "Вы добавили навык:",
+        "errors": {
+          "default": "Упсс, возникла ошибка...",
+          "requiredLanguages": "Оба поля при заполнении владения языками обязательны для заполнения",
+          "requiredSkills": "Все поля при заполнении навыков обязательны для заполнения"
+        }
+      }
     }
   },
   "resumes": {

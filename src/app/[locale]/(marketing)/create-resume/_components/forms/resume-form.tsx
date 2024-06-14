@@ -96,19 +96,18 @@ export default function ResumeForm(): JSX.Element {
       categories: modifiedCategories,
       socials: data.socials,
     };
-    toast.loading('Создание резюме..');
+    toast.loading(t('messages.loading'));
     try {
       //@ts-ignore
       const response = await create(payload).unwrap();
       form.reset();
-      toast.success('Резюме успешно создано!');
+      toast.success('messages.success');
     } catch (e: any) {
       if (e.data && e.data.message) {
         toast.error(e.data.message);
       } else {
-        toast.error('Упсс, возникла ошибка...');
+        toast.error('messages.errors.default');
       }
-      console.error(e, 'Говно не зашло', payload);
     } finally {
       toast.dismiss();
     }
@@ -117,12 +116,9 @@ export default function ResumeForm(): JSX.Element {
   const addLanguage = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (!languageName || !languageLevel) {
-      toast.error(
-        'Оба поля при заполнении владения языками обязательны для заполнения',
-        {
-          position: 'bottom-right',
-        },
-      );
+      toast.error(t('messages.errors.requiredLanguages'), {
+        position: 'bottom-right',
+      });
       return;
     }
 
@@ -130,19 +126,16 @@ export default function ResumeForm(): JSX.Element {
     const updatedLanguages = [...addedLanguages, newLanguage];
     setAddedLanguages(updatedLanguages);
     form.setValue('languages', updatedLanguages);
-    toast.success(`Вы добавили ${languageName} язык!`);
+    toast.success(`${t('messages.added')} ${languageName} ${t('messages.language')}`);
     setlanguageName('');
   };
 
   const addSkill = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (!skillName || !quantityExp || !seniority) {
-      toast.error(
-        'Все поля при заполнении навыков обязательны для заполнения',
-        {
-          position: 'bottom-right',
-        },
-      );
+      toast.error(t('messages.errors.requiredSkills'), {
+        position: 'bottom-right',
+      });
       return;
     }
 
@@ -155,7 +148,7 @@ export default function ResumeForm(): JSX.Element {
     const updatedSkills: Category[] = [...addedSkills, newSkill];
     setaddedSkills(updatedSkills);
     form.setValue('categories', updatedSkills);
-    toast.success(`Вы добавили навык: ${newSkill.name}`);
+    toast.success(`${t('messages.addedSkill')} ${newSkill.name}`);
     setSkillName('');
     setQuantityExp(undefined);
     setSeniority('');
@@ -278,15 +271,25 @@ export default function ResumeForm(): JSX.Element {
         {addedLanguages.length > 0 && (
           <div className={css.table}>
             <div>
-              <h3>Добавленные языки:</h3>
+              <h3>{t('fieldLanguage.added')}</h3>
             </div>
             <div className={css.addedWrapper}>
               {addedLanguages.map((language, index) => (
                 <div className={css.languageList} key={index}>
-                  <div className={cn(css.language, "bg-light-main-colored-20 dark:bg-dark-main-colored-10")}>
+                  <div
+                    className={cn(
+                      css.language,
+                      'bg-light-main-colored-20 dark:bg-dark-main-colored-10',
+                    )}
+                  >
                     {language.name}
                   </div>
-                  <div className={cn(css.language, "bg-light-main-colored-20 dark:bg-dark-main-colored-10")}>
+                  <div
+                    className={cn(
+                      css.language,
+                      'bg-light-main-colored-20 dark:bg-dark-main-colored-10',
+                    )}
+                  >
                     {language.level}
                   </div>
                   <button type="button" onClick={() => removeLanguage(index)}>
@@ -357,26 +360,31 @@ export default function ResumeForm(): JSX.Element {
             </button>
           </div>
         </div>
-        <div className={css.table}>
-          <div>
-            <h3>Добавленные навыки:</h3>
-          </div>
-          <div className={css.addedWrapper}>
-            {addedSkills.map((skill, index) => (
-              <div className={css.skillsList} key={index}>
-                <div
-                  className={cn(css.skill, "bg-light-main-colored-20 dark:bg-dark-main-colored-10")}
-                  key={index}
-                >
-                  {skill.name}
+        {addedSkills.length > 0 && (
+          <div className={css.table}>
+            <div>
+              <h3>{t('fieldSkills.added')}</h3>
+            </div>
+            <div className={css.addedWrapper}>
+              {addedSkills.map((skill, index) => (
+                <div className={css.skillsList} key={index}>
+                  <div
+                    className={cn(
+                      css.skill,
+                      'bg-light-main-colored-20 dark:bg-dark-main-colored-10',
+                    )}
+                    key={index}
+                  >
+                    {skill.name}
+                  </div>
+                  <button type="button" onClick={() => removeSkills(index)}>
+                    <X />
+                  </button>
                 </div>
-                <button type="button" onClick={() => removeSkills(index)}>
-                  <X />
-                </button>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
         <Accordion
           type="single"
           collapsible

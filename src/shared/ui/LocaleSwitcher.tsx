@@ -1,41 +1,44 @@
-"use client";
-import Image from "next/image";
-import { Button } from "@/shared/ui/button";
+'use client';
+import Image from 'next/image';
+import { Button } from '@/shared/ui/button';
 
-import globe from "@/../public/globe.svg";
+import globe from '@/../public/globe.svg';
 
-import { useRouter } from "next/navigation";
-import { useTransition } from "react";
-import { useLocale } from "next-intl";
+import { usePathname, useRouter } from 'next/navigation';
+import { useTransition } from 'react';
+import { useLocale } from 'next-intl';
 
-import Cookies from "js-cookie";
+import Cookies from 'js-cookie';
 
 export default function LocaleSwitcher() {
-   const [isPending, startTransition] = useTransition();
-   const router = useRouter();
-   const localActive = useLocale();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+  const [isPending, startTransition] = useTransition();
+  const currentLocale = Cookies.get('selectedLocale') || locale || 'ru';
 
-   const Switcher = (nextLocale: string) => {
-      if (!isPending) {
-         startTransition(() => {
-            router.replace(`/${nextLocale}`);
-            Cookies.set("selectedLocale", nextLocale);
-         })
-      }
-   }
-   return (
-      <Button
-         size='icon'
-         variant='ghost'
-         onClick={() => Switcher(localActive === "en" ? "ru" : "en")}
-      >
-         <Image
-            alt='change language icon'
-            src={globe}
-            width={24}
-            height={24}
-            className='dark:invert hover:opacity-85 transition-opacity'
-         />
-      </Button>
-   )
+  const switchLocale = () => {
+    if (!isPending) {
+      startTransition(() => {
+        const newLocale = currentLocale === 'ru' ? 'en' : 'ru';
+        const newPath = pathname.startsWith(`/${currentLocale}`)
+          ? pathname.replace(`/${currentLocale}`, `/${newLocale}`)
+          : `/${newLocale}${pathname}`;
+        router.replace(newPath);
+        Cookies.set('selectedLocale', newLocale);
+      });
+    }
+  };
+
+  return (
+    <Button size="icon" variant="ghost" onClick={() => switchLocale()}>
+      <Image
+        alt="change language icon"
+        src={globe}
+        width={24}
+        height={24}
+        className="dark:invert hover:opacity-85 transition-opacity"
+      />
+    </Button>
+  );
 }

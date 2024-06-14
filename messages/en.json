@@ -412,7 +412,7 @@
         "title": "Select a project category",
         "placeholder": "Choose one category"
       },
-      "btn": "Continue"
+      "btn": "Create order"
     }
   },
   "tasks": {
@@ -463,11 +463,13 @@
       },
       "fieldLanguage": {
         "title": "Language",
+        "added": "Added languages:",
         "placeholder": "Language",
         "selectPlaceholder": "Select language proficiency:"
       },
       "fieldSkills": {
         "title": "Your Skills",
+        "added": "Added skills:",
         "placeholder": "Skill",
         "expPlaceholder": "Experience",
         "selectPlaceholder": "Experience"
@@ -480,7 +482,19 @@
         "telegram": "Telegram @username",
         "discord": "Discord @username"
       },
-      "btn": "Create Resume"
+      "btn": "Create Resume",
+      "messages": {
+        "loading": "Creating resume..",
+        "success": "Resume created successfully!",
+        "added": "You added",
+        "language": "language!",
+        "addedSkill": "You added skill:",
+        "errors": {
+          "default": "Oops, an error occurred...",
+          "requiredLanguages": "Both fields for language proficiency are required",
+          "requiredSkills": "All fields for skills are required"
+        }
+      }
     }
   },
   "resumes": {

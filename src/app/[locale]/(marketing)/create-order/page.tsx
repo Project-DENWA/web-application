@@ -15,7 +15,13 @@ import { Input } from '@/shared/ui/input';
 import { Button } from '@/shared/ui/button';
 import { Textarea } from '@/shared/ui/textarea';
 import { Checkbox } from '@/shared/ui/checkbox';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/shared/ui/select';
 import { Form, FormControl, FormField, FormItem } from '@/shared/ui/form';
 
 import Image from 'next/image';
@@ -34,15 +40,6 @@ import { useGetCategoriesQuery } from '@/shared/redux/features/categoriesApi';
 type FieldErrors = {
   [key: string]: any | undefined;
 };
-
-// const categories = [
-//   { value: 'Web Development', label: 'Веб-разработка' },
-//   { value: 'mobile', label: 'Мобильная-разработка' },
-//   { value: 'gameDev', label: 'Геймдев' },
-//   { value: 'dataScience', label: 'Наука о данных' },
-//   { value: 'uiUx', label: 'UI/UX дизайн' },
-//   { value: 'devOps', label: 'DevOps' },
-// ];
 
 export default function CreateOrderStepOne(): JSX.Element {
   const [create, { isLoading }] = useCreateOrderMutation();
@@ -146,7 +143,12 @@ export default function CreateOrderStepOne(): JSX.Element {
             <InfoBlock active={activeTab} />
             {activeTab === 'step1' && (
               <div className={css.projectInfo}>
-                <div className={cn(css.infoBlock, 'bg-light-main-colored-20 dark:bg-dark-main-colored-20')}>
+                <div
+                  className={cn(
+                    css.infoBlock,
+                    'bg-light-main-colored-20 dark:bg-dark-main-colored-20',
+                  )}
+                >
                   <div>
                     <div className="bg-light-text-colored">
                       <span className="text-light-text-primary dark:text-light-main-bg-primary">
@@ -209,7 +211,10 @@ export default function CreateOrderStepOne(): JSX.Element {
                     {t('description.link')}
                   </Link>
                   <label
-                    className={cn(css.uploadFile, 'bg-light-main-colored-20 dark:bg-dark-main-colored-20')}
+                    className={cn(
+                      css.uploadFile,
+                      'bg-light-main-colored-20 dark:bg-dark-main-colored-20',
+                    )}
                   >
                     <div>{t('uploadFile.title')}</div>
                     <Image
@@ -229,7 +234,7 @@ export default function CreateOrderStepOne(): JSX.Element {
                 </div>
                 <div className={css.nextBtn}>
                   <Button onClick={() => setActiveTab('step2')}>
-                    Продолжить
+                    {t('btn')}
                   </Button>
                 </div>
               </div>
@@ -310,11 +315,16 @@ export default function CreateOrderStepOne(): JSX.Element {
                       <FormItem>
                         <Select onValueChange={field.onChange}>
                           <FormControl>
-                            <SelectTrigger className={cn(css.selectTrigger, 'dark:bg-dark-main-colored-20')}>
+                            <SelectTrigger
+                              className={cn(
+                                css.selectTrigger,
+                                'dark:bg-dark-main-colored-20',
+                              )}
+                            >
                               <SelectValue placeholder={t('category.title')} />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent className='dark:bg-dark-main-colored-20'>
+                          <SelectContent className="dark:bg-dark-main-colored-20">
                             {categories?.map((category) => (
                               <SelectItem
                                 key={category.id}
@@ -342,7 +352,7 @@ export default function CreateOrderStepOne(): JSX.Element {
                     type="submit"
                     disabled={buttonDisabled}
                   >
-                    Создать заказ
+                    {t('btn')}
                   </Button>
                 </div>
               </div>
