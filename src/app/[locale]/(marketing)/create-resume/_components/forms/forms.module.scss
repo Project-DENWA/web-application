@@ -17,7 +17,40 @@
     justify-content: space-between;
     max-width: 910px;
     width: 100%;
-
+    .addedWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 704px;
+      width: 100%;
+      .languageList {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 704px;
+        width: 100%;
+        .language {
+          border-radius: 8px;
+          max-width: 320px;
+          width: 100%;
+          padding: 8px 12px;
+        }
+      }
+      .skillsList {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        max-width: 704px;
+        width: 100%;
+        .skill {
+          border-radius: 8px;
+          max-width: 320px;
+          width: 100%;
+          padding: 8px 12px;
+        }
+      }
+    }
+   
     div {
       p {
         line-height: 26px;

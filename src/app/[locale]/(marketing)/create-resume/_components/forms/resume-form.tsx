@@ -30,11 +30,13 @@ import {
 } from '@/shared/ui/accordion';
 
 import { languageItems, dateFormat } from './langualeItems';
-import { PlusCircle } from 'lucide-react';
+import { PlusCircle, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { createResumeForm, ResumeData, Language, Category } from '../../schema';
 import { useCreateResumeMutation } from '@/shared/redux/features/resumeApi';
+import { useGetCategoriesQuery } from '@/shared/redux/features/categoriesApi';
+import { useGetLanguagesQuery } from '@/shared/redux/features/languagesApi';
 
 type FieldErrors = {
   [key: string]: any | undefined;
@@ -64,6 +66,12 @@ export default function ResumeForm(): JSX.Element {
   const [skillName, setSkillName] = useState<string>('');
   const [quantityExp, setQuantityExp] = useState<number>();
   const [seniority, setSeniority] = useState<string>('');
+
+  const { data: skillsData } = useGetCategoriesQuery();
+  const skillsList = skillsData?.result;
+
+  const { data: languagesData } = useGetLanguagesQuery();
+  const languagesList = languagesData?.result;
 
   useEffect(() => {
     if (!isErrorsShown) return;
@@ -153,6 +161,18 @@ export default function ResumeForm(): JSX.Element {
     setSeniority('');
   };
 
+  const removeLanguage = (index: number) => {
+    const updatedLanguages = addedLanguages.filter((_, i) => i !== index);
+    setAddedLanguages(updatedLanguages);
+    form.setValue('languages', updatedLanguages);
+  };
+
+  const removeSkills = (index: number) => {
+    const updatedSkills = addedSkills.filter((_, i) => i !== index);
+    setaddedSkills(updatedSkills);
+    form.setValue('categories', updatedSkills);
+  };
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className={css.wrapper}>
@@ -203,13 +223,29 @@ export default function ResumeForm(): JSX.Element {
             <h3>{t('fieldLanguage.title')}</h3>
           </div>
           <div>
-            <Input
-              className={css.input}
-              type="text"
-              placeholder={t('fieldLanguage.placeholder')}
-              value={languageName}
-              onChange={(e) => setlanguageName(e.target.value)}
-            />
+            <Select onValueChange={(value) => setlanguageName(value)}>
+              <SelectTrigger
+                className={cn(
+                  css.selectTrigger,
+                  'bg-light-main-colored-20 dark:bg-dark-main-colored-10',
+                )}
+              >
+                <SelectValue
+                  placeholder={t('fieldLanguage.selectPlaceholder')}
+                />
+              </SelectTrigger>
+              <SelectContent
+                className={
+                  'bg-light-main-colored-20 dark:bg-dark-main-colored-10'
+                }
+              >
+                {languagesList?.map((language) => (
+                  <SelectItem key={language.id} value={language.name}>
+                    {language.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
 
             <Select onValueChange={(value) => setlanguageLevel(value)}>
               <SelectTrigger
@@ -234,7 +270,7 @@ export default function ResumeForm(): JSX.Element {
                 ))}
               </SelectContent>
             </Select>
-            <button onClick={(e) => addLanguage(e)}>
+            <button type="button" onClick={(e) => addLanguage(e)}>
               <PlusCircle />
             </button>
           </div>
@@ -244,11 +280,19 @@ export default function ResumeForm(): JSX.Element {
             <div>
               <h3>Добавленные языки:</h3>
             </div>
-            <div>
+            <div className={css.addedWrapper}>
               {addedLanguages.map((language, index) => (
-                <p key={index}>
-                  {language.name} - {language.level}
-                </p>
+                <div className={css.languageList} key={index}>
+                  <div className={cn(css.language, "bg-light-main-colored-20 dark:bg-dark-main-colored-10")}>
+                    {language.name}
+                  </div>
+                  <div className={cn(css.language, "bg-light-main-colored-20 dark:bg-dark-main-colored-10")}>
+                    {language.level}
+                  </div>
+                  <button type="button" onClick={() => removeLanguage(index)}>
+                    <X />
+                  </button>
+                </div>
               ))}
             </div>
           </div>
@@ -259,12 +303,27 @@ export default function ResumeForm(): JSX.Element {
             <h3>{t('fieldSkills.title')}</h3>
           </div>
           <div>
-            <Input
-              className={css.input}
-              placeholder={t('fieldSkills.placeholder')}
-              value={skillName}
-              onChange={(e) => setSkillName(e.target.value)}
-            />
+            <Select onValueChange={(value) => setSkillName(value)}>
+              <SelectTrigger
+                className={cn(
+                  css.selectTrigger,
+                  'bg-light-main-colored-20 dark:bg-dark-main-colored-10',
+                )}
+              >
+                <SelectValue placeholder={t('fieldSkills.placeholder')} />
+              </SelectTrigger>
+              <SelectContent
+                className={
+                  'bg-light-main-colored-20 dark:bg-dark-main-colored-10'
+                }
+              >
+                {skillsList?.map((skill) => (
+                  <SelectItem key={skill.id} value={skill.name}>
+                    {skill.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
             <Input
               className={css.expInput}
               type="number"
@@ -293,7 +352,7 @@ export default function ResumeForm(): JSX.Element {
                 ))}
               </SelectContent>
             </Select>
-            <button onClick={(e) => addSkill(e)}>
+            <button type="button" onClick={(e) => addSkill(e)}>
               <PlusCircle />
             </button>
           </div>
@@ -302,13 +361,21 @@ export default function ResumeForm(): JSX.Element {
           <div>
             <h3>Добавленные навыки:</h3>
           </div>
-          <div>
-        {addedSkills.map((skill, index) => (
-          <p key={index}>
-            {skill.name} - {skill.exp} - {skill.seniority}
-          </p>
-        ))}
-        </div>
+          <div className={css.addedWrapper}>
+            {addedSkills.map((skill, index) => (
+              <div className={css.skillsList} key={index}>
+                <div
+                  className={cn(css.skill, "bg-light-main-colored-20 dark:bg-dark-main-colored-10")}
+                  key={index}
+                >
+                  {skill.name}
+                </div>
+                <button type="button" onClick={() => removeSkills(index)}>
+                  <X />
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
         <Accordion
           type="single"
