@@ -25,10 +25,10 @@ export default function CollaborationBanner() {
                   <p>{t("firstCard.description")}</p>
                   <Button variant={"dark"}>{t("firstCard.textBtn")}</Button>
                </div>
-               <div>
+               <div className={css.illustration}>
                   <Image
                      alt='Illustration'
-                     src={Plug}
+                     src={'/3D/3DIllustrationCircle.png'}
                      width={230}
                      height={215}
                   />
@@ -58,10 +58,10 @@ export default function CollaborationBanner() {
                   </p>
                   <Button variant={"default"}>{t("secondCard.textBtn")}</Button>
                </div>
-               <div>
+               <div className={css.illustration}> 
                   <Image
                      alt='Illustration'
-                     src={Plug}
+                     src={'/3D/3DIllustrationMessenger.png'}
                      width={230}
                      height={215}
                   />

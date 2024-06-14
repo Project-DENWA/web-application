@@ -29,6 +29,10 @@
             border-radius: 24px;
             width: 100%;
             transition: 0.5s;
+            .illustration {
+                max-width: 220px;
+                padding-right: 20px;
+            }
             .leftItems {
                 display: flex;
                 flex-direction: column;
@@ -36,7 +40,8 @@
                 max-width: 310px;
                 width: 100%;
                 gap: 15px;
-                padding-left: 20px;
+                padding: 20px;
+                
                 h3 {
                     font-size: 24px;
                     font-weight: 700;
