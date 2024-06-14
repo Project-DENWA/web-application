@@ -17,6 +17,7 @@ export interface OrderResult {
   deadline: Date;
   views: number;
   status: string;
+  rating: number;
   createdAt: string;
   user: User;
   categories: Category[];

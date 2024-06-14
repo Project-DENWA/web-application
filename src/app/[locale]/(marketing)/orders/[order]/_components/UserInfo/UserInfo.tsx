@@ -4,8 +4,6 @@ import Image from 'next/image';
 
 import Performer from '@/../public/photosPerfomers/Perfomer1.png';
 import { Clock, Eye, MessageCircleMore } from 'lucide-react';
-import { Button } from '@/shared/ui/button';
-
 import FeedbackModalTrigger from '../FeedbackModal/FeedbackModalTrigger';
 
 type Props = {
@@ -18,6 +16,7 @@ type Props = {
   cost: string;
   deadline: Date;
   orderId: string;
+  rating: number;
 };
 
 export default function UserInfo({
@@ -26,7 +25,8 @@ export default function UserInfo({
   feedbacksAmount,
   cost,
   deadline,
-  orderId
+  orderId,
+  rating
 }: Props): JSX.Element {
   return (
     <div className={css.userInfo}>
@@ -38,7 +38,7 @@ export default function UserInfo({
           <div className={css.userName}>
             <h2>Заказчик / {user.fullname}</h2>
             <h5 className="text-light-text-main-50">
-              Рейтинг: <span className="text-light-text-colored">4.3</span>
+              Рейтинг: <span className="text-light-text-colored">5</span>
             </h5>
           </div>
         </div>

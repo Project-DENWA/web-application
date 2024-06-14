@@ -23,19 +23,13 @@ export default function Order({ params }: { params: { order: string } }) {
   ];
 
   const { data: order, isSuccess } = useGetOrderQuery({ id: params.order });
-  const [addViewMutation, { data: mutationData }] = useAddViewMutation();
+  const [addViewMutation] = useAddViewMutation();
 
   useEffect(() => {
     if (order?.result.id) {
       addViewMutation({ workId: order.result.id });
     }
   }, [order]);
-
-  useEffect(() => {
-    if (mutationData) {
-      console.log('Response from server:', mutationData);
-    }
-  }, [mutationData]);
 
   if (isSuccess && order) {
     return (
@@ -53,6 +47,7 @@ export default function Order({ params }: { params: { order: string } }) {
               views={order.result.views}
               feedbacksAmount={order.result.feedbacksAmount}
               cost={order.result.cost}
+              rating={order.result.rating}
               deadline={order.result.deadline}
               orderId={params.order}
             />

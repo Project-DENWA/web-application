@@ -15,13 +15,7 @@ import { Input } from '@/shared/ui/input';
 import { Button } from '@/shared/ui/button';
 import { Textarea } from '@/shared/ui/textarea';
 import { Checkbox } from '@/shared/ui/checkbox';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/shared/ui/select';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/ui/select';
 import { Form, FormControl, FormField, FormItem } from '@/shared/ui/form';
 
 import Image from 'next/image';
@@ -35,22 +29,25 @@ import { toast } from 'sonner';
 import { useCreateOrderMutation } from '@/shared/redux/features/worksApi';
 
 import paperClip from '@/../public/Paperclip.svg';
+import { useGetCategoriesQuery } from '@/shared/redux/features/categoriesApi';
 
 type FieldErrors = {
   [key: string]: any | undefined;
 };
 
-const categories = [
-  { value: 'Web Development', label: 'Веб-разработка' },
-  { value: 'mobile', label: 'Мобильная-разработка' },
-  { value: 'gameDev', label: 'Геймдев' },
-  { value: 'dataScience', label: 'Наука о данных' },
-  { value: 'uiUx', label: 'UI/UX дизайн' },
-  { value: 'devOps', label: 'DevOps' },
-];
+// const categories = [
+//   { value: 'Web Development', label: 'Веб-разработка' },
+//   { value: 'mobile', label: 'Мобильная-разработка' },
+//   { value: 'gameDev', label: 'Геймдев' },
+//   { value: 'dataScience', label: 'Наука о данных' },
+//   { value: 'uiUx', label: 'UI/UX дизайн' },
+//   { value: 'devOps', label: 'DevOps' },
+// ];
 
 export default function CreateOrderStepOne(): JSX.Element {
   const [create, { isLoading }] = useCreateOrderMutation();
+  const { data: categoryData } = useGetCategoriesQuery();
+  const categories = categoryData?.result;
   const [activeTab, setActiveTab] = useState<'step1' | 'step2'>('step1');
   const [isPriceDisabled, setIsPriceDisabled] = useState<boolean>(false);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(false);
@@ -149,7 +146,7 @@ export default function CreateOrderStepOne(): JSX.Element {
             <InfoBlock active={activeTab} />
             {activeTab === 'step1' && (
               <div className={css.projectInfo}>
-                <div className={cn(css.infoBlock, 'bg-dark-main-colored-20')}>
+                <div className={cn(css.infoBlock, 'bg-light-main-colored-20 dark:bg-dark-main-colored-20')}>
                   <div>
                     <div className="bg-light-text-colored">
                       <span className="text-light-text-primary dark:text-light-main-bg-primary">
@@ -212,7 +209,7 @@ export default function CreateOrderStepOne(): JSX.Element {
                     {t('description.link')}
                   </Link>
                   <label
-                    className={cn(css.uploadFile, 'bg-light-main-colored-20')}
+                    className={cn(css.uploadFile, 'bg-light-main-colored-20 dark:bg-dark-main-colored-20')}
                   >
                     <div>{t('uploadFile.title')}</div>
                     <Image
@@ -313,17 +310,17 @@ export default function CreateOrderStepOne(): JSX.Element {
                       <FormItem>
                         <Select onValueChange={field.onChange}>
                           <FormControl>
-                            <SelectTrigger className={css.selectTrigger}>
+                            <SelectTrigger className={cn(css.selectTrigger, 'dark:bg-dark-main-colored-20')}>
                               <SelectValue placeholder={t('category.title')} />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
-                            {categories.map((category) => (
+                          <SelectContent className='dark:bg-dark-main-colored-20'>
+                            {categories?.map((category) => (
                               <SelectItem
-                                key={category.value}
-                                value={category.value}
+                                key={category.id}
+                                value={category.name}
                               >
-                                {category.label}
+                                {category.name}
                               </SelectItem>
                             ))}
                           </SelectContent>
