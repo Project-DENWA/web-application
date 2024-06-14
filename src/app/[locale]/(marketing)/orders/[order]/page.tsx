@@ -12,6 +12,7 @@ import RelatedTasks from './_components/RelatedTasks/RelatedTasks';
 
 import { useGetOrderQuery, useAddViewMutation } from '@/shared/redux/features/worksApi';
 import { useEffect } from 'react';
+import OrderPageSkeleton from './skeleton';
 
 export default function Order({ params }: { params: { order: string } }) {
   const locale = useLocale();
@@ -22,7 +23,7 @@ export default function Order({ params }: { params: { order: string } }) {
     { link: '', title: 'Подробное описание заказа' },
   ];
 
-  const { data: order, isSuccess } = useGetOrderQuery({ id: params.order });
+  const { data: order, isSuccess, isLoading } = useGetOrderQuery({ id: params.order });
   const [addViewMutation] = useAddViewMutation();
 
   useEffect(() => {
@@ -30,6 +31,10 @@ export default function Order({ params }: { params: { order: string } }) {
       addViewMutation({ workId: order.result.id });
     }
   }, [order]);
+
+  if (isLoading) {
+    return <OrderPageSkeleton />
+  }
 
   if (isSuccess && order) {
     return (

@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 export default function TasksFilter(): JSX.Element {
   const t = useTranslations('tasks.filter')
   const wrapperClass = cn(css.wrapper,'bg-light-main-colored-10 dark:bg-dark-main-colored-10');
-  const elementClass = cn(css.element,'border-b-light-main-colored-20 border-b-[1px]');
+  const elementClass = cn(css.element,'border-b-light-main-colored-20 border-b-[1px] dark:border-b-dark-main-colored-20');
   
   const dataItems = [
     {
@@ -28,18 +28,12 @@ export default function TasksFilter(): JSX.Element {
         <h2>{t('title')}</h2>
       </div>
       <div
-        className={cn(
-          css.element,
-          'border-b-light-main-colored-20 border-b-[1px]',
-        )}
+        className={elementClass}
       >
         <AccordionWithCheckboxes title={t('category')} categories={categories} />
       </div>
       <div
-        className={cn(
-          css.element,
-          'border-b-light-main-colored-20 border-b-[1px]',
-        )}
+        className={elementClass}
       >
         <div className={css.slider}>
           <Slider defaultValue={[33]} max={100} step={1} />
@@ -53,10 +47,7 @@ export default function TasksFilter(): JSX.Element {
         </div>
       </div>
       <div
-        className={cn(
-          css.element,
-          'border-b-light-main-colored-20 border-b-[1px]',
-        )}
+        className={elementClass}
       >
         <AccordionWithCheckboxes
           title={t('dataSort.title')}

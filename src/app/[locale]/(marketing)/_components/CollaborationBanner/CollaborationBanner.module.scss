@@ -1,64 +1,66 @@
 .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 140px;
+  .navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    width: 100%;
+  }
+
+  .content {
+    max-width: 1000px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 32px;
-    margin-top: 140px;
-    .navContainer {
+    gap: 30px;
+    .bannerFirst,
+    .bannerSecond {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 24px;
+      width: 100%;
+      transition: 0.5s;
+      .illustration {
+        max-width: 220px;
+        padding-right: 20px;
+      }
+      .leftItems {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 1280px;
-        width: 100%;
-     }
-
-
-     .content {
-        max-width: 1000px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
-        gap: 30px;
-        .bannerFirst, .bannerSecond {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 24px;
-            width: 100%;
-            transition: 0.5s;
-            .illustration {
-                max-width: 220px;
-                padding-right: 20px;
-            }
-            .leftItems {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                max-width: 310px;
-                width: 100%;
-                gap: 15px;
-                padding: 20px;
-                
-                h3 {
-                    font-size: 24px;
-                    font-weight: 700;
-                    line-height: 24px;
-                }
-                p {
-                    font-size: 18px;
-                    font-weight: 500;
-                    line-height: 24px;
-                }
-            }
-        }
+        align-items: flex-start;
+        max-width: 310px;
+        width: 100%;
+        gap: 15px;
+        padding: 20px;
 
-        .bannerFirst {
-            background: linear-gradient(90deg, rgb(49, 116, 244) -0.313%, rgb(153, 211, 255) 99.965%);
+        h3 {
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 24px;
         }
-        
-    
+        p {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 24px;
+        }
+      }
     }
+
+    .bannerFirst {
+      background: linear-gradient(
+        90deg,
+        rgb(49, 116, 244) -0.313%,
+        rgb(153, 211, 255) 99.965%
+      );
+    }
+  }
 }
