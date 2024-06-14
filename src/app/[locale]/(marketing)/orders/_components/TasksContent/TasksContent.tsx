@@ -10,6 +10,7 @@ import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, Pagi
 import { useGetWorksQuery } from '@/shared/redux/features/worksApi';
 
 import { OrderResult } from '../../[order]/Iordet';
+import PageLoader from '../../../_components/PageLoader/PageLoader';
 
 const TasksCard = dynamic(() => import('../TasksCard/TasksCard'), {
   loading: () => <TasksCardSkeleton />,
@@ -24,13 +25,11 @@ export default function TasksContent(): JSX.Element {
   });
   //@ts-ignore
   const orders: OrderResult[] = data?.result || [];
-
-  console.log(orders)
   return (
     <div className={css.wrapper}>
       <TasksFilter />
       {isLoading ? (
-        <TasksCardSkeleton />
+        <PageLoader />
       ) : (
         <div className={css.cards}>
           {orders.length > 0 ? (

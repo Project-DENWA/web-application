@@ -529,7 +529,8 @@
     },
     "card": {
       "rating": "Рейтинг",
-      "experience": "Опыт"
+      "experience": "Опыт",
+      "empty": "отсутствует"
     }
   },
   "orderDetails": {

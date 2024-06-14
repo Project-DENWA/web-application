@@ -6,6 +6,13 @@
   max-width: 818px;
   width: 100%;
   padding: 20px;
+  .avatar {
+    img {
+      max-width: 60px;
+      max-height: 60px;
+      border-radius: 8px;
+    }
+  }
   .rightItems {
     display: flex;
     flex-direction: column;
@@ -39,6 +46,11 @@
         display: flex;
         align-items: center;
         gap: 5px;
+        .empty {
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 28px;
+        }
       }
     }
     .description {

@@ -526,7 +526,8 @@
     },
     "card": {
       "rating": "Rating",
-      "experience": "Experience"
+      "experience": "Experience",
+      "empty": "absent"
     }
   },
   "orderDetails": {
