@@ -1,7 +1,7 @@
 import PopularCategoryCard from "./PopularCategoryCard/PopularCategoryCard"
 import css from "@/app/[locale]/(marketing)/_components/PopularCategories/PopularCategories.module.scss"
 import ICategoriesCardProps from "@/app/interfaces/ICategoriesCardProps"
-import Illustration from "@/../public/categoryIcons/IllustrationCategories.png"
+import Illustration from "@/../public/illustrations/homeIllustration.png";
 import Image from "next/image"
 import HeaderLink from "@/app/[locale]/(marketing)/_components/HeaderLink/HeaderLink"
 import { useTranslations, useLocale } from "next-intl"

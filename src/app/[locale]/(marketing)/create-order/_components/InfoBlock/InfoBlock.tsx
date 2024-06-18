@@ -14,6 +14,7 @@ export default function InfoBlock({ active }: Props): JSX.Element {
       ? 'createOrderStepOne.infoBlock'
       : 'createOrderStepTwo.infoBlock',
   );
+    const img = active === 'step1' ? 'orderIllustration1.png' : 'orderIllustration2.png'
   return (
     <div className={css.wrapper}>
       <h1>{t('title')}</h1>
@@ -21,7 +22,7 @@ export default function InfoBlock({ active }: Props): JSX.Element {
       <Link href={'#'} className="text-light-text-colored">
         {t('link')}
       </Link>
-      <Image alt="Illustration" src={Plug} width={340} height={340} />
+      <Image alt="Illustration" src={`/illustrations/${img}`} width={400} height={400} />
     </div>
   );
 }
