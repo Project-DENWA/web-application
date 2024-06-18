@@ -32,10 +32,10 @@ export default function Footer() {
       >
          <div className={css.items}>
             <div className={cn(css.item, "text-light-text-main-50")}>
-               <h3 className='text-light-text-main-100 dark:text-dark-text-main-100'>
+               {/* <h3 className='text-light-text-main-100 dark:text-dark-text-main-100'>
                   {t("orders.title")}
-               </h3>
-               <Link href={t("orders.links.link1.url")}>
+               </h3> */}
+               {/* <Link href={t("orders.links.link1.url")}>
                   {t("orders.links.link1.text")}
                </Link>
                <Link href={t("orders.links.link2.url")}>
@@ -52,14 +52,14 @@ export default function Footer() {
                </Link>
                <Link href={t("orders.links.link6.url")}>
                   {t("orders.links.link6.text")}
-               </Link>
+               </Link> */}
             </div>
 
             <div className={cn(css.item, "text-light-text-main-50")}>
-               <h3 className='text-light-text-main-100 dark:text-dark-text-main-100'>
+               {/* <h3 className='text-light-text-main-100 dark:text-dark-text-main-100'>
                   {t("experts.title")}
-               </h3>
-               <Link href={t("experts.links.link1.url")}>
+               </h3> */}
+               {/* <Link href={t("experts.links.link1.url")}>
                   {t("experts.links.link1.text")}
                </Link>
                <Link href={t("experts.links.link2.url")}>
@@ -76,14 +76,14 @@ export default function Footer() {
                </Link>
                <Link href={t("experts.links.link6.url")}>
                   {t("experts.links.link6.text")}
-               </Link>
+               </Link> */}
             </div>
 
             <div className={cn(css.item, "text-light-text-main-50")}>
-               <h3 className='text-light-text-main-100 dark:text-dark-text-main-100'>
+               {/* <h3 className='text-light-text-main-100 dark:text-dark-text-main-100'>
                   {t("news.title")}
-               </h3>
-               <Link href={t("news.links.link1.url")}>
+               </h3> */}
+               {/* <Link href={t("news.links.link1.url")}>
                   {t("news.links.link1.text")}
                </Link>
                <Link href={t("news.links.link2.url")}>
@@ -100,14 +100,14 @@ export default function Footer() {
                </Link>
                <Link href={t("news.links.link6.url")}>
                   {t("news.links.link6.text")}
-               </Link>
+               </Link> */}
             </div>
 
             <div className={cn(css.item, "text-light-text-main-50")}>
-               <h3 className='text-light-text-main-100 dark:text-dark-text-main-100'>
+               {/* <h3 className='text-light-text-main-100 dark:text-dark-text-main-100'>
                   {t("more.title")}
-               </h3>
-               <Link href={t("more.links.link1.url")}>
+               </h3> */}
+               {/* <Link href={t("more.links.link1.url")}>
                   {t("more.links.link1.text")}
                </Link>
                <Link href={t("more.links.link2.url")}>
@@ -124,14 +124,14 @@ export default function Footer() {
                </Link>
                <Link href={t("more.links.link6.url")}>
                   {t("more.links.link6.text")}
-               </Link>
+               </Link> */}
             </div>
 
             <div className={cn(css.item, "text-light-text-main-50")}>
-               <h3 className='text-light-text-main-100 dark:text-dark-text-main-100'>
+               {/* <h3 className='text-light-text-main-100 dark:text-dark-text-main-100'>
                   {t("inProgress.title")}
-               </h3>
-               <Link href={t("inProgress.links.link1.url")}>
+               </h3> */}
+               {/* <Link href={t("inProgress.links.link1.url")}>
                   {t("inProgress.links.link1.text")}
                </Link>
                <Link href={t("inProgress.links.link2.url")}>
@@ -148,7 +148,7 @@ export default function Footer() {
                </Link>
                <Link href={t("inProgress.links.link6.url")}>
                   {t("inProgress.links.link6.text")}
-               </Link>
+               </Link> */}
             </div>
          </div>
          <div className={cn(css.line, "bg-light-text-main-50")}></div>

@@ -16,7 +16,7 @@ import Dropdown from '@/shared/ui/dropdown';
 export default function AuthorizedUser({ data }: { data: UserData | null}) {
   const locale = useLocale();
   const t = useTranslations('header.profileDropdownItems');
-  const keys = ['myAccount', 'profile', 'createResume', 'logout'];
+  const keys = ['myAccount', 'profile', 'createResume'];
 
   const profileDropdownItems = keys.map((key) => ({
     title: t(`${key}.title`),

@@ -24,6 +24,9 @@
         "title": "Logout",
         "href": "/logout"
       }
+    },
+    "messages": {
+      "logout": "You have successfully logged out of the profile!"
     }
   },
 

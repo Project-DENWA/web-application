@@ -101,12 +101,12 @@ export default function ResumeForm(): JSX.Element {
       //@ts-ignore
       const response = await create(payload).unwrap();
       form.reset();
-      toast.success('messages.success');
+      toast.success(t('messages.success'));
     } catch (e: any) {
       if (e.data && e.data.message) {
         toast.error(e.data.message);
       } else {
-        toast.error('messages.errors.default');
+        toast.error(t('messages.errors.default'));
       }
     } finally {
       toast.dismiss();

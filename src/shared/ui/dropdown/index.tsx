@@ -2,6 +2,8 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import css from './Dropdown.module.scss';
 import Link from 'next/link';
 import { cn } from '@/shared/lib/utils';
+import { useTranslations } from 'next-intl';
+import useLogout from '@/shared/lib/hooks/useLogout';
 type Props = {
   dropdownItems: DropdownItems[];
   children: React.ReactNode;
@@ -14,8 +16,9 @@ type DropdownItems = {
 
 export default function Dropdown({ dropdownItems, children }: Props) {
   const [isOpen, setIsOpen] = useState(false);
+  const logout = useLogout();
   const dropdownRef = useRef<HTMLDivElement | null>(null);
-
+  const t = useTranslations("header.profileDropdownItems");
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
@@ -66,6 +69,15 @@ export default function Dropdown({ dropdownItems, children }: Props) {
               {item.title}
             </Link>
           ))}
+          <Link
+            onClick={logout}
+              className={cn(
+                'hover:text-light-text-colored dark:hover:text-dark-text-colored transition-colors',
+              )}
+              href={`/`}
+            >
+              {t('logout.title')}
+            </Link>
         </div>
       )}
     </div>
