@@ -81,9 +81,12 @@ export default function SignUpModal({
       toast.success("Аккаунт успешно создан!");
       form.reset();
       router.push("/");
-    } catch (e) {
-      toast.error("Error");
-      console.error(e);
+    } catch (e: any) {
+      if (e.data && e.data.message) {
+        toast.error(e.data.message);
+      } else {
+        toast.error('Возникла ошибка..');
+      }
     } finally {
       toast.dismiss();
     }
