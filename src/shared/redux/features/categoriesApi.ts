@@ -5,7 +5,7 @@ export const categoriesApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getCategories: builder.query<CategoriesResponse, void>({
       query: () => ({
-        url: `categories/getAll`,
+        url: `categories/get-all`,
         method: 'GET',
       }),
     }),

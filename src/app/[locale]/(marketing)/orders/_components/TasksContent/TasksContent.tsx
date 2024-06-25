@@ -19,7 +19,7 @@ const TasksCard = dynamic(() => import('../TasksCard/TasksCard'), {
 
 export default function TasksContent(): JSX.Element {
   const { data, isLoading } = useGetWorksQuery({
-    sort: 'relevant',
+    sort: 'RECENTLY',
     page: 1,
     pageSize: 10,
   });
